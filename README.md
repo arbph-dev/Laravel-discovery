@@ -18,29 +18,31 @@ Le projet inclut :
 
 ---
 
-🛡 Double Licence
+# 🛡 Double Licence
 
 Ce projet est distribué sous un régime de double licence :
-1. Licence Open Source (GNU GPLv3)
+## 1. Licence Open Source (GNU GPLv3)
 
 Vous pouvez utiliser, modifier et redistribuer ce projet uniquement si :
+- Vous respectez les termes de la GNU GPLv3.
+- Vous publiez vos modifications sous la même licence.
+- Vous fournissez le code source complet lors de toute redistribution.
 
-    Vous respectez les termes de la GNU GPLv3.
+## 2. Licence Commerciale
 
-    Vous publiez vos modifications sous la même licence.
+Pour toute utilisation propriétaire, fermée, interne ou ne respectant pas la GPLv3 :  Vous devez obtenir une licence commerciale payante auprès de l’auteur.
+Cette licence permet :
+- Un usage interne sans publication du code source.
+- L’intégration dans un produit propriétaire.
 
-    Vous fournissez le code source complet lors de toute redistribution.
+---
+# 📌 Mention légale
 
-2. Licence Commerciale
+Ce code est fourni sans aucune garantie. L’auteur ne peut être tenu responsable des dommages, pertes de données ou conséquences liées à l’utilisation de ce logiciel.
+L’utilisation du dépôt implique l’acceptation d’une des licences ci-dessus.
+📧 Contact
 
-Pour toute utilisation propriétaire, fermée, interne ou ne respectant pas la GPLv3 :
+Pour toute question, demande d’autorisation spéciale ou obtention d’une licence commerciale :
 
-    Vous devez obtenir une licence commerciale payante auprès de l’auteur.
-
-    Cette licence permet :
-
-        Un usage interne sans publication du code source.
-
-        L’intégration dans un produit propriétaire.
 
         Un support technique dédié (optionnel selon le contrat).
