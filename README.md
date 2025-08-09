@@ -40,9 +40,6 @@ Cette licence permet :
 
 Ce code est fourni sans aucune garantie. L’auteur ne peut être tenu responsable des dommages, pertes de données ou conséquences liées à l’utilisation de ce logiciel.
 L’utilisation du dépôt implique l’acceptation d’une des licences ci-dessus.
-📧 Contact
 
-Pour toute question, demande d’autorisation spéciale ou obtention d’une licence commerciale :
-
-
-        Un support technique dédié (optionnel selon le contrat).
+Pour toute question, demande d’autorisation spéciale, support technique dédié (optionnel selon le contrat). ou obtention d’une licence commerciale :        
+📧 Contact 
