@@ -18,9 +18,29 @@ Le projet inclut :
 
 ---
 
-## 🚀 Installation
+🛡 Double Licence
 
-### 1. Cloner le dépôt
-```bash
-git clone https://github.com/<ton-compte>/<nom-du-repo>.git
-cd <nom-du-repo>
+Ce projet est distribué sous un régime de double licence :
+1. Licence Open Source (GNU GPLv3)
+
+Vous pouvez utiliser, modifier et redistribuer ce projet uniquement si :
+
+    Vous respectez les termes de la GNU GPLv3.
+
+    Vous publiez vos modifications sous la même licence.
+
+    Vous fournissez le code source complet lors de toute redistribution.
+
+2. Licence Commerciale
+
+Pour toute utilisation propriétaire, fermée, interne ou ne respectant pas la GPLv3 :
+
+    Vous devez obtenir une licence commerciale payante auprès de l’auteur.
+
+    Cette licence permet :
+
+        Un usage interne sans publication du code source.
+
+        L’intégration dans un produit propriétaire.
+
+        Un support technique dédié (optionnel selon le contrat).
