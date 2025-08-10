@@ -38,7 +38,14 @@ Laravel gère les paramètres des requetes et fait le lien avec les propriétés
 
 Artisan
 expliquer l'utilisation sur Hostinger
-expliquer les scripts artisan création exploitation : images:sync fichier [Syncimages.php](./images/SyncImages.php)
+- ssh, mdp et
+
+
+expliquer les scripts artisan 
+- création
+- exploitation
+
+voir images:sync fichier [Syncimages.php](../../images/SyncImages.php)
 
 
 
