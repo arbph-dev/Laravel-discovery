@@ -25,7 +25,7 @@ exemple : [README](/README.md)
 ```
 [LARAVEL]([/README.md](https://laravel.com/)
 ```
-exemple : [LARAVEL]([/README.md](https://laravel.com/)
+exemple : [LARAVEL](https://laravel.com/)
 
 
 ## Mermaid
