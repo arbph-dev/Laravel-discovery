@@ -12,7 +12,7 @@ Le projet inclut :
 - Modèles et migrations
 - Scripts d’import/export
 - Helpers et vues personnalisées
-- Documentation technique voir [wiki](/wiki)
+- Documentation technique voir [wiki](../../wiki)
 
 ⚠️ **Tous les fichiers, codes, scripts et ressources présents dans ce dépôt sont protégés par la licence indiquée ci-dessous.**
 
