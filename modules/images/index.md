@@ -13,7 +13,7 @@
 
 ### images
 Table principale, elle contient les données propres aux images
-migration : [srcLaravel/database/migrations]
+migration : [migration 1](../..//srcLaravel/database/migrations/2025_07_09_155455_create_images_table.php)
 
 les champs : 
 - id
