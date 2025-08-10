@@ -45,7 +45,7 @@ expliquer les scripts artisan
 - création
 - exploitation
 
-voir images:sync fichier [Syncimages.php](../../images/SyncImages.php)
+voir images:sync fichier [Syncimages.php](../../srcLaravel/app/Console/Commands/SyncImages.php)
 
 
 
