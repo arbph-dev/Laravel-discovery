@@ -9,12 +9,39 @@ Premiere app laravel, notes et documentation projet
 Ce dépôt contient mes travaux de développement autour de **Laravel** et de l’intégration de la **Validation des Acquis de l’Expérience (VAE)**.  
 Le projet inclut :
 - [Modules Laravel](./modules/index.md)
+  - [images](./images/index.md)
+  - [organisations](./organisations/index.md)
 - Modèles et migrations
 - Scripts d’import/export
 - Helpers et vues personnalisées 
 - Documentation technique voir [wiki](../../wiki)
 
 ⚠️ **Tous les fichiers, codes, scripts et ressources présents dans ce dépôt sont protégés par la licence indiquée ci-dessous.**
+
+---
+## Todo
+
+### 25-08-10_000
+**modules images , controller** : 
+- La pagination requiert une gestion de css à détailler.
+
+### 25-08-10_001
+**modules images , vues** :
+- La vue index est la seule implémentée à ce stade.[TODO]
+
+### 25-08-10_002 
+**routes** : 
+- Détailler le Route Model Binding.[TODO]
+
+Avec cette technique on passe les objets lors du routage
+Laravel gère les paramètres des requetes et fait le lien avec les propriétés des models
+
+Artisan
+expliquer l'utilisation sur Hostinger
+expliquer les scripts artisan création exploitation : images:sync fichier [Syncimages.php](./images/SyncImages.php)
+
+
+
 
 ---
 
