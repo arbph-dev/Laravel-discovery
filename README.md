@@ -25,7 +25,7 @@ Le projet inclut :
 **modules images , controller** : 
 - La pagination requiert une gestion de css à détailler.
 
-### 25-08-10_001
+### [25-08-10_001](./methodes/todos/25-08-10_001.md)
 **modules images , vues** :
 - La vue index est la seule implémentée à ce stade.
 
