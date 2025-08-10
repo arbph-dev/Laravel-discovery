@@ -42,7 +42,7 @@ expliquer l'utilisation sur Hostinger
 - ssh, mdp et
 
 ### 25-08-10_004 
-expliquer les scripts artisan 
+expliquer les scripts et seeders via artisan 
 - création
 - exploitation
 
@@ -51,6 +51,10 @@ voir images:sync fichier [Syncimages.php](./srcLaravel/app/Console/Commands/Sync
 ### 25-08-10_005 
 **modules images , Model Image** :
 - méthode url est fonctionnelle : oui , non => sinon
+
+### 25-08-10_006 
+Artisan / Seeders
+[OrganisationSeeder](./srcLaravel/database/seeders/OrganisationSeeder.php)
 
 ---
 
