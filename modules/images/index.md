@@ -1,5 +1,7 @@
 # Module : images
 
+---
+
 ## Migration
 
 ### table
@@ -30,7 +32,9 @@ les champs :
 - realisation_id
 - timestamps
 
-## model Image
+---
+
+## Model Image
 
     protected $table = 'images';
 
