@@ -1,5 +1,20 @@
 # Organisations
 
+%%
+## Migrations
+### Table de la base de données
+## Model
+### Relations
+### Methodes
+## Controller
+### Helpers
+## route 
+## views
+
+## Outils
+### command artisan
+### seeder
+%%
 
 table : organisations
 model : Organisation
