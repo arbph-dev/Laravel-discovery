@@ -8,23 +8,7 @@ use App\Models\Organisation;
 
 class OrganisationController extends Controller
 {
-    /*
-    essai apres migration
-    public function index()
-    {
-        $organisations = Organisation::all();
-        $titre = "Elfennel - page principale (template simple)";
-        $keyGOOGLESEARCH = "AfXsb50qf2vbKIfIt9K4j3AdN6a8WHUaGmDdeHcdN0Q";
 
-        return view('organisations.index', compact('organisations', 'titre', 'keyGOOGLESEARCH'));
-    }
-
-    vues à créer :
-    organisations.index
-    organisations.show
-    organisations.create
-    organisations.edit
-    */
 
     public function index()
     {
@@ -101,3 +85,4 @@ class OrganisationController extends Controller
 
 
 }
+
