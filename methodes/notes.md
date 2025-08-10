@@ -32,7 +32,7 @@ exemple : [LARAVEL](https://laravel.com/)
 Les graphismes Mermaid sont disponibles
 
 ### Kanban
-
+la documentation est accessible ici [Mermaid](https://mermaid.js.org/)
 
 ```mermaid
 kanban
