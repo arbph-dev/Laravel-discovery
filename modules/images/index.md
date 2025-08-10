@@ -10,8 +10,10 @@
 - images
 - image_realisation
 
+
 ### images
 Table principale, elle contient les données propres aux images
+migration : [srcLaravel/database/migrations]
 
 les champs : 
 - id
