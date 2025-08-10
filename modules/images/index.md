@@ -49,26 +49,34 @@ De type belongsToMany : une image peut appartenir à plusieurs realisations
 ## Controller ImageController
 A ce stade seule la méthode index est implémentée
 
-[ImageController](./images/ImageController.php)
+
 
 
 ### Notes
-La méthode index, utilise la pagination. La pagination requiert une gestion de css à détailler.[TODO]
-Le controleur charge les entités du Model Image
+La méthode index, utilise la pagination.
 
- $images = Image::orderBy('created_at', 'desc')->paginate(20);
-return view('images.index', compact('images'));
-    }
+[TODO] La pagination requiert une gestion de css à détailler.
+
+Le controleur charge les entités par le biais du Model Image, les trie et les pagine avant de les transmettre aux vues.
+
 
 ---
 ## route 
-Le controller, ImageController, est inclue dans routes/web.php
-Les routes sont gérées en Route Model Binding. La vue index est la seule implémentée à ce stade.[TODO]
+Le controller, ImageController, est inclue dans routes/web.php.
+
+Les routes sont gérées en Route Model Binding.
+
 Route::resource('images', ImageController::class);
 
 ---
 ## views
-seul la vue index est implémentée, reste à créer : _form , edit, create,show
+Seule la vue index est implémentée
+
+[TODO] Reste à créer : 
+- _form
+- edit
+- create
+- show
 
 ---
 
@@ -77,4 +85,4 @@ Pour gérer les images j'ai choisi de les importer en deux temps
 - upload des images vers le serveur
 - execution du script artisan via SSH
 
-images:sync fichier [Syncimages.php](./images/SyncImages.php)
+[TODO] Documenter l'usage d'artisan
