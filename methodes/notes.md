@@ -1,3 +1,13 @@
+# Documentation
+
+## Markdown
+
+
+### liens
+Les liens se crée en employant une syntaxe tel que:
+[texte lien](../README.md)
+
+
 ```mermaid
 kanban
 todo[Todo]
