@@ -36,32 +36,27 @@ les champs :
 
 ## Model Image
 
-    protected $table = 'images';
+les propriétés : **table** et **fillable**  sont définies
 
-    protected $fillable = [
-        'filename',
-        'path',
-        'w',
-        'h',
-        'ext',
-        'alt',
-		'description'
-    ];
-
-### methodes 
-url()
+### Notes
+Une méthode **url** permet de gérer l'arborescence pour la créations des liens
 
 
 ### Relations
-	public function realisations()
-	{
-		return $this->belongsToMany(Realisation::class, 'image_realisation');
-	}
+- imgage et realisations
+De type belongsToMany : une image peut appartenir à plusieurs realisations
 
-## ImageController
+
+## Controller ImageController
+A ce stade seule la méthode index est implémentée
+
 [ImageController](./images/ImageController.php)
 
-seul index est implémentée
+
+### Notes
+La méthode index, utilise la pagination. La pagination requiert une gestion de css à détailler. 
+[TODO]
+
 
     public function index()
     {
