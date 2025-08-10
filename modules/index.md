@@ -1,7 +1,7 @@
 # Modules
 
-[images](./images/index.md)
-[organisations](./organisations/index.md)
+- [images](./images/index.md)
+- [organisations](./organisations/index.md)
 
 
 
