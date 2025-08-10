@@ -27,28 +27,30 @@ Le projet inclut :
 
 ### 25-08-10_001
 **modules images , vues** :
-- La vue index est la seule implémentée à ce stade.[TODO]
+- La vue index est la seule implémentée à ce stade.
 
 ### 25-08-10_002 
 **routes** : 
-- Détailler le Route Model Binding.[TODO]
+- Détailler le Route Model Binding.
 
 Avec cette technique on passe les objets lors du routage
 Laravel gère les paramètres des requetes et fait le lien avec les propriétés des models
 
+### 25-08-10_003 
 Artisan
 expliquer l'utilisation sur Hostinger
 - ssh, mdp et
 
-
+### 25-08-10_004 
 expliquer les scripts artisan 
 - création
 - exploitation
 
 voir images:sync fichier [Syncimages.php](./srcLaravel/app/Console/Commands/SyncImages.php)
 
-
-
+### 25-08-10_005 
+**modules images , Model Image** :
+- méthode url est fonctionnelle : oui , non => sinon
 
 ---
 
