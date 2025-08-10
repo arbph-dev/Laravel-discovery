@@ -12,31 +12,38 @@ A ce stade : pas de relations réalisations avec les prestataires
 
 
 ## Migrations
+### Table de la base de données
+table : organisations
+[migration](#)
 
+## Model
+model : [Organisation]
+
+### Relations
+
+### Methodes
+
+## Controller
+controleur : OrganisationController
+
+### Helpers
+aucun à ce stade
+
+## route 
+
+## views
+organisations._form  (commun a create et edit)
+organisations.create
+organisations.edit
+organisations.index
+organisations.show
 
 <!-- 
 
-### Table de la base de données
-## Model
-### Relations
-### Methodes
-## Controller
-### Helpers
-## route 
-## views
 
 ## Outils
 ### command artisan
 ### seeder
 -->
 
-table : organisations
-model : Organisation
-controleur : OrganisationController
 
-Vues : 
-organisations._form  (commun a create et edit)
-organisations.create
-organisations.edit
-organisations.index
-organisations.show
