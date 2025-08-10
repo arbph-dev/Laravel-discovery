@@ -1,29 +1,34 @@
 # Module : images
 
+## Migration
 
+### table
 
+2 tables servent au module :
+- images
+- image_realisation
 
-## migration
-table : images
+### images
+Table principale, elle contient les données propres aux images
 
-        $table->id();
-        $table->string('path')->unique();      // ex: images/produits/logo.jpg
-        $table->string('filename');            // ex: logo.jpg
-        $table->integer('w')->nullable();      // largeur
-        $table->integer('h')->nullable();      // hauteur
-        $table->string('ext', 10);             // jpg, png, webp...
-        $table->string('description')->nullable();
-        $table->timestamps();
+les champs : 
+- id
+- path
+- filename
+- w
+- h
+- ext
+- description
+- timestamps
 
-table image_realisation
-        Schema::create('image_realisation', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('image_id')->constrained()->onDelete('cascade');
-            $table->foreignId('realisation_id')->constrained()->onDelete('cascade');
-            $table->timestamps();
-        });
+###  image_realisation
+Table pivot
 
-
+les champs : 
+- id
+- image_id
+- realisation_id
+- timestamps
 
 ## model Image
 
