@@ -47,8 +47,8 @@ De type belongsToMany : une image peut appartenir à plusieurs realisations
 
 ---
 ## Controller ImageController
-A ce stade seule la méthode index est implémentée
-
+A ce stade seule la méthode index est exploité, les autres sont implémentées
+[ImageController](../../scrLaravel/app/Http/Controllers/ImageController.php)
 
 
 
