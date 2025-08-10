@@ -62,8 +62,15 @@ Le controleur charge les entités par le biais du Model Image, les trie et les p
 
 ---
 ## route 
-Le controller, ImageController, est inclue dans routes/web.php.
-
+Le controller, ImageController
+- inclu le model pour accéder au données
+```php
+use App\Models\Image;
+```
+- est inclu dans routes/web.php.
+```php
+use App\Http\Controllers\ImageController;
+```
 Les routes sont gérées en Route Model Binding.
 
 Route::resource('images', ImageController::class);
@@ -86,3 +93,12 @@ Pour gérer les images j'ai choisi de les importer en deux temps
 - execution du script artisan via SSH
 
 [TODO] Documenter l'usage d'artisan
+- creation Model -mcr
+- Visualisation des routes
+
+---
+Utilisation :
+- https://elfennel.fr/images via la route GET /images/index , le controller 
+
+
+
