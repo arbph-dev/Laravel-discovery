@@ -72,8 +72,9 @@ use App\Models\Image;
 use App\Http\Controllers\ImageController;
 ```
 Les routes sont gérées en Route Model Binding.
-
+```php
 Route::resource('images', ImageController::class);
+```
 
 ---
 ## views
