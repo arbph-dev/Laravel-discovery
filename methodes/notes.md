@@ -1,41 +1,27 @@
-# Documentation
+# interaction php -> js
 
-## Markdown
+## Transferer des données au script du navigateur
 
+🧠 Depuis le contrôleur
 
-### liens
-Les liens ont une syntaxe tel que : 
+On prépare une variable **infos** que l'on passera à la vue (index,show...) dans une méthode
+
+```php
+$infos = [
+    'user_id' => auth()->id(),
+    'realisation_id' => $realisation->id,
+    'csrf_token' => csrf_token(),
+    'parts' => $realisation->parts->pluck('titre'),
+];
 ```
-[texte lien](adresse lien)
-```
 
-#### chemin relatif 
-- au dossier actuel 
-```
-[README](../README.md)
-```
-- à la racine du repository 
-```
-[README](/README.md)
-```
-exemple : [README](../README.md)
-exemple : [README](/README.md)
+🧠 Dans la vue Blade :
 
-#### chemin absolu 
+La variable est converti en json puis incorporé dans le code javascript
+```js
+<script>
+    const appData = @json($infos);
+    console.log(appData);
+    // Tu peux utiliser appData.user_id, appData.parts etc.
+</script>
 ```
-[LARAVEL]([/README.md](https://laravel.com/)
-```
-exemple : [LARAVEL](https://laravel.com/)
-
-
-## Mermaid
-Les graphismes Mermaid sont disponibles
-
-### Kanban
-la documentation est accessible ici [Mermaid](https://mermaid.js.org/)
-
-```mermaid
-kanban
-todo[Todo]
-  id3[Update Database Function]@{ ticket: MC-2037, assigned: 'knsv', priority: 'High' }
-```   
