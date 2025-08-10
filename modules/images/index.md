@@ -33,7 +33,6 @@ les champs :
 - timestamps
 
 ---
-
 ## Model Image
 
 les propriétés : **table** et **fillable**  sont définies
@@ -46,7 +45,7 @@ Une méthode **url** permet de gérer l'arborescence pour la créations des lien
 - imgage et realisations
 De type belongsToMany : une image peut appartenir à plusieurs realisations
 
-
+---
 ## Controller ImageController
 A ce stade seule la méthode index est implémentée
 
@@ -54,34 +53,28 @@ A ce stade seule la méthode index est implémentée
 
 
 ### Notes
-La méthode index, utilise la pagination. La pagination requiert une gestion de css à détailler. 
-[TODO]
+La méthode index, utilise la pagination. La pagination requiert une gestion de css à détailler.[TODO]
+Le controleur charge les entités du Model Image
 
-
-    public function index()
-    {
-	   $images = Image::orderBy('created_at', 'desc')->paginate(20);
-		return view('images.index', compact('images'));
+ $images = Image::orderBy('created_at', 'desc')->paginate(20);
+return view('images.index', compact('images'));
     }
 
-
+---
 ## route 
-dans routes/web.php
-on inclue le controller : use App\Http\Controllers\ImageController;
-
-route model binding
+Le controller, ImageController, est inclue dans routes/web.php
+Les routes sont gérées en Route Model Binding. La vue index est la seule implémentée à ce stade.[TODO]
 Route::resource('images', ImageController::class);
 
-
+---
 ## views
-seul la vue images/index.blade.php est implémentée
-a creer 
-_form
-edit
-create
-show
+seul la vue index est implémentée, reste à créer : _form , edit, create,show
 
+---
 
 ## command artisan
+Pour gérer les images j'ai choisi de les importer en deux temps
+- upload des images vers le serveur
+- execution du script artisan via SSH
 
 images:sync fichier [Syncimages.php](./images/SyncImages.php)
