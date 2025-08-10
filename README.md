@@ -8,10 +8,10 @@ Premiere app laravel, notes et documentation projet
 ## 📖 Description
 Ce dépôt contient mes travaux de développement autour de **Laravel** et de l’intégration de la **Validation des Acquis de l’Expérience (VAE)**.  
 Le projet inclut :
-- Modules Laravel sur mesure
+- [Modules Laravel](./modules/index.md)
 - Modèles et migrations
 - Scripts d’import/export
-- Helpers et vues personnalisées
+- Helpers et vues personnalisées 
 - Documentation technique voir [wiki](../../wiki)
 
 ⚠️ **Tous les fichiers, codes, scripts et ressources présents dans ce dépôt sont protégés par la licence indiquée ci-dessous.**
