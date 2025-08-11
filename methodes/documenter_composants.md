@@ -7,6 +7,13 @@ Les composants sont stockées dans  /resources/views/components
 Le composant link2.blade.php est stockée dans /resources/views/components/nav
 
 Son chemin complet : /resources/views/components/nav/link2.blade.php   
+
+lescomposants dans /resources/views/components 
+commencent par x- 
+esnuite le chemin ; les . remplace les / 
+le nom de fichier sans .blade.php
+
+ainsi : x-nav.link2
   
 # Exploitation
 
