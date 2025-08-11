@@ -21,7 +21,7 @@ table : organisations
 ### Seeder
 
 
-[OrganisationSeeder 1](../../srcLaravel/database/seeders/OrganisationSeeder.php)
+[OrganisationSeeder](../../srcLaravel/database/seeders/OrganisationSeeder.php)
 
 
 ## Model
