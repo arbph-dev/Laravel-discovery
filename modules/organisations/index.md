@@ -14,17 +14,25 @@ A ce stade : pas de relations réalisations avec les prestataires
 ## Migrations
 ### Table de la base de données
 table : organisations
-[migration](#)
+
+### Migration
+[migration 1](../../srcLaravel/database/migrations/2025_07_03_164608_create_tbl_organisations_table.php)
+
+### Seeder
+
+
+[OrganisationSeeder 1](../../srcLaravel/database/seeders/OrganisationSeeder.php)
+
 
 ## Model
-model : [Organisation]
+model : [Organisation](../../srcLaravel/app/Models/Organisation.php)
 
 ### Relations
 
 ### Methodes
 
 ## Controller
-controleur : OrganisationController
+controleur : [OrganisationController](../../srcLaravel/app/Http/OrganisationController.php)
 
 ### Helpers
 aucun à ce stade
