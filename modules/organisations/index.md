@@ -3,13 +3,15 @@ Ce module gère les organisations : entreprise, association, insititutions
 
 Deux cas d'emploi : 
 
-- organisation -> expérience professionelle
+1. organisation -> expérience professionelle
+Une organisation a été le vecteur d'une expérience professionelle([vaeexp](../vaeexps/index.md)).
 
-une organisation a été le vecteur d'une expérience professionelle (employeur)
+L'organisation est dans ce cas l'employeur
 
-- réalisation -> organisation
+2. réalisation -> organisation
 
-une réalisation, d'une expérience professionelle, est lié à une organisation (client)
+Une réalisation, d'une expérience professionelle ([vaeexp](../vaeexps/index.md)), est lié à une organisation (client)
+
 
 A ce stade : pas de relations réalisations avec les prestataires
 
