@@ -57,8 +57,8 @@ Les routes sont gérées dans[web.php](../../srcLaravel/routes/web.php)
 
 ---
 ## Views
-- [realisations._form](../../srcLaravel/resources/views/realisations/_form.php)  (commun a create et edit)
-- [realisations.create](../../srcLaravel/resources/views/realisations/create.php)
-- [realisations.edit](../../srcLaravel/resources/views/realisations/edit.php)
-- [realisations.index](../../srcLaravel/resources/views/realisations/index.php)
-- [realisations.show](../../srcLaravel/resources/views/realisations/show.php)
+- [realisations._form](../../srcLaravel/resources/views/realisations/_form.blade.php)  (commun a create et edit)
+- [realisations.create](../../srcLaravel/resources/views/realisations/create.blade.php)
+- [realisations.edit](../../srcLaravel/resources/views/realisations/edit.blade.php)
+- [realisations.index](../../srcLaravel/resources/views/realisations/index.blade.php)
+- [realisations.show](../../srcLaravel/resources/views/realisations/show.blade.php)
