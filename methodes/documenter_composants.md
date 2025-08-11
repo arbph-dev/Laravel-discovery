@@ -21,6 +21,23 @@ Ci dessous : active est une props, le slot contient VAE
 # Creation
 [link2.blade.php](../srcLaravel/resources/views/components/nav/link2.blade.php)
 
+```
+@props(['active' => false])
+```
+on definit une props blade avec @props ,cette props est initialisée avec une valeur par défaut
+
+```
+{{ $attributes->merge(['class' => 'item']) }}
+```
+on peut affecter les classes CSS, ici la classe item
+
+```
+aria-current="{{ $active ? 'page' : 'false' }}
+```
+gère l'état selon que lien est la page cible => vrai 
+
+
+le slot permet d'ajouter du contenu plus complet
 
 ## A voir
 Laracast liens  
