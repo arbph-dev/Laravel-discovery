@@ -1,0 +1,600 @@
+:root {
+    --primary-color         :   #fff;
+    --secondary-color       :   #000;
+
+    --theme-color-1         :   #eeeeff;
+    --theme-color-2         :   #afafff;
+    --theme-color-3         :   #7f7fe0;
+    --theme-color-4         :   #2f2fd0;
+    --theme-color-5         :   #0000c0;
+}
+
+
+/* CSS RESET*/
+body {
+    margin              :       0px;
+    background-color	:		var( --primary-color );	
+    color	            :		var( --secondary-color  );
+    font-family			: 		Arial, Helvetica, sans-serif;
+}
+
+.body_dark-mode {
+        background-color    :		var( --secondary-color  );
+        color               :       var( --primary-color );
+  
+}
+
+/* ===================================================
+
+
+==================================================== */
+.Esf_Upbar {
+  position          : sticky;
+  top: 0;
+  overflow: hidden;
+  background-color: #333;
+  z-index             : 2;  
+}
+
+.Esf_Upbar .nav-item
+{
+    float               : left;
+    color               : var(--theme-color-3);
+    width               : auto;
+    border              : none;
+    display             : block;
+    outline             : 0;
+    padding             : 0.5vh 1vw;
+    text-decoration     : none;
+}
+
+.Esf_Upbar .item
+{
+    float               : left;
+    color               : var(--theme-color-3);
+    width               : auto;
+    border              : none;
+    display             : block;
+    outline             : 0;
+    padding             : 0.5vh 1vw;
+    text-decoration     : none;
+
+}
+
+.Esf_Upbar .sys-item
+{
+    float               : right;
+    color               : var(--theme-color-3);
+    width               : auto;
+    border              : none;
+    display             : block;
+    outline             : 0;
+    padding             : 0.5vh 1vw;
+    text-decoration     : none;
+}
+
+.Esf_Upbar .nav-item:hover, .Esf_Upbar .item:hover,.Esf_Upbar .sys-item:hover ,.Esf_Upbar .nav-item:active, .Esf_Upbar .item:active, .Esf_Upbar .sys-item:active{
+    color               : var(--secondary-color);/*yellow*/
+    background-color    : var(--theme-color-3);
+}
+
+/* ===================================================
+
+
+==================================================== */
+
+
+.Esf_Main{
+    position            :       relative;
+	min-height			: 			842px
+}
+
+/* ===================================================
+
+
+==================================================== */
+
+.Esf_Header
+{
+    background-color    :           var(--theme-color-4);
+    color               :           var(--primary-color);
+	padding				:           30px;
+	text-align			:           center;
+    /* 30/06/25 - passer svg en bg*/
+    overflow            :           hidden; 
+    position            :           relative;
+}
+
+/* 30/06/25 - passer svg en bg ajout deux div enfant*/
+.Esf_Header_Content {
+    position: relative;
+    z-index: 10;
+}
+.Esf_Header_Background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* pointer-events: none; important si le SVG ne doit pas capter de clics */
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    opacity: 0.65; /* optionnel pour rendre le fond plus doux */
+}
+
+.Esf_Header_dark-mode
+{
+    background-color    :           var(--theme-color-2) !important;
+    color               :           var(--secondary-color)!important;
+}
+
+
+.Esf_Header P 
+{
+    text-align			: center;
+}
+
+/* ===================================================
+
+
+==================================================== */
+.Esf_Content
+{
+    max-width           :           1200px;
+    margin-left         :           auto;
+    margin-right        :           auto;
+}
+
+
+.textimgr
+{
+	display :flex;
+	margin-bottom:20px
+	border : 1px solid #ccc;
+	padding:10px;
+}
+
+
+.textimgr h2
+{
+color : var(--theme-color-4);
+}
+
+.text-content
+{
+flex:1;
+padding-right : 10px;
+}
+.img-content
+{
+width:320px;
+text-align : right;
+}
+
+.cmp-content
+{
+width:320px;
+text-align : right;
+}
+
+.img-content img
+{
+max-width:50%;
+max-height:25%;
+}
+
+.img-content img.full
+{
+max-width:100%;
+max-height:auto;
+}
+
+/* ===================================================
+
+
+==================================================== */
+
+
+.TreeCmp_tree {
+    list-style: none;
+    padding-left: 0;
+    font-family: sans-serif;
+}
+
+.TreeCmp_node {
+    margin: 5px 0;
+    position: relative;
+}
+
+.TreeCmp_toggle {
+    cursor: pointer;
+    margin-right: 5px;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.TreeCmp_toggle::after {
+    content: "";
+}
+
+.TreeCmp_count {
+    color: #666;
+    font-size: 0.9em;
+    margin-left: 5px;
+}
+
+.TreeCmp_children {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.TreeCmp_hidden {
+    display: none;
+}
+
+.TreeCmp_expandBtn {
+    padding: 6px 12px;
+    margin: 10px 0;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-weight: bold;
+}
+.TreeCmp_expandBtn:hover {
+    background-color: #e2e2e2;
+}
+
+
+/* ===================================================
+
+
+==================================================== */
+
+
+
+
+
+.Esf_Dnbar {
+	color: var(--theme-color-1);
+	background-color: var(--theme-color-5);
+	position: relative;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	height: 5vh;
+	z-index: 1;
+	padding-top: 1vh;
+}
+
+
+
+
+
+.Esf_Dnbar_dark-mode
+{
+    background-color    :           var(--theme-color-2) !important;
+    color               :           var(--secondary-color)!important;
+}
+
+
+
+
+
+
+.Esf_Dnbar_Dn {
+    /*color               : var(--theme-color-3);*/
+    /*greenyellow*/
+    margin-top          : 1vh;
+    font-size           : medium ;
+}
+
+.Esf_Dnbar_Dn p{
+    text-align: center;
+
+}
+/* ===================================================
+
+
+==================================================== */
+
+
+.Esf_Navbar{
+    display             : none;
+    background-color    : var(--theme-color-4);
+    color               : var(--theme-link-sys);
+    bottom              : 0;
+    position            : absolute;    
+    /*top                 : 0px;*/
+    width               : 35vw; /* pc*/
+    z-index             : 12;   
+    top                 : 0px ;
+    padding-top         : 166px;
+}
+
+.Esf_Navbar a 
+{
+    background-color    : var(--theme-color-4);
+    color               : white;
+    padding             : 5px 10px;
+    text-align          : center;
+    text-decoration     : none;
+    display             : block;
+    border              : 2px outset ButtonBorder;
+}
+
+
+.Esf_Navbar a:hover , .Esf_Navbar a:active 
+{
+	color: var(--secondary-color);
+	background-color: var(--theme-color-3);
+}
+
+
+/*  -----------------------------------------------------------------------------------------------------  */
+
+        /* COMPOSANT :  modal  */
+
+@keyframes cp_modal_TopCtAnimGrad { from {background-color: rgba(52, 149, 240, 0.842);} to {background-color: rgba(126, 230, 112, 0.5);} }
+
+#cp_modal_div {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    padding: 60px; /* Location of the box */
+    left: 0; top: 0; right: 0; bottom:0;/*indispensable pour bien remplir*/
+    z-index: 20; /* Sit on top */
+    width: auto; /* Full width */
+    overflow: visible;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(52, 149, 240, 0.842); /* Black w/ opacity */
+    background: rgba(52, 149, 240, 0.842);
+    animation: cp_modal_TopCtAnimGrad 10s infinite;
+    animation-direction: alternate-reverse;
+
+    }
+
+    #cp_modal_top {
+    background: var(--theme-color-3);
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    color: #024218;    
+    font-weight: bold;
+    }
+    
+    #cp_modal_ct {
+    background-color: #fefefe;
+    display:block;
+    padding: 20px;
+    margin: auto;
+    /*height: 50%;*/
+    min-height: 50%;
+    /*max-height: 80%;*/
+    width: 60%; font-size: 14pt;
+    /*overflow-y: scroll;*/
+    }
+    
+    /* font-size: 28px;The Close Button */
+    .cp_modal_cl {float: right;}
+    
+    /* ne marche pa ssur span*/
+    .cp_modal_cl:hover,.CWModalClose:focus {
+    color: #000;
+    text-decoration: underline;
+    cursor: pointer;
+    }
+
+
+
+
+/* ----------------------------------------------------------------------------------------------------  */
+/* ----------------------------------------------------------------------------------------------------  */
+
+.cp_nav-overlay  { 
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}   
+
+/* ------------------------DEBUG BAR ---------------------------------------------------  */
+
+.cp_dbg-div { 
+    background-color: rgba(0, 0, 0.5, 0.8);
+    font-size           : var(--fnt-sz-178) ;   
+    color:rgb(49, 228, 228);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 16; /* pour passer sur top bar */
+}  
+
+/* ----------------------------------------------------------------------------------------------------  */
+/* Annotation  => permet 'afficher uen légende au passage d'un texte */
+
+.cp_tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.cp_tooltip .tooltiptext {
+    visibility              : hidden;
+    background-color        : black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 5;
+    font-size           : var(--fnt-sz-178_small) ;  
+    top                     : 100%;
+    left                    : 50%;
+    width                   : max-content;
+    margin-left             : -60px; /* Use half of the width (120/2 = 60), to center the tooltip */    
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.cp_tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.cp_tooltipTitle {
+  position: relative;
+}
+
+/* Tooltip text */
+.cp_tooltipTitle .tooltiptext {
+    visibility              : hidden;
+    /*background-color        : black;*/
+	background-color          : var(--theme-color-5);	
+    color					  : #fff;
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 6px;
+    position				: absolute;
+    z-index: 5;
+    font-size           	: var(--fnt-sz-178_small) ;  
+    top                     : 100%;
+    width                   : max-content;
+    margin-left             : 60px; /* Use half of the width (120/2 = 60), to center the tooltip */    
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.cp_tooltipTitle:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+.carousel { position: absolute; width: 100%; }
+
+/* Ratio 16:9 padding-bottom: 56.25%*/
+.carousel-images { position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; }
+
+.image-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.carousel-images img { width: 100%; height: 100%; object-fit: cover; }
+
+.carousel-controls {
+    /*display: flex;*/
+    justify-content: space-between;
+    align-items: center;
+    /*margin-top: 10px;*/
+}
+
+.carousel-image-counter
+{ 
+    /*display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;*/
+}
+
+.carousel-image-caption
+{ 
+    /*display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;*/
+}
+
+
+
+
+
+
+
+/*-------------------------------------------------------------------------------------------------*/
+/* FORMULAIRES
+/* -------------------------------------------------------------------------------------------------*/
+.cp_form-label {
+	color               : var( --theme-color-5 );
+	display             : inline-block;    
+    margin              : 1vw;
+	padding-left        : 1vw;
+	text-align          : right;
+    width               : 35%;
+    font-size           : x-large;
+}
+.cp_form-link {
+	color               : var( --theme-color-5 );
+	display             : inline-block;    
+    margin              : 2vw;
+	padding-left        : 1vw;
+    width               : 45%;
+}
+.cp_form-error {
+/*	color               : red;*/
+	display             : inline-block;    
+    margin              : 2vw;
+	padding-left        : 1vw;
+	text-align          : right;
+    width               : 40vw;
+}
+
+select.cp_form-field, input.cp_form-field  {
+    font-size           : x-large;
+    /* margin              : 2vw;*/
+    width               : 45%;
+    border-radius: 10px;   
+}
+
+textarea.cp_form-field {
+  width: 45%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+
+input[type=submit].cp_form-submit {
+    background-color    : var( --theme-color-5 );
+    color               : var( --theme-color-1 );
+    font-size           : x-large;
+    padding: 1vw;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    margin-top: 1vh;
+    margin-right: 10%;
+    margin-left: 10%;
+    margin-bottom: 10vh;
+}
+
+input[type=submit]:hover.cp_form-submit {
+    background-color    : var( --theme-color-1 );
+    color               : var( --theme-color-5 );
+}
+
+input[type=submit].cp_link-submit {
+    background-color    : var( --theme-color-5 );
+    color               : var( --theme-color-1 );
+    font-size           : x-large;
+    padding: 1vw;
+    text-align: center;
+    align-content: center;
+    width: 80%;
+    margin-top: 1vh;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+input[type=submit]:hover.cp_link-submit {
+    background-color    : var( --theme-color-1 );
+    color               : var( --theme-color-5 );
+}
