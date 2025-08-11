@@ -48,8 +48,8 @@ class ImageController extends Controller
      */
     public function show(Image $image)
     {
-        //$image->load('realisations'); // Optionnel pour charger la relation
-        //return view('images.show', compact('image'));
+        $image->load('realisations'); // Optionnel pour charger la relation
+        return view('images.show', compact('image'));
     }
 
     /**
