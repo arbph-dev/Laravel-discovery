@@ -11,9 +11,9 @@ Realisation
 [migration 1](../../srcLaravel/database/migrations/2025_07_12_025950_create_realisations_table.php)
 
 ### Tables
-realisations
-competence_realisation
-image_realisation
+- realisations
+- competence_realisation
+- image_realisation
 
 ---
 ## Model Realisation
