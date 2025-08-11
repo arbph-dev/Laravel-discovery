@@ -11,6 +11,9 @@ Le projet inclut :
 - [Modules Laravel](./modules/index.md)
   - [images](./modules/images/index.md)
   - [organisations](./modules/organisations/index.md)
+  - [vaeexps](./modules/vaeexps/index.md)
+  - [realisations](./modules/realisations/index.md)
+  - [competences](./modules/competences/index.md)
 - Modèles et migrations
 - Scripts d’import/export
 - Helpers et vues personnalisées 
@@ -25,7 +28,7 @@ Le projet inclut :
 **modules images , controller** : 
 - La pagination requiert une gestion de css à détailler.
 
-### 25-08-10_001
+### [25-08-10_001](./methodes/todos/25-08-10_001.md)
 **modules images , vues** :
 - La vue index est la seule implémentée à ce stade.
 
@@ -42,7 +45,7 @@ expliquer l'utilisation sur Hostinger
 - ssh, mdp et
 
 ### 25-08-10_004 
-expliquer les scripts artisan 
+expliquer les scripts et seeders via artisan 
 - création
 - exploitation
 
@@ -51,6 +54,10 @@ voir images:sync fichier [Syncimages.php](./srcLaravel/app/Console/Commands/Sync
 ### 25-08-10_005 
 **modules images , Model Image** :
 - méthode url est fonctionnelle : oui , non => sinon
+
+### 25-08-10_006 
+Artisan / Seeders
+[OrganisationSeeder](./srcLaravel/database/seeders/OrganisationSeeder.php)
 
 ---
 

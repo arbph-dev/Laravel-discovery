@@ -1,0 +1,1223 @@
+:root {
+   /*  mode theme  */
+    --primary-color         :   #fff;
+    --secondary-color       :   #000;
+    --header-color          :   teal;
+
+    --theme-color-1         :   #cfcfcf;
+    --theme-color-2         :   #c0d8fb;
+    --theme-color-3         :   #77a9e2;
+    --theme-color-4         :   #0071b5;
+    --theme-color-5         :   #003a69;
+
+    --theme-link-sys        : #a319e2;
+
+
+    --theme-auth-wn         :  12vw;    
+    /*structure*/
+    --theme-struct-hh       :   10vh;  /*header height */         
+    --theme-struct-hhb      :   3vh; /* 4vh; */ /*header bar (down) height */
+    --theme-struct-hhbt     :   calc( var(--theme-struct-hh ) - var(--theme-struct-hhb ));
+    
+            /* hauteur topbar   --theme-struct-hh     --theme-struct-wn */
+    --theme-struct-wn       :   25vw;                  /* largeur navbar pc*/
+    --theme-struct-wnmob    : 100vw;                   /* largeur navbar mobile*/
+    --theme-struct-hf       :   8vh;                   /* hauteur footer */
+/*    min-height          : 86vh;*/
+
+    --fnt-sz-178            : 1.4rem;
+    --fnt-sz-178_small      : 1rem;
+    
+    --fnt-sz-075 : 1.37rem;
+    --fnt-sz-056 : 1.6rem;
+    --fnt-sz-045 : 1.79rem;
+
+}
+
+/* CSS RESET*/
+    body {
+        margin              :       0px;
+        background-color	:		var( --primary-color );	
+        color	            :		var( --secondary-color  );
+		font-family			: 		Arial, Helvetica, sans-serif;
+    }
+
+
+
+    h1
+    {
+        margin-block        :       0px;	   /* 20250609 a surveiller */  
+    }
+/* fin CSS RESET*/
+
+/* essai en cours 20250609*/
+ul {
+  list-style-type: none;
+  padding: 0;
+  border: 1px solid var(--theme-color-3);
+}
+
+ul li {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--theme-color-3);
+}
+
+ul li:last-child {
+  border-bottom: none
+}
+
+/* ------- -----------------------------------------------------------------------------------  */
+/*AJOUT*/
+
+ul.hbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  font-size: medium;
+}
+
+
+ul.hbar li {
+  float: left;
+}
+
+ul.hbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  /*padding: 14px 16px;*/
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+ul.hbar li a:hover {
+  background-color: #111;
+}
+
+ul.hbar li a.active {
+  background-color: #04AA6D;
+}
+
+
+
+
+
+
+/*         ----------------   GESTION THEME  ---------------------------------------       */
+
+.dark-mode {
+        background-color    :		var( --secondary-color  );
+        color               :       var( --primary-color );
+  
+}
+
+/*-         fin gestion theme*/
+
+/* on definit le tag p avec les varaibles de theme */ 
+	p {
+        text-align: justify;
+	}
+		  			
+	p.grayblock {
+		color				: 		var(--theme-color-5); 	
+		background-color	:		var( --theme-color-1 );	  			
+	}
+		  
+
+/* on definit des classes a combiner avec les varaibles de theme */ 
+
+	.pr 				{	position	:	relative;	}
+	.pa 				{	position	:	absolute;	}
+	
+	.bgCyan			    {	background-color	:	cyan;	}
+	.bgRed				{	background-color	:	red;	}
+	.bgTeal			    {	background-color	:	teal;	}	
+	.bgGray			    {	background-color	:	gray ;	}
+	
+	/* background */
+	.bgTC1 				{	background-color	: var( --theme-color-1 ); }
+	.bgTC2 				{	background-color	: var( --theme-color-2 ); }
+	.bgTC3 				{	background-color	: var( --theme-color-3 ); }
+	.bgTC4 				{	background-color	: var( --theme-color-4 ); }
+	.bgTC5 				{	background-color	: var( --theme-color-5 ); }
+	
+	/* text color */
+	.tcTC1 				{	color	: var( --theme-color-1 ); }
+	.tcTC2 				{	color	: var( --theme-color-2 ); }
+	.tcTC3 				{	color	: var( --theme-color-3 ); }
+	.tcTC4 				{	color	: var( --theme-color-4 ); }
+	.tcTC5 				{	color	: var( --theme-color-5 ); }
+	
+		
+	/* la qulite dependra de ratio  et w  */
+    .cardBloc			{	background-color	:	cyan ;	}
+	/*	----------------------------------------------------	*/
+	.cardBlocSizeXQ		{	width	:	100% ;	}
+	.cardBlocSize178	{	width	:	178px ;	height : 100px }
+
+	/*	----------------------------------------------------	*/
+	.cardBlocSizeLQ		{	width	:	100% ;	}
+	.cardBlocSize160	{	width	:	160px ;	height : 100px }
+
+	/*	----------------------------------------------------	*/
+	.cardBlocSizeHQ		{	width	:	100% ;	}
+	.cardBlocSize075	{	width	:	75px ;	height : 100px }
+
+	/*	----------------------------------------------------	*/	
+	.cardBlocSizeMQ		{	width	:	100% ;	}
+	.cardBlocSize070	{	width	:	70px ;	height : 100px }	
+
+	/*	----------------------------------------------------	*/
+	.cardBlocSizeSQ		{	width	:	100% ;	}
+	.cardBlocSize056	{	width	:	56px ;	height : 100px }	
+
+	/*	----------------------------------------------------	*/	
+	.cardBlocSizeZQ		{	width	:	100% ;	}		
+	.cardBlocSize045	{	width	:	45px ;	height : 100px }	
+	/*	----------------------------------------------------	*/
+	
+
+    .mg0    { margin        :  0% }         /* margin 	*/
+	.mg10   { margin        : 10% }
+	.mg20   { margin        : 20% }
+    .mg0L   { margin-left   :  0px }
+	.mg0R   { margin-right  :  0px; margin-left: auto; }
+	.mg20L  { margin-left   : 20% }
+	.mg20R  { margin-right  : 20% ; margin-left: auto;}
+	
+	.pd10   { padding       : 10%; }
+    .pd20   { padding       : 10%; }
+    .pd20L  { padding-left  : 10%; }
+    .pd20R  { padding-right : 10%; }
+	
+    .dmIB { display: inline-block;} /* display mode  permet au bloc */
+
+    .ddW50 { width : 49.6% ;}
+    .ddW25 { width : 24.4% ;} 
+
+    /* animations */
+    @keyframes animateleft{from{left:-100vw;opacity:0} to{left:0;opacity:1}}    
+
+/* ========================= COMPOSANTS prefixe cp_
+/* ----------------------------------------------------------------------------------------------------  
+<div class="cmp_soft-card">Une carte cmp_soft-card</div>
+*/
+    .cp_soft-card {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    }
+
+  /*  .cp_soft-card:hover {
+    transform: translateY(-5px);
+    }*/
+
+
+
+/* 2025-06-21 PC suppression top: 0 ; mobile left : 0 ;width: 100%;
+
+*/
+.cp_old-card1 {
+    height: 100%;
+    right: 0;
+    top: 10vh;
+    left: 25vw;
+    position: fixed;
+    opacity:0.2;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+   
+    background-image: url('../../img/arn.jpg');
+/*! background-image: url('../../img/card/wind-rose2.png'); */
+/*! background-image: url('../../img/card/wind-rose1.png'); */
+/*! background-image: url('../../img/card/tribal-lion1.png'); */
+/*! background-image: url('../../img/card/tribal-dragon1.png'); */
+/*! background-image: url('../../img/card/frame-gold2.png'); */
+/*! background-image: url('../../img/card/frame-gold1.png'); */
+/*! background-image: url('../../img/card/book-2page1.png'); */
+/*! background-image: url('../..//img/card/book-1page1.png'); */	
+
+}
+
+.cp_old-card1_section
+{
+    position:absolute;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #222;
+   /* background-color: #fdfdfd;*/
+}
+
+/* ----------------------------------------------------------------------------------------------------  */
+
+.cp_nav-overlay  { 
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}   
+
+/* ------------------------DEBUG BAR ---------------------------------------------------  */
+
+.cp_dbg-div { 
+    background-color: rgba(0, 0, 0.5, 0.8);
+    font-size           : var(--fnt-sz-178) ;   
+    color:teal;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 16; /* pour passer sur top bar */
+}  
+
+/* ----------------------------------------------------------------------------------------------------  */
+/* Annotation  => permet 'afficher uen légende au passage d'un texte */
+
+.cp_tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.cp_tooltip .tooltiptext {
+    visibility              : hidden;
+    background-color        : black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 5;
+    font-size           : var(--fnt-sz-178_small) ;  
+    top                     : 100%;
+    left                    : 50%;
+    width                   : 120px;
+    margin-left             : -60px; /* Use half of the width (120/2 = 60), to center the tooltip */    
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.cp_tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+/*             ----------------------------------                                         */
+/* COMPOSANT : carousel*/
+
+.cp_carousel { position: absolute; width: 25%; }
+.cp_carousel-images { position: relative; width: 100%; padding-bottom: 56.25%; overflow: hidden; }
+.cp_carousel-image-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.cp_carousel-images img { width: 100%; height: 100%; object-fit: cover; }
+.cp_carousel-controls { justify-content: space-between; align-items: center; }
+
+/*             ----------------------------------                                         */
+/* COMPOSANT : page */
+
+.cp_page_section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #222;
+  background-color: #fdfdfd;
+}
+
+.cp_page_citation {
+  font-style: italic;
+  text-align: center;
+  font-size: 1.25em;
+  color: #555;
+  margin-bottom: 2em;
+}
+
+.cp_page_Titre1 {
+  font-size: 2.2em;
+  text-align: center;
+  color: #2a4c78;
+  margin-bottom: 1.5em;
+}
+
+.cp_page_paragraphe {
+  font-size: 1.05em;
+  line-height: 1.2em;
+  margin-bottom: 1.2em;
+  text-align: justify;
+}
+
+.cp_page_signature {
+  font-weight: 600;
+  text-align: center;
+  color: #2a4c78;
+  margin-top: 2em;
+  font-size: 1.1em;
+}
+
+/* --- */
+
+.cp_callout {
+    border: 1px solid #ccc;
+    margin: 1rem 0;
+    padding: 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.cp_callout .titre {
+    background-color: #f1f1f1;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cp_callout .content {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+    margin-top: 10px; /* Espace entre les autres éléments de la page */
+    max-height: 150px; /* Hauteur maximale du conteneur pour éviter que le contenu ne déborde */
+    overflow-y: auto; /* Ajoute une barre de défilement si le texte dépasse la hauteur définie */
+}
+
+
+/* --- */
+
+
+.cp_codeval {
+    border: 1px solid #ccc;
+    margin: 1rem 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.cp_codeval .titre {
+    background-color: #f1f1f1;
+    padding: 10px;
+    cursor: pointer;
+}
+.cp_codeval .scriptcode,
+.cp_codeval .result {
+    padding: 10px;
+    display: none;
+}
+.cp_codeval .scriptcode textarea {
+    width: 100%;
+    height: 100px;
+}
+
+
+
+
+/*  -----------------------------------------------------------------------------------------------------  */
+
+        /* COMPOSANT :  modal  */
+
+        @keyframes cp_modal_TopCtAnimGrad { from {background-color: rgba(52, 149, 240, 0.842);} to {background-color: rgba(126, 230, 112, 0.5);} }
+
+        #cp_modal_div {
+            display: none; /* Hidden by default */
+            position: absolute; /* Stay in place */
+            padding: 60px; /* Location of the box */
+            left: 0; top: 0; right: 0; bottom:0;/*indispensable pour bien remplir*/
+            z-index: 20; /* Sit on top */
+            width: auto; /* Full width */
+            overflow: visible;
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(52, 149, 240, 0.842); /* Black w/ opacity */
+            background: rgba(52, 149, 240, 0.842);
+            animation: cp_modal_TopCtAnimGrad 10s infinite;
+            animation-direction: alternate-reverse;
+
+          }
+
+          #cp_modal_top {
+            background: var(--theme-color-3);
+            margin: auto;
+            padding: 20px;
+           border: 1px solid #888;
+            width: 60%;
+            color: #024218;    
+            font-weight: bold;
+          }
+          
+          #cp_modal_ct {
+            background-color: #fefefe;
+            display:block;
+            padding: 20px;
+            margin: auto;
+            /*height: 50%;*/
+            min-height: 50%;
+            /*max-height: 80%;*/
+            width: 60%; font-size: 14pt;
+            /*overflow-y: scroll;*/
+          }
+          
+          /* font-size: 28px;The Close Button */
+          .cp_modal_cl {float: right;}
+          
+          /* ne marche pa ssur span*/
+          .cp_modal_cl:hover,.CWModalClose:focus {
+            color: #000;
+            text-decoration: underline;
+            cursor: pointer;
+          }
+
+
+
+
+/* ----------------------------------------------------------------------------------------------------  */
+
+.Esf_Topbar-darkmode
+{
+    background-color    : var(--theme-color-2) !important;
+    color               : var(--secondary-color);
+}
+.Esf_Topbar {
+    /*background-color    : var(--theme-color-2);*/
+    background-color    : var(--theme-color-4);
+    color               : var(--primary-color);
+    position            : sticky;
+    top                 : 0px;
+    width               : 100vw; /*100%;*/
+    /*font-size           : var(--fnt-sz-178) ;    */
+    height              : var(--theme-struct-hh );
+    z-index             : 15;
+    text-align          : center;
+}
+
+#Esf_Topbar {
+    /*background-color    : var(--theme-color-2);*/
+    background-color    : var(--theme-color-4);
+    color               : var(--primary-color);
+    position            : sticky;
+    top                 : 0px;
+    width               : 100vw; /*100%;*/
+    /*font-size           : var(--fnt-sz-178) ;    */
+    height              : var(--theme-struct-hh );
+    z-index             : 15;
+    text-align          : center;
+}
+
+.Esf_Header
+{
+    background-color    : var(--theme-color-4);
+    color               : var(--primary-color);
+	padding				: 30px;
+	text-align			: center;
+}
+
+.Esf_Header-darkmode
+{
+    background-color    : var(--theme-color-2) !important;
+    color               : var(--secondary-color)!important;
+}
+
+
+.Esf_Header P 
+{
+    text-align			: center;
+}
+
+.Esf_Upbar {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  background-color: #333;
+  z-index             : 2;  
+}
+
+.Esf_Upbar .nav-item
+{
+    float               : left;
+    color               : var(--theme-color-3);/*yellow*/
+    width               : auto;
+    border              : none;
+    display             : block;
+    outline             : 0;
+    padding             : 0.5vh 1vw;
+    text-decoration     : none;
+}
+
+.Esf_Upbar .item
+{
+    float               : left;
+    color               : var(--theme-color-3);/*yellow*/
+    width               : auto;
+    border              : none;
+    display             : block;
+    outline             : 0;
+    padding             : 0.5vh 1vw;
+    text-decoration     : none;
+
+}
+
+.Esf_Upbar .sys-item
+{
+    float               : right;
+    color               : var(--theme-color-3);/*yellow*/
+    width               : auto;
+    border              : none;
+    display             : block;
+    outline             : 0;
+    padding             : 0.5vh 1vw;
+    text-decoration     : none;
+}
+
+.Esf_Upbar .nav-item:hover, .Esf_Upbar .item:hover,.Esf_Upbar .sys-item:hover ,.Esf_Upbar .nav-item:active, .Esf_Upbar .item:active, .Esf_Upbar .sys-item:active{
+    color               : var(--secondary-color);/*yellow*/
+    background-color    : var(--theme-color-3);
+}
+
+
+
+#Esf_Topbar_Up {
+     color               : var(--secondary-color );
+     position: absolute;
+     top: 0;
+     height: 5vh;
+/*     background-color: transparent;*/
+     left: 0;
+     right: 0;
+}
+
+
+#Esf_Topbar_Dn {
+    color               : var(--theme-color-3);/*yellow*/
+    background-color    : transparent;/*var(--secondary-color);*/
+    display             : table;
+    width               : 100vw;
+    position            : absolute;
+    /*top                 : var(--theme-struct-hhbt );*/
+    height              : var(--theme-struct-hhb );
+    left: 0;
+    right: 0;
+    bottom: 0 !important;
+    top : auto;
+}
+
+#Esf_Topbar_Dn .item, #Esf_Topbar_Dn .item:visited {
+    float               : left;
+    color               : var(--theme-color-3);/*yellow*/
+    width               : auto;
+    border              : none;
+    display             : block;
+    outline             : 0;
+    padding             : 0.5vh 1vw;
+    text-decoration     : none;
+}
+
+#Esf_Topbar_Dn .item:hover , #Esf_Topbar_Dn .item:active{
+    color               : var(--secondary-color);/*yellow*/
+    background-color    : var(--theme-color-3);
+}
+
+/*
+#Esf_Topbar_Dn {
+    color               : pink;
+}
+*/
+
+/* ------------------- footer --------------------------- */
+/*background-color : 
+darkorange;
+var(--theme-color-5);
+
+*/
+
+#Esf_Dnbar {
+    color               : var(--theme-color-1);
+    background-color    : var(--theme-color-5);
+    position            : fixed;
+    left                : 0;
+    bottom              : 0;
+    width               : 100%;
+    text-align          : center;
+    /*font-size           : var(--fnt-sz-178) ;*/
+    height              : var(--theme-struct-hf ); 
+    z-index             : 1;
+}
+
+#Esf_Dnbar_Up {
+    color               : var(--theme-color-3);/*yellow*/
+    background-color    : var(--secondary-color);
+    height              : 3vh;
+    display             : table;
+    width               : 100vw;
+}
+
+#Esf_Dnbar_Up .item {
+	/*padding: 8px 16px;*/
+	float: left;
+	width: auto;
+	border: none;
+	display: block;
+	outline: 0;
+    padding: 0.5vh 1vw;
+}
+
+#Esf_Dnbar_Up .item:hover {
+    color               : var(--secondary-color);/*yellow*/
+    background-color    : var(--theme-color-3);
+    border-left: 0.2vw solid red;
+    /*border-top-left-radius: 0.75vw;*/
+    /*border-right: 0.2vw solid red;*/
+    /*border-top-right-radius: 0.75vw;*/
+}
+
+
+
+#Esf_Dnbar_Dn {
+    color               : var(--theme-color-3);/*greenyellow*/
+    margin-top          : 1vh;
+    font-size           : medium ;
+}
+#Esf_Dnbar_Dn p{
+    text-align: center;
+
+}
+/* -------------------- navbar --------------------------  */
+
+#Esf_Navbar {
+    background-color    : #7b91b3; /*#c0d8fb;*/
+    color               : var(--theme-link-sys);
+    /*display             : none;*/
+    bottom              : 0;
+    height              : auto;/* auto */
+    margin-bottom       : 0; /* ajout padding 8vh a tester*/
+    padding-bottom      : 8vh;
+    margin-right        : 1vw;
+    position            : absolute;    
+    top                 : var(--theme-struct-hh );
+    width               : var(--theme-struct-wn);
+    z-index             : 14;    
+}
+/*
+#Esf_Navbar_Bt_Show {
+    color               : aqua
+}
+*/
+
+
+#Esf_Navbar_Bt_Hide {
+    /*color               : var(--theme-link-sys);*/
+    display             : none;/*   pour pc*/
+    position            : absolute;
+    right               : 0 ;
+}
+/* RWD mobile tablet => #Esf_Navbar_Bt_Hide { display : block;}*/
+
+
+
+#Esf_Navbar_Bt_Hide > a
+{
+/*    color               : var(--theme-link-sys);*/
+    text-decoration     : none;
+}
+
+#Esf_Navbar div > h1
+{
+    margin-left             : 1vw;
+/*    color                   : var(--theme-link-sys);*/
+    text-decoration-line    : underline;
+    text-decoration-style   : dotted;
+}
+
+.rwd_Navbar{
+    display: none;
+    background-color    : var(--theme-color-4);
+    color               : var(--theme-link-sys);
+    bottom              : 0;
+    position            : absolute;    
+    /*top                 : 0px;*/
+    width               : 35vw; /* pc*/
+    z-index             : 12;   
+    top                 : 0px ;
+    padding-top         : 166px;
+}
+
+.rwd_Navbar a 
+{
+    background-color    : var(--theme-color-4);
+    color               : white;
+    padding             : 5px 10px;
+    text-align          : center;
+    text-decoration     : none;
+    display             : block;
+    border              : 2px outset ButtonBorder;
+}
+
+
+.rwd_Navbar a:hover , .rwd_Navbar a:active 
+{
+	color: var(--secondary-color);
+	background-color: var(--theme-color-3);
+}
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------*/
+/*2025-06-06 : theming suppresion de :: color , background-color */
+#Esf_Mains {
+
+    margin-left         : var(--theme-struct-wn);/*26vw;*/
+    min-height          : 82vh;
+    margin-bottom       : 2vh;
+    padding-left        : 1vw;
+    padding-right       : 1vw;
+    padding-bottom      : 4vh;
+    font-size           : var(--fnt-sz-178) ;
+    /*position: absolute;*/
+
+}
+
+
+.Esf_Content
+{
+max-width               : 1200px;
+margin-left             : auto;
+margin-right            : auto;
+}
+
+
+/*---------------------------------------------------------*/
+#Esf_RwdDg { 
+    color : black;
+    /* background-color: #c0d8fb; */
+    /* background-color: transparent; */
+    margin-right : 10vw;
+    width:25vw;
+    margin-left: auto;
+    top: 0;
+}
+
+.Esf_RwdDg_btnav{
+    display             : none !important;
+}
+
+#Esf_RwdDg button 
+{
+    background-color    : var(--theme-color-4);
+    color               : white;
+    padding             : 5px 10px;
+    text-align          : center;
+    text-decoration     : none;
+    display             : inline-block;
+    border              : 2px outset ButtonBorder;
+
+}
+
+
+#Esf_RwdDg.Esf_RwdDg a 
+{
+    background-color    : var(--theme-color-4);
+    color               : white;
+    padding             : 5px 10px;
+    text-align          : center;
+    text-decoration     : none;
+    display             : inline-block;
+    border              : 2px outset ButtonBorder;
+}
+
+
+#Esf_RwdDg button:hover , #Esf_RwdDg button:active , #Esf_RwdDg.Esf_RwdDg a:hover , #Esf_RwdDg.Esf_RwdDg a:active 
+{
+	color: var(--secondary-color);
+	background-color: var(--theme-color-3);
+}
+
+
+
+
+/*  -------------  AUTHENTIFICATION ------------------- */
+#Esf_Auth {
+    background-color: var( --theme-color-4 );    
+    min-height          : 82vh;
+    margin-left         : var(--theme-auth-wn);
+    margin-right        : var(--theme-auth-wn);
+    margin-bottom       : 2vh;
+    padding-left        : 1vw;
+    padding-right       : 1vw;
+    text-align          : center;
+    font-size           : x-large;
+
+}
+
+.auth_form-label {
+	color               : var( --theme-color-5 );
+	display             : inline-block;    
+    margin              : 2vw;
+	padding-left        : 1vw;
+	text-align          : right;
+    width               : 10vw;
+}
+.auth_form-link {
+	color               : var( --theme-color-5 );
+	display             : inline-block;    
+    margin              : 2vw;
+	padding-left        : 1vw;
+    width               : 30vw;
+}
+.auth_form-error {
+/*	color               : red;*/
+	display             : inline-block;    
+    margin              : 2vw;
+	padding-left        : 1vw;
+	text-align          : right;
+    width               : 40vw;
+}
+
+input.auth_form-field  {
+    font-size           : x-large;
+    margin              : 2vw;
+    width               : 15vw;
+    border-radius: 10px;   
+}
+
+input[type=submit].auth_form-submit {
+    background-color    : var( --theme-color-5 );
+    color               : var( --theme-color-1 );
+    width               : 30vw;
+    font-size           : x-large;
+    padding: 0.5vw;
+    margin             : 2vw;
+    box-sizing: content-box;
+}
+
+input[type=submit]:hover.auth_form-submit {
+    background-color    : var( --theme-color-1 );
+    color               : var( --theme-color-5 );
+}
+/*  fin   AUTHENTIFICATION  */
+/*                   --------------------------                */
+
+
+
+
+
+/*-------- RWD     RWD      RWD  -------------------------------------------------------------------*/
+@media ( min-width :  1921px )
+{
+    #Esf_RwdDg { color : rgb(15, 36, 228); }
+}
+
+@media ( ( min-width :  1190px ) and ( max-width : 1370px )  and ( min-aspect-ratio :   15/9  ))
+{
+    #Esf_RwdDg { color : rgb(158, 11, 187); }
+}
+
+@media ((max-width: 1023px) and ( min-aspect-ratio :   6/10  ) and ( max-aspect-ratio :  15/9 ))
+{
+
+    .cp_old-card1 { left: 0; width: 100%;} 
+
+    #Esf_Topbar { font-size:var(--fnt-sz-075);z-index : 5 ;}
+    #Esf_RwdDg { 
+        color               : rgb(255, 218, 11); 
+        width               : 50vw;
+		margin-right 		: 1vw;
+    }
+
+    #Esf_Navbar { 
+        display             : none ;
+        top                 : 0;
+        width               : var(--theme-struct-wnmob);
+        animation: animateleft 0.8s;
+    }
+    .Esf_RwdDg_btnav{display: inline-block;}
+    #Esf_Navbar_Bt_Hide { display : block;}
+    
+    .rwd_Navbar{ width               : 75vw;} 
+
+    #Esf_Mains { 
+        margin-left         : 1vw;
+        column-count        : 1;
+        font-size           : var(--fnt-sz-075);
+        /*padding-bottom      : 4vh;*/
+    }
+
+    #Esf_Dnbar { font-size:var(--fnt-sz-075); }
+	
+	#Esf_Dnbar_Up {
+		display: block;
+		width: 100%;
+	}
+        /*  -------------  AUTHENTIFICATION ------------------- */
+
+    #Esf_Auth {
+        background-color    : var( --theme-color-4 );
+        font-size           : xxx-large;
+        margin-bottom       : 2vh;
+        margin-left         : 0;
+        margin-right        : 0;
+        padding             : 0;
+        padding-top         : 2vh;                
+        text-align          : center;
+    }    
+
+/*  #Esf_Auth form{ margin-top          :25vh;  }*/
+
+    .auth_form-label {
+        margin              : 2vh;
+        padding-left        : 1vw;
+        text-align: center;
+        width: 94vw;
+        display             : block;
+    }
+
+    .auth_form-link {
+        display             : block;
+        font-size           : xxx-large;
+        width: 94vw;
+        margin-top: 2vh;
+    }
+
+    .auth_form-error {
+        display             : block;
+    
+        width: 94vw;
+        margin-top: 2vh;
+    }
+
+    input.auth_form-field {
+        display             : block;
+        font-size           : xxx-large;         
+        width               : 30vw;
+        text-align: center;
+        width: 94vw;
+    }
+
+    input[type=submit].auth_form-submit {
+        background-color    : var( --theme-color-5 );
+        color               : var( --theme-color-1 );
+        display             : block;
+        font-size           : xxx-large;        
+        text-align          : center;
+        width               : 94vw;
+        margin-top              : 2vh;
+    }
+
+    input[type=submit]:hover.auth_form-submit {
+        background-color    : var( --theme-color-1 );
+        color               : var( --theme-color-5 );
+    }
+}
+
+/* ratio 0,56 :: galaxy note3 360 x 640  */
+@media  (( min-aspect-ratio : 1/2 ) and ( max-aspect-ratio : 6/10)) 
+{
+
+    .cp_old-card1 { left: 0; width: 100%;} 
+
+    #Esf_Topbar { font-size:var(--fnt-sz-056); z-index : 5 ; }
+    #Esf_RwdDg { 
+        color               : rgb(228, 94, 101);
+        width               : 50vw;
+		margin-right 		: 1vw;        
+    } 
+
+
+    #Esf_Navbar { 
+        display             : none ;
+        top                 : 0;
+        width               : var(--theme-struct-wnmob);
+        animation: animateleft 0.8s;
+    }
+    .Esf_RwdDg_btnav{display: inline-block;}
+    #Esf_Navbar_Bt_Hide { display : block;}
+
+    .rwd_Navbar{ width               : 75vw;} 
+
+    #Esf_Mains { 
+        margin-left         :       1vw;
+        column-count        :       1;
+        font-size           :       var(--fnt-sz-056);
+        /*padding-bottom      :       4vh;*/
+    }
+    #Esf_Dnbar { font-size:var(--fnt-sz-056); }
+
+	#Esf_Dnbar_Up {
+		display: block;
+		width: 100%;
+	}
+    /*  -------------  AUTHENTIFICATION ------------------- */
+
+    #Esf_Auth {
+        background-color    : var( --theme-color-4 );
+        font-size           : xxx-large;
+        margin-bottom       : 2vh;
+        margin-left         : 0;
+        margin-right        : 0;
+        padding             : 0;
+        padding-top         : 2vh;                
+        text-align          : center;
+    }    
+
+/*  #Esf_Auth form{ margin-top          :25vh;  }*/
+
+    .auth_form-label {
+        margin              : 2vh;
+        padding-left        : 1vw;
+        text-align: center;
+        width: 94vw;
+        display             : block;
+    }
+
+    .auth_form-link {
+        display             : block;
+        font-size           : xxx-large;
+        width: 94vw;
+        margin-top: 2vh;
+    }
+
+    .auth_form-error {
+        display             : block;
+    
+        width: 94vw;
+        margin-top: 2vh;
+    }
+
+    input.auth_form-field {
+        display             : block;
+        font-size           : xxx-large;         
+        width               : 30vw;
+        text-align: center;
+        width: 94vw;
+    }
+
+    input[type=submit].auth_form-submit {
+        background-color    : var( --theme-color-5 );
+        color               : var( --theme-color-1 );
+        display             : block;
+        font-size           : xxx-large;        
+        text-align          : center;
+        width               : 94vw;
+        margin-top              : 2vh;
+    }
+
+    input[type=submit]:hover.auth_form-submit {
+        background-color    : var( --theme-color-1 );
+        color               : var( --theme-color-5 );
+    }    
+}
+
+/*  -------------  ----------------- ------------------- */
+/* ratio 0,45 :: galaxy S20 s9 moto  */
+@media ( ( min-aspect-ratio : 1/10 ) and ( max-aspect-ratio : 1/2) ) 
+{
+
+    .cp_old-card1 { left: 0; width: 100%;} 
+
+    #Esf_Topbar { 
+        font-size           : var(--fnt-sz-045);
+        z-index             : 5 ;        
+    }
+
+    #Esf_RwdDg { 
+        color               : rgb(121, 228, 94); 
+        width               : 50vw;
+		margin-right 		: 1vw;
+    }
+
+    #Esf_Navbar { 
+        display             : none ;
+        top                 : 0;
+        width               : var(--theme-struct-wnmob);
+        animation           : animateleft 0.8s;
+    }
+    .Esf_RwdDg_btnav{display: inline-block;}
+    #Esf_Navbar_Bt_Hide { display : block;}
+
+    .rwd_Navbar{ width               : 75vw;} 
+
+    #Esf_Mains { 
+        margin-left         : 1vw;
+        column-count        : 1;
+        font-size           : var(--fnt-sz-045);
+        /*padding-bottom      : 4vh;*/
+    }
+
+    #Esf_Dnbar { font-size:var(--fnt-sz-045); }
+
+	#Esf_Dnbar_Up {
+		display: block;
+		width: 100%;
+	}
+
+    /*  -------------  AUTHENTIFICATION ------------------- */
+
+    #Esf_Auth {
+        background-color    : var( --theme-color-4 );
+        font-size           : xxx-large;
+        margin-bottom       : 2vh;
+        margin-left         : 0;
+        margin-right        : 0;
+        padding             : 0;
+        padding-top         : 2vh;                
+        text-align          : center;
+    }    
+
+/*  #Esf_Auth form{ margin-top          :25vh;  }*/
+
+    .auth_form-label {
+        margin              : 2vh;
+        padding-left        : 1vw;
+        text-align: center;
+        width: 94vw;
+        display             : block;
+    }
+
+    .auth_form-link {
+        display             : block;
+        font-size           : xxx-large;
+        width: 94vw;
+        margin-top: 2vh;
+    }
+
+    .auth_form-error {
+        display             : block;
+    
+        width: 94vw;
+        margin-top: 2vh;
+    }
+
+    input.auth_form-field {
+        display             : block;
+        font-size           : xxx-large;         
+        width               : 30vw;
+        text-align: center;
+        width: 94vw;
+    }
+
+    input[type=submit].auth_form-submit {
+        background-color    : var( --theme-color-5 );
+        color               : var( --theme-color-1 );
+        display             : block;
+        font-size           : xxx-large;        
+        text-align          : center;
+        width               : 94vw;
+        margin-top              : 2vh;
+    }
+
+    input[type=submit]:hover.auth_form-submit {
+        background-color    : var( --theme-color-1 );
+        color               : var( --theme-color-5 );
+    }
+
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/

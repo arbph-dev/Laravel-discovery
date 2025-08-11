@@ -1,0 +1,208 @@
+/* attention au constatante a passer en variable 
+https://whatismyviewport.com/
+*/ 
+
+/*---- Variables -----*/
+:root {
+    /*  mode theme  */
+    --primary-color         :   #fff;
+    --secondary-color       :   #000;
+    --header-color          :   teal;
+    /* rgb(135, 176, 222); 
+    
+    --theme-color-1 +  theme clair => + plus clair
+    --theme-color-5
+    */
+
+    --theme-color-1         :   #fafafa;
+    --theme-color-2         :   #c0d8fb;
+    --theme-color-3         :   #77a9e2;
+    --theme-color-4         :   #0071b5;
+    --theme-color-5         :   #003a69;
+
+
+}
+
+                    /* document  */
+
+.dark_mode {
+    --primary-color         :   #000;
+    --secondary-color       :   #fff;
+    --header-color          :   teal;
+}
+
+
+/* on assigne couleur de primary fond  et color secondary (texte) */
+body {
+    background              :   var( --primary-color );
+    color                   :   var( --secondary-color );
+/*    overflow                :   hidden;*/
+    margin                  :   0%;
+}
+
+
+                    /* structure  */
+
+.form-group {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 1em;
+}
+.form-label {
+    text-align: right;
+    padding-right: 0.5rem;
+    position: static;
+    color: var( --theme-color-5 );
+}
+.form-field input {
+    /*width: 100%;*/
+    width:30vw;
+    padding: 0.5rem;
+    font-size: 1rem;
+    position: static;
+}
+
+.form-group input[type="submit"] {
+  grid-column: span 2;
+  width: 50%;
+  margin-left: 25%;
+  border-radius: 16px;
+  border: 5px solid var( --theme-color-5 );
+      background-color: var( --theme-color-5 );
+    color: var(  --primary-color );
+}
+div.auth form div input[type=submit]:hover {
+    background-color: var( --theme-color-1 );
+    color: var( --theme-color-5 );
+    border: 5px solid var( --theme-color-5 );
+/*    transform: translateY(-5px);*/
+}
+/*
+div.auth form div input[type=submit] {
+    text-align: center;
+    border-radius: 16px;
+    border: 5px solid var( --theme-color-4 );
+    width:12vw;
+    background-color: var( --theme-color-4 );
+    color: var(  --primary-color );
+}
+
+div.auth form div input[type=submit]:hover {
+    background-color: var( --theme-color-2 );
+    color: var( --theme-color-4 );
+    border-radius: 16px;
+    border: 5px solid var( --theme-color-4 );
+}
+
+*/
+
+
+
+
+
+div.authbg { 
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    opacity:0.2;
+    background-image: url('../../img/arn.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+
+.logo img {
+  /*margin-left: 30%;*/
+  margin-left: auto;
+  width: 30vh;
+  /*width: 30%;*/
+    border-radius: 50%;
+    border: 0.75vh solid var( --theme-color-5 );
+}
+
+
+
+div.auth
+{
+    position            :         absolute;
+    left                :         25vw;
+    right               :         25vw;
+    top                 :         15vh;
+    /*background-color: antiquewhite;*/
+     /* background-color: var( --theme-color-4 );*/
+    background-color: var( --theme-color-2 );
+    color: var(  --primary-color );
+    border: 0.75vh solid var( --theme-color-5 );
+    /*border: 1px solid #888;*/
+    width:auto;
+    text-align: center;
+    z-index: 2;
+
+}
+
+@media (max-width: 600px), (max-aspect-ratio: 1/1) {
+    .form-group {
+        grid-template-columns: 1fr;
+    }
+    .form-label {
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 0.25em;
+    }
+
+
+  .logo img {
+    /*margin-left: 10%;*/
+    margin-left: auto;
+    width: 40vw;
+    border: 1vw solid var( --theme-color-5 );
+  }
+
+
+  div.auth {
+    position: absolute;
+    left : 0;
+    right: 0;
+    top     :15vh;
+
+    background-color: var( --theme-color-3 );
+    color: var(  --primary-color );
+    border: 1vw solid var( --theme-color-4 );
+
+    width:auto;
+    text-align: center;
+    z-index: 2;
+
+  }
+
+  .form-group input[type="submit"] {
+    grid-column: 1;
+    width: 100%;
+    margin-left: 0%;
+  }
+
+.form-field input {
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    position: static;
+    margin: 2vw;
+}
+
+
+.form-label {
+        text-align: left;
+        padding-right: 0;
+        margin-bottom: 0.25em;
+        padding-left: 5vw;
+        color: var( --theme-color-5 );
+    }
+
+
+
+}
