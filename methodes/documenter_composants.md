@@ -32,7 +32,7 @@ Ci dessous : active est une props, le slot contient VAE
 @props(['active' => false])
 ```
 on definit une props blade avec @props ,cette props est initialisée avec une valeur par défaut
-
+le controller peut définir les props
 ```
 {{ $attributes->merge(['class' => 'item']) }}
 ```
