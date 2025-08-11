@@ -46,9 +46,10 @@ class ImageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Image $image)
     {
-        //
+        $image->load('realisations'); // Optionnel pour charger la relation
+        return view('images.show', compact('image'));
     }
 
     /**
