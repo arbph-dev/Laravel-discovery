@@ -13,6 +13,7 @@ Le projet inclut :
   - [organisations](./modules/organisations/index.md)
   - [vaeexps](./modules/vaeexps/index.md)
   - [realisations](./modules/realisations/index.md)
+  - [competences](./modules/competences/index.md)
 - Modèles et migrations
 - Scripts d’import/export
 - Helpers et vues personnalisées 
