@@ -39,6 +39,15 @@ aucun à ce stade
 
 ## route 
 
+
+```php
+use App\Http\Controllers\OrganisationController;
+```
+
+```php
+Route::resource('organisations', OrganisationController::class);
+```
+
 ## views
 organisations._form  (commun a create et edit)
 organisations.create
