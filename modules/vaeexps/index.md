@@ -12,7 +12,7 @@ model : [Vaeexp](../../srcLaravel/app/Models/Vaeexp.php)
 
 ### Relations
 - organisation
-une organisation peut contenir plusieurs experiences
+une organisation peut contenir plusieurs experiences voir [organisations](../organisations/index.md)
 ```
 return $this->belongsTo(Organisation::class);
 ```
@@ -31,13 +31,13 @@ controleur : [VaeexpController](../../srcLaravel/app/Http/VaeexpController.php)
 
 ## route
 Les routes sont gérées dans[web.php](../../srcLaravel/routes/web.php)
-## views
 
-[vaeexps._form](../../srcLaravel/resources/views/vaeexps/_form.php)  (commun a create et edit)
-[vaeexps.create](../../srcLaravel/resources/views/vaeexps/create.php)
-[vaeexps.edit](../../srcLaravel/resources/views/vaeexps/edit.php)
-[vaeexps.index](../../srcLaravel/resources/views/vaeexps/index.php)
-[vaeexps.show](../../srcLaravel/resources/views/vaeexps/show.php)
+## views
+- [vaeexps._form](../../srcLaravel/resources/views/vaeexps/_form.php)  (commun a create et edit)
+- [vaeexps.create](../../srcLaravel/resources/views/vaeexps/create.php)
+- [vaeexps.edit](../../srcLaravel/resources/views/vaeexps/edit.php)
+- [vaeexps.index](../../srcLaravel/resources/views/vaeexps/index.php)
+- [vaeexps.show](../../srcLaravel/resources/views/vaeexps/show.php)
 
 <!-- 
 ## Outils
