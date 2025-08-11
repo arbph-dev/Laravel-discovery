@@ -43,7 +43,9 @@ aria-current="{{ $active ? 'page' : 'false' }}
 ```
 gère l'état selon que lien est la page cible => vrai 
 
-
+```
+{{$slot}}
+```
 le slot permet d'ajouter du contenu plus complet
 
 ## A voir
