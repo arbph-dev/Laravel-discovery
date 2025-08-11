@@ -53,11 +53,12 @@ Route::resource('organisations', OrganisationController::class);
 ```
 
 ## views
-[organisations._form](../../srcLaravel/resources/views/organisations/_form.php)  (commun a create et edit)
-[organisations.create](../../srcLaravel/resources/views/organisations/create.php)
-[organisations.edit](../../srcLaravel/resources/views/organisations/edit.php)
-[organisations.index](../../srcLaravel/resources/views/organisations/index.php)
-[organisations.show](../../srcLaravel/resources/views/organisations/show.php)
+- [organisations._form](../../srcLaravel/resources/views/organisations/_form.php)
+commune a create et edit
+- [organisations.create](../../srcLaravel/resources/views/organisations/create.php)
+- [organisations.edit](../../srcLaravel/resources/views/organisations/edit.php)
+- [organisations.index](../../srcLaravel/resources/views/organisations/index.php)
+- [organisations.show](../../srcLaravel/resources/views/organisations/show.php)
 <!-- 
 
 
