@@ -11,6 +11,7 @@ Le projet inclut :
 - [Modules Laravel](./modules/index.md)
   - [images](./modules/images/index.md)
   - [organisations](./modules/organisations/index.md)
+  - [vaeexps](./modules/vaeexps/index.md)
 - Modèles et migrations
 - Scripts d’import/export
 - Helpers et vues personnalisées 
