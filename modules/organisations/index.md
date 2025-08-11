@@ -2,10 +2,13 @@
 Ce module gère les organisations : entreprise, association, insititutions
 
 Deux cas d'emploi : 
+
 - organisation -> expérience professionelle
+
 une organisation a été le vecteur d'une expérience professionelle (employeur)
 
 - réalisation -> organisation
+
 une réalisation, d'une expérience professionelle, est lié à une organisation (client)
 
 A ce stade : pas de relations réalisations avec les prestataires
