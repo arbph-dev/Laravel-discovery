@@ -48,8 +48,10 @@ controleur : [RealisationController](../../srcLaravel/app/Http/RealisationContro
 ## Route
 Les routes sont gérées dans[web.php](../../srcLaravel/routes/web.php)
 
-[realisations._form](../../srcLaravel/resources/views/realisations/_form.php)  (commun a create et edit)
-[realisations.create](../../srcLaravel/resources/views/realisations/create.php)
-[realisations.edit](../../srcLaravel/resources/views/realisations/edit.php)
-[realisations.index](../../srcLaravel/resources/views/realisations/index.php)
-[realisations.show](../../srcLaravel/resources/views/realisations/show.php)
+---
+## Views
+- [realisations._form](../../srcLaravel/resources/views/realisations/_form.php)  (commun a create et edit)
+- [realisations.create](../../srcLaravel/resources/views/realisations/create.php)
+- [realisations.edit](../../srcLaravel/resources/views/realisations/edit.php)
+- [realisations.index](../../srcLaravel/resources/views/realisations/index.php)
+- [realisations.show](../../srcLaravel/resources/views/realisations/show.php)
