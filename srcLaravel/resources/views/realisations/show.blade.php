@@ -1,5 +1,5 @@
 @php
-	$keyGOOGLESEARCH = "KEY";
+	$keyGOOGLESEARCH = "AfXsb50qf2vbKIfIt9K4j3AdN6a8WHUaGmDdeHcdN0Q";
 	$metaTitle = $realisation->titre;
 	$metaDescription = Str::limit(strip_tags($realisation->description), 160);
 	$metaKeywords = $realisation->competences->pluck('nom')->implode(', ');
@@ -54,7 +54,7 @@
 
 
 	@auth
-		@if (Auth::user()->role === 'admin')
+		@if ( Auth::user()->isAdmin() )
 			<a href="{{ route('realisations.edit', $realisation) }}">Modifier</a>
 		@endif   
 	@endauth
@@ -62,6 +62,5 @@
 	
 	
     <a href="{{ route('realisations.index') }}">Retour</a>
-
 
 @endsection

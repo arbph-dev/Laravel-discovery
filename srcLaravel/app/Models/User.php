@@ -59,4 +59,10 @@ class User extends Authenticatable implements MustVerifyEmail
             'password' => 'hashed',
         ];
     }*/
+
+
+    public function isAdmin(): bool
+    {
+        return $this->role->value === UserRole::Admin->value;
+    }        
 }
