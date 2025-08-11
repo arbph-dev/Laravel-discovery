@@ -1,5 +1,5 @@
 @php
-	$keyGOOGLESEARCH = "AfXsb50qf2vbKIfIt9K4j3AdN6a8WHUaGmDdeHcdN0Q";
+	$keyGOOGLESEARCH = "KEY";
 	$metaTitle = $realisation->titre;
 	$metaDescription = Str::limit(strip_tags($realisation->description), 160);
 	$metaKeywords = $realisation->competences->pluck('nom')->implode(', ');
@@ -62,5 +62,6 @@
 	
 	
     <a href="{{ route('realisations.index') }}">Retour</a>
+
 
 @endsection
