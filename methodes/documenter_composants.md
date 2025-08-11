@@ -18,6 +18,9 @@ Ci dessous : active est une props, le slot contient VAE
 ```html
 <x-nav.link2 href="/organisations" :active="request()->is('organisations')">VAE</x-nav.link2>
 ```
+# Creation
+[link2.blade.php](../srcLaravel/resources/views/components/nav/link2.blade.php)
+
 
 ## A voir
 Laracast liens  
