@@ -1,5 +1,5 @@
 @php
-$keyGOOGLESEARCH = "KEY;
+$keyGOOGLESEARCH = "KEY";
 $titre = "Elfennel - Module des expériences";
 @endphp
 
@@ -109,4 +109,5 @@ $titre = "Elfennel - Module des expériences";
 	@endforeach
 	</ul>
 @endsection
+
 
