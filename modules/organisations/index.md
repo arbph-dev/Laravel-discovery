@@ -37,8 +37,9 @@ controleur : [OrganisationController](../../srcLaravel/app/Http/OrganisationCont
 ### Helpers
 aucun à ce stade
 
+---
 ## route 
-
+Les routes sont gérées dans[web.php](../../srcLaravel/routes/web.php)
 
 ```php
 use App\Http\Controllers\OrganisationController;
