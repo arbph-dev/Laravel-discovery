@@ -25,7 +25,7 @@ return $this->hasMany(Competence::class, 'idp');
 ```
 ---
 ## Controller
-controleur : [CompetenceController](../../srcLaravel/app/Http/CompetenceController.php)
+controleur : [CompetenceController](../../srcLaravel/app/Http/Controllers/CompetenceController.php)
 
 ---
 ## Route
