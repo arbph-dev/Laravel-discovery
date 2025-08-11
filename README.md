@@ -12,6 +12,7 @@ Le projet inclut :
   - [images](./modules/images/index.md)
   - [organisations](./modules/organisations/index.md)
   - [vaeexps](./modules/vaeexps/index.md)
+  - [realisations](./modules/realisations/index.md)
 - Modèles et migrations
 - Scripts d’import/export
 - Helpers et vues personnalisées 
