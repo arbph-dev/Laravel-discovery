@@ -33,11 +33,11 @@ controleur : [VaeexpController](../../srcLaravel/app/Http/VaeexpController.php)
 Les routes sont gérées dans[web.php](../../srcLaravel/routes/web.php)
 
 ## views
-- [vaeexps._form](../../srcLaravel/resources/views/vaeexps/_form.php)  (commun a create et edit)
-- [vaeexps.create](../../srcLaravel/resources/views/vaeexps/create.php)
-- [vaeexps.edit](../../srcLaravel/resources/views/vaeexps/edit.php)
-- [vaeexps.index](../../srcLaravel/resources/views/vaeexps/index.php)
-- [vaeexps.show](../../srcLaravel/resources/views/vaeexps/show.php)
+- [vaeexps._form](../../srcLaravel/resources/views/vaeexps/_form.blade.php)  (commun a create et edit)
+- [vaeexps.create](../../srcLaravel/resources/views/vaeexps/create.blade.php)
+- [vaeexps.edit](../../srcLaravel/resources/views/vaeexps/edit.blade.php)
+- [vaeexps.index](../../srcLaravel/resources/views/vaeexps/index.blade.php)
+- [vaeexps.show](../../srcLaravel/resources/views/vaeexps/show.blade.php)
 
 <!-- 
 ## Outils
