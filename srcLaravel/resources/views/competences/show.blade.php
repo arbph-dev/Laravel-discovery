@@ -1,5 +1,5 @@
 @php
-$keyGOOGLESEARCH = "AfXsb50qf2vbKIfIt9K4j3AdN6a8WHUaGmDdeHcdN0Q";
+$keyGOOGLESEARCH = "KEY";
 $titre = "Elfennel - Module des compétences"
 @endphp
 
@@ -28,5 +28,6 @@ $titre = "Elfennel - Module des compétences"
 	
 	
     <a href="{{ route('competences.index') }}">Retour</a>
+
 
 @endsection
