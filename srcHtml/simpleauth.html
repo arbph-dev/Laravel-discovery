@@ -1,0 +1,731 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+
+
+
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+<title>Untitled 1</title>
+<style type="text/css">
+:root {
+   /*  mode theme  */
+    --primary-color         :   #fff;
+    --secondary-color       :   #000;
+    --header-color          :   teal;
+
+    --theme-color-1         :   #cfcfcf;
+    --theme-color-2         :   #c0d8fb;
+    --theme-color-3         :   #77a9e2;
+    --theme-color-4         :   #0071b5;
+    --theme-color-5         :   #003a69;
+
+    --theme-link-sys        : #a319e2;
+
+    /*structure*/
+    --theme-struct-hh       :   10vh;           
+            /* hauteur topbar   --theme-struct-hh     --theme-struct-wn */
+    --theme-struct-wn       :  25vw;                  /* largeur navbar pc*/
+    --theme-auth-wn         :  12vw;
+    --theme-struct-wnmob    : 100vw;                   /* largeur navbar mobile*/
+    --theme-struct-hf       :   8vh;                   /* hauteur footer */
+/*    min-height          : 86vh;*/
+
+    --fnt-sz-178            : 1.4rem;
+    --fnt-sz-178_small      : 1rem;
+    
+    --fnt-sz-075 : 1.37rem;
+    --fnt-sz-056 : 1.6rem;
+    --fnt-sz-045 : 1.79rem;
+
+}
+
+/* CSS RESET*/
+    body {
+        margin              :       0px;
+        background-color	:		var( --primary-color );	
+        color	            :		var( --secondary-color  );
+   
+    }
+
+    h1
+    {
+        margin-block        :       0px;	   /* 20250609 a surveiller */  
+    }
+/* fin CSS RESET*/
+
+/* essai en cours 20250609*/
+ul {
+  list-style-type: none;
+  padding: 0;
+  border: 1px solid var(--theme-color-3);
+}
+
+ul li {
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--theme-color-3);
+}
+
+ul li:last-child {
+  border-bottom: none
+}
+
+
+
+/*         ----------------   GESTION THEME  ---------------------------------------       */
+
+.dark-mode {
+        background-color    :		var( --secondary-color  );
+        color               :       var( --primary-color );
+  
+}
+
+/*-         fin gestion theme*/
+
+/* on definit le tag p avec les varaibles de theme */ 
+	p {
+        text-align: justify;
+	}
+		  			
+	p.grayblock {
+		color				: 		var(--theme-color-5); 	
+		background-color	:		var( --theme-color-1 );	  			
+	}
+		  
+
+/* on definit des classes a combiner avec les varaibles de theme */ 
+
+	.pr 				{	position	:	relative;	}
+	.pa 				{	position	:	absolute;	}
+	
+	.bgCyan			    {	background-color	:	cyan;	}
+	.bgRed				{	background-color	:	red;	}
+	.bgTeal			    {	background-color	:	teal;	}	
+	.bgGray			    {	background-color	:	gray ;	}
+	
+	/* background */
+	.bgTC1 				{	background-color	: var( --theme-color-1 ); }
+	.bgTC2 				{	background-color	: var( --theme-color-2 ); }
+	.bgTC3 				{	background-color	: var( --theme-color-3 ); }
+	.bgTC4 				{	background-color	: var( --theme-color-4 ); }
+	.bgTC5 				{	background-color	: var( --theme-color-5 ); }
+	
+	/* text color */
+	.tcTC1 				{	color	: var( --theme-color-1 ); }
+	.tcTC2 				{	color	: var( --theme-color-2 ); }
+	.tcTC3 				{	color	: var( --theme-color-3 ); }
+	.tcTC4 				{	color	: var( --theme-color-4 ); }
+	.tcTC5 				{	color	: var( --theme-color-5 ); }
+	
+		
+	/* la qulite dependra de ratio  et w  */
+    .cardBloc			{	background-color	:	cyan ;	}
+	/*	----------------------------------------------------	*/
+	.cardBlocSizeXQ		{	width	:	100% ;	}
+	.cardBlocSize178	{	width	:	178px ;	height : 100px }
+
+	/*	----------------------------------------------------	*/
+	.cardBlocSizeLQ		{	width	:	100% ;	}
+	.cardBlocSize160	{	width	:	160px ;	height : 100px }
+
+	/*	----------------------------------------------------	*/
+	.cardBlocSizeHQ		{	width	:	100% ;	}
+	.cardBlocSize075	{	width	:	75px ;	height : 100px }
+
+	/*	----------------------------------------------------	*/	
+	.cardBlocSizeMQ		{	width	:	100% ;	}
+	.cardBlocSize070	{	width	:	70px ;	height : 100px }	
+
+	/*	----------------------------------------------------	*/
+	.cardBlocSizeSQ		{	width	:	100% ;	}
+	.cardBlocSize056	{	width	:	56px ;	height : 100px }	
+
+	/*	----------------------------------------------------	*/	
+	.cardBlocSizeZQ		{	width	:	100% ;	}		
+	.cardBlocSize045	{	width	:	45px ;	height : 100px }	
+	/*	----------------------------------------------------	*/
+	
+
+    .mg0    { margin        :  0% }         /* margin 	*/
+	.mg10   { margin        : 10% }
+	.mg20   { margin        : 20% }
+    .mg0L   { margin-left   :  0px }
+	.mg0R   { margin-right  :  0px; margin-left: auto; }
+	.mg20L  { margin-left   : 20% }
+	.mg20R  { margin-right  : 20% ; margin-left: auto;}
+	
+	.pd10   { padding       : 10%; }
+    .pd20   { padding       : 10%; }
+    .pd20L  { padding-left  : 10%; }
+    .pd20R  { padding-right : 10%; }
+	
+    .dmIB { display: inline-block;} /* display mode  permet au bloc */
+
+    .ddW50 { width : 49.6% ;}
+    .ddW25 { width : 24.4% ;} 
+
+    /* animations */
+    @keyframes animateleft{from{left:-100vw;opacity:0} to{left:0;opacity:1}}    
+
+/* ========================= COMPOSANTS prefixe cp_
+/* ----------------------------------------------------------------------------------------------------  
+<div class="cmp_soft-card">Une carte cmp_soft-card</div>
+*/
+.cp_soft-card {
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+transition: transform 0.3s ease;
+}
+
+.cp_soft-card:hover {
+transform: translateY(-5px);
+}
+
+/* ----------------------------------------------------------------------------------------------------  */
+
+.cp_nav-overlay  { 
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+}   
+
+/* ------------------------DEBUG BAR ---------------------------------------------------  */
+
+.cp_dbg-div { 
+    background-color: rgba(0, 0, 0.5, 0.8);
+    font-size           : var(--fnt-sz-178) ;   
+    color:teal;
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 16; /* pour passer sur top bar */
+}  
+
+/* ----------------------------------------------------------------------------------------------------  */
+/* Annotation  => permet 'afficher uen légende au passage d'un texte */
+
+.cp_tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.cp_tooltip .tooltiptext {
+    visibility              : hidden;
+    background-color        : black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 5;
+    font-size           : var(--fnt-sz-178_small) ;  
+    top                     : 100%;
+    left                    : 50%;
+    width                   : 120px;
+    margin-left             : -60px; /* Use half of the width (120/2 = 60), to center the tooltip */    
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.cp_tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+
+/* ----------------------------------------------------------------------------------------------------  */
+
+.Esf_Topbar-darkmode
+{
+    background-color    : var(--theme-color-4) !important;
+}
+
+#Esf_Topbar {
+    background-color    : var(--theme-color-2);
+    position            : sticky;
+    top                 : 0px;
+    /*z-index             : 5;*/
+    width               : 100%;
+    font-size           : var(--fnt-sz-178) ;    
+    height              : var(--theme-struct-hh );
+    z-index             : 15;
+}
+
+#Esf_Topbar_Up {
+     color               : red
+}
+
+#Esf_Topbar_Dn {
+    
+    color               : pink;
+    /*background-color    : yellowgreen;
+    */
+}
+
+/* ------------------- footer --------------------------- */
+#Esf_Dnbar {
+    color               : green;
+    background-color    : darkorange;
+    position            : fixed;
+    left                : 0;
+    bottom              : 0;
+    width               : 100%;
+    text-align          : center;
+    font-size           : var(--fnt-sz-178) ;
+    height              : var(--theme-struct-hf ); 
+    z-index             : 15;
+}
+
+#Esf_Dnbar_Up {
+    color               : yellow
+}
+
+#Esf_Dnbar_Dn {
+    color               : greenyellow
+}
+
+/* -------------------- navbar --------------------------  */
+
+#Esf_Navbar {
+    background-color    : #7b91b3; /*#c0d8fb;*/
+    color               : var(--theme-link-sys);
+    /*display             : none;*/
+    bottom              : 0;
+    /*color               : chocolate ;*/
+    height              : auto;/* auto */
+    margin-bottom       : 0; /* ajout padding 8vh a tester*/
+    padding-bottom      : 8vh;
+    margin-right        : 1vw;
+    position            : absolute;    
+    top                 : var(--theme-struct-hh );
+    width               : var(--theme-struct-wn);
+    z-index             : 14;    
+}
+/*
+#Esf_Navbar_Bt_Show {
+    color               : aqua
+}
+*/
+
+
+#Esf_Navbar_Bt_Hide {
+    /*color               : var(--theme-link-sys);*/
+    display             : none;/*   pour pc*/
+    position            : absolute;
+    right               : 0 ;
+}
+/* RWD mobile tablet => #Esf_Navbar_Bt_Hide { display : block;}*/
+
+
+
+#Esf_Navbar_Bt_Hide > a
+{
+/*    color               : var(--theme-link-sys);*/
+    text-decoration     : none;
+}
+
+#Esf_Navbar div > h1
+{
+    margin-left             : 1vw;
+/*    color                   : var(--theme-link-sys);*/
+    text-decoration-line    : underline;
+    text-decoration-style   : dotted;
+}
+
+
+
+
+/* ----------------------------------------------------------*/
+/*2025-06-06 : theming suppresion de :: color , background-color */
+#Esf_Mains {
+
+    margin-left         : var(--theme-struct-wn);/*26vw;*/
+    min-height          : 82vh;
+    margin-bottom       : 2vh;
+    padding-left        : 1vw;
+    padding-right       : 1vw;
+    padding-bottom      : 4vh;
+    font-size           : var(--fnt-sz-178) ;
+    column-count        : 2;
+    column-gap          : 1vw;
+    column-rule         : 1px solid yellow;
+}
+
+/*---------------------------------------------------------*/
+#Esf_RwdDg { 
+    color : black;
+    background-color: #c0d8fb;
+    margin-right : 10vw;
+    width:20vw;
+    margin-left: auto;
+    top: 0;
+}
+
+.Esf_RwdDg_btnav{
+    display: none;/*display: inline-block;*/
+}
+
+
+/*  -------------  AUTHENTIFICATION ------------------- */
+#Esf_Auth {
+    background-color: var( --theme-color-4 );    
+    min-height          : 82vh;
+    margin-left         : var(--theme-auth-wn);
+    margin-right        : var(--theme-auth-wn);
+    margin-bottom       : 2vh;
+    padding-left        : 1vw;
+    padding-right       : 1vw;
+    text-align          : center;
+    font-size           : x-large;
+
+}
+
+
+
+.auth_form-label {
+	color               : var( --theme-color-5 );
+	display             : inline-block;    
+    margin              : 2vw;
+	padding-left        : 1vw;
+	text-align          : right;
+    width               : 10vw;
+}
+.auth_form-link {
+	color               : var( --theme-color-5 );
+	display             : inline-block;    
+    margin              : 2vw;
+	padding-left        : 1vw;
+    width               : 30vw;
+}
+.auth_form-error {
+	color               : red;
+	display             : inline-block;    
+    margin              : 2vw;
+	padding-left        : 1vw;
+	text-align          : right;
+    width               : 40vw;
+}
+
+input.auth_form-field  {
+    font-size           : x-large;
+    margin              : 2vw;
+    width               : 15vw;
+    border-radius: 10px;   
+}
+
+input[type=submit].auth_form-submit {
+    background-color    : var( --theme-color-5 );
+    color               : var( --theme-color-1 );
+    width               : 30vw;
+    font-size           : x-large;
+    padding: 0.5vw;
+    margin             : 2vw;
+    box-sizing: content-box;
+}
+
+input[type=submit]:hover.auth_form-submit {
+    background-color    : var( --theme-color-1 );
+    color               : var( --theme-color-5 );
+}
+/*  fin   AUTHENTIFICATION  */
+/*                   --------------------------                */
+
+
+@media ( min-width :  1921px )
+{
+    #Esf_RwdDg { color : rgb(15, 36, 228); }
+}
+
+@media ( ( min-width :  1190px ) and ( max-width : 1370px )  and ( min-aspect-ratio :   15/9  ))
+{
+    #Esf_RwdDg { color : rgb(158, 11, 187); }
+}
+
+@media ((max-width: 1023px) and ( min-aspect-ratio :   6/10  ) and ( max-aspect-ratio :  15/9 ))
+{
+    #Esf_Topbar { font-size:var(--fnt-sz-075);z-index : 5 ;}
+    #Esf_RwdDg { color : rgb(255, 218, 11); }
+
+    #Esf_Navbar { 
+        display             : none ;
+        top                 : 0;
+        width               : var(--theme-struct-wnmob);
+        animation: animateleft 0.8s;
+    }
+    .Esf_RwdDg_btnav{display: inline-block;}
+    #Esf_Navbar_Bt_Hide { display : block;}
+    
+
+    #Esf_Mains { 
+        margin-left         : 1vw;
+        column-count        : 1;
+        font-size           : var(--fnt-sz-075);
+        /*padding-bottom      : 4vh;*/
+    }
+
+    #Esf_Dnbar { font-size:var(--fnt-sz-075); }
+}
+
+/* ratio 0,56 :: galaxy note3 360 x 640  */
+@media  (( min-aspect-ratio : 1/2 ) and ( max-aspect-ratio : 6/10)) 
+{
+    #Esf_Topbar { font-size:var(--fnt-sz-056); z-index : 5 ; }
+    #Esf_RwdDg { color : rgb(228, 94, 101);} 
+
+    #Esf_Navbar { 
+        display             : none ;
+        top                 : 0;
+        width               : var(--theme-struct-wnmob);
+        animation: animateleft 0.8s;
+    }
+    .Esf_RwdDg_btnav{display: inline-block;}
+    #Esf_Navbar_Bt_Hide { display : block;}
+
+    #Esf_Mains { 
+        margin-left         :       1vw;
+        column-count        :       1;
+        font-size           :       var(--fnt-sz-056);
+        /*padding-bottom      :       4vh;*/
+    }
+    #Esf_Dnbar { font-size:var(--fnt-sz-056); }
+}
+
+/* ratio 0,45 :: galaxy S20 s9 moto  */
+@media ( ( min-aspect-ratio : 1/10 ) and ( max-aspect-ratio : 1/2) ) 
+{
+    #Esf_Topbar { 
+        font-size           : var(--fnt-sz-045);
+        z-index             : 5 ;        
+    }
+
+    #Esf_RwdDg { color : rgb(121, 228, 94); }
+
+    #Esf_Navbar { 
+        display             : none ;
+        top                 : 0;
+        width               : var(--theme-struct-wnmob);
+        animation           : animateleft 0.8s;
+    }
+    .Esf_RwdDg_btnav{display: inline-block;}
+    #Esf_Navbar_Bt_Hide { display : block;}
+
+    #Esf_Mains { 
+        margin-left         : 1vw;
+        column-count        : 1;
+        font-size           : var(--fnt-sz-045);
+        /*padding-bottom      : 4vh;*/
+    }
+
+    #Esf_Dnbar { font-size:var(--fnt-sz-045); }
+
+
+    #Esf_Auth {
+        background-color    : var( --theme-color-4 );
+        font-size           : xxx-large;
+        margin-bottom       : 2vh;
+        margin-left         : 0;
+        margin-right        : 0;
+        padding             : 0;
+        padding-top         : 2vh;                
+        text-align          : center;
+    }    
+
+/*  #Esf_Auth form{ margin-top          :25vh;  }*/
+
+    .auth_form-label {
+        margin              : 2vh;
+        padding-left        : 1vw;
+        text-align: center;
+        width: 94vw;
+        display             : block;
+    }
+
+    .auth_form-link {
+        display             : block;
+        font-size           : xxx-large;
+        width: 94vw;
+        margin-top: 2vh;
+    }
+
+    .auth_form-error {
+        display             : block;
+    
+        width: 94vw;
+        margin-top: 2vh;
+    }
+
+    input.auth_form-field {
+        display             : block;
+        font-size           : xxx-large;         
+        width               : 30vw;
+        text-align: center;
+        width: 94vw;
+    }
+
+    input[type=submit].auth_form-submit {
+        background-color    : var( --theme-color-5 );
+        color               : var( --theme-color-1 );
+        display             : block;
+        font-size           : xxx-large;        
+        text-align          : center;
+        width               : 94vw;
+        margin-top              : 2vh;
+    }
+
+    input[type=submit]:hover.auth_form-submit {
+        background-color    : var( --theme-color-1 );
+        color               : var( --theme-color-5 );
+    }
+
+}
+
+/*-----------------------------------------------------------------------------------------------------------*/
+
+</style>
+
+
+<script>
+
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+
+  const topbar = document.getElementById("Esf_Topbar");
+    topbar.classList.toggle("Esf_Topbar-darkmode");
+
+}
+
+
+const cp_nav_divnavId = "Esf_Navbar"
+const cp_nav_overlayId = "cp_nav-overlay"
+const cp_dbg_divId = "cp_dbg-div"
+//variable ssur les noeeuds du document
+let cp_nav_divnav // ref a div nav.cp_nav_divnav ligne 62   du dom 
+let cp_nav_overlay
+let cp_dbg_div
+
+//il faut attendre initialisation compete du dom avant de les affecter sinon null
+document.addEventListener("DOMContentLoaded", (event) => {
+    console.log(`appz.js / evt listener :  DOMContentLoaded\n`);
+    
+    //init variable de test passer par le controleur
+  cp_nav_divnav = document.getElementById( cp_nav_divnavId ); // initilaise les vaibales de ihm
+  cp_nav_overlay = document.getElementById( cp_nav_overlayId ); // initilaise les vaibales de ihm
+  cp_dbg_div = document.getElementById( cp_dbg_divId ); // initilaise les vaibales de ihm
+});
+
+
+
+
+
+//----
+
+window.w3_close = () => { 
+    cp_nav_divnav.style.display = "none";
+    cp_nav_overlay.style.display = "none";}
+
+//----
+
+window.w3_open = () => {
+  if (cp_nav_divnav.style.display === 'block') {
+    cp_nav_divnav.style.display = 'none'
+    cp_nav_overlay.style.display = "none"
+  }
+  else {
+    cp_nav_divnav.style.display = 'block'
+    cp_nav_overlay.style.display = "block"
+  }
+}
+
+//----
+window.w3_close2 = () => { cp_dbg_div.style.display = "none"; } //cp_nav_overlay.style.display = "none"; 
+
+window.w3_open2 = () => {
+//  AppendDebug("app2.js / window.w3_open2 (callback event handler)" , " Ouverture page debug" , 160 );
+
+  if (cp_dbg_div.style.display === 'block') {
+    cp_dbg_div.style.display = 'none';
+    //cp_nav_overlay.style.display = "none";
+  }
+  else {
+    cp_dbg_div.style.display = 'block';
+    //cp_nav_overlay.style.display = "block";
+  }
+}
+
+</script>
+
+</head>
+
+
+
+<body class="pr">
+
+    <!----------------------------------------------------------------------------------------------------------------------------->       
+    <!-- HEADER ( banniere ou top bar ) -->
+    <div id="Esf_Topbar" name="Esf_Topbar" class="Esf_Topbar" >
+        <svg x="0px" y="0px" viewBox="0 0 30 30" width="30" height="30"><path style="fill:#344E5D;" cx="236.967" cy="236.967" r="236.967" d="M30 15A15 15 0 0 1 15 30A15 15 0 0 1 0 15A15 15 0 0 1 30 15z"/><path style="fill:#F1EB75;" d="M15.726 15.362c0 -3.312 1.805 -6.2 4.484 -7.741 -0.997 -0.418 -2.092 -0.649 -3.242 -0.649 -4.634 0 -8.39 3.756 -8.39 8.39 0 4.634 3.756 8.39 8.39 8.39 1.149 0 2.244 -0.232 3.242 -0.65 -2.679 -1.541 -4.484 -4.429 -4.484 -7.74"/></svg>
+        <svg x="0px" y="0px" viewBox="0 0 30 30" width="30" height="30"><g><path style="fill-rule:evenodd;clip-rule:evenodd;fill:#21A58D;" d="M12.653 0c3.116 8.294 4.836 8.762 11.294 2.734 -3.767 7.99 -2.796 9.485 6.053 9.919 -8.294 3.116 -8.762 4.836 -2.734 11.294 -7.991 -3.767 -9.485 -2.796 -9.919 6.053C14.231 21.706 12.511 21.238 6.053 27.266 9.82 19.276 8.849 17.781 0 17.347 8.294 14.231 8.762 12.511 2.734 6.053 10.724 9.82 12.219 8.849 12.653 0"/><path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFE98F;" cx="56.998" cy="56.998" r="25.318" d="M21.663 15A6.663 6.663 0 0 1 15 21.663A6.663 6.663 0 0 1 8.337 15A6.663 6.663 0 0 1 21.663 15z"/></g></svg>
+    </div><!-- fin div id="Esf_Topbar" -->
+ 
+
+    <!----------------------------------------------------------------------------------------------------------------------------->   
+    <!--  CONTENT , formulaire auth
+      
+    -->
+
+
+    <div id="Esf_Auth" name="Esf_Auth" >
+    
+        <form>
+
+            <div>
+                <label class="auth_form-label" for="email">Email</label>
+                <input class="auth_form-field" id="email" name="email" type="email"/>
+            </div>
+
+            <div>
+                <label class="auth_form-label" for="password">Password</label>
+                <input class="auth_form-field" id="password" name="password" type="password"/>
+            </div>
+
+            <div>                
+                <input class="auth_form-submit" type="submit" value="Login"/>
+            </div>
+
+            <div>
+                <a class="auth_form-link" href="#">Créer un compte</a>
+            </div>
+
+            <div>                    
+                <a class="auth_form-link" href="#">Mot de passe oublié</a>
+            </div>
+
+            <div class="auth_form-error" id="login-form-error">
+                <p>error</p>               
+            </div>
+
+        </form>
+       
+    </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------->
+<!--  FOOTER                  FOOTER                  FOOTER                  FOOTER                  FOOTER                 -->    
+    <div id="Esf_Dnbar" name="Esf_Dnbar" class="Esf_Dnbar" >
+
+    </div>
+<!----------------------------------------------------------------------------------------------------------------------------->
+
+
+</body>
+
+</html>
