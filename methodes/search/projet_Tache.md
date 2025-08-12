@@ -1,6 +1,7 @@
 On va créer un module gestion des taches
 
-on doit tester [mermaid.js](https://mermaid.js.org/), selon les resultats on avisera
+on doit tester [mermaid.js](https://mermaid.js.org/), cette librairie permet de réaliser,entre autre, les garpiques suivants:
+
 - [gantt](https://mermaid.js.org/syntax/gantt.html)
 - [kanban](https://mermaid.js.org/syntax/kanban.html)
 
@@ -43,8 +44,13 @@ Celle proposé par l'IA repose sur date de debut, date de fin
 ```
 ### Conclusion 
 Gantt nécessite des choix, d'autres graphiques sont à voir.
-Une note de synthèse sur le diagramme Mermaid / Kanban est à prévoir
+- [timeline](https://mermaid.js.org/syntax/timeline.html)
+- [userJourney](https://mermaid.js.org/syntax/userJourney.html)
 
+ 
+Une note de synthèse sur 
+- diagramme Mermaid / Kanban est à finaliser (style? interaction?) [doc/tools/Mermaid](../docs/tools/Mermaid.js)
+- diagramme Mermaid / Gantt est à créer (syntaxe , style , interaction => fonction assigné à windows )
 
 ---
 
