@@ -14,13 +14,35 @@
         <li><strong>Nom du fichier :</strong> {{ $image->filename }}</li>
         <li><strong>Extension :</strong> {{ $image->ext }}</li>
         <li><strong>Chemin :</strong> {{ $image->path }}</li>
+        <li><strong>Dimension :</strong> {{ $image->w }} / {{ $image->w }}</li>
+        <li><strong>Extension :</strong> {{ $image->ext }}</li>
+        <li><strong>Texte alternatif :</strong> {{ $image->alt }}</li>
+        <li><strong>Description :</strong> {{ $image->description }}</li>
     </ul>
 
-    <a href="{{ route('images.index') }}">Retour à la liste</a>
+<h2>Réalisation associée</h2>
+    @if( $image->realisations->isEmpty() )
+        <p>Aucune réalisation associée.</p>
+    @else
+        <ul>
+        @foreach( $image->realisations as $real )
+            <li>
+            <a href="{{ route('realisations.show', $real) }}">
+            
+                <strong>{{ $real->titre }}</strong> 
+            
+            </a>					
+            </li>
+        @endforeach
+        </ul>
+    @endif
 
     @auth
-        @if (Auth::user()->role === 'admin')
+        @if (Auth::user()->isAdmin() )
             <a href="{{ route('images.edit', $image) }}">Modifier</a>
         @endif
     @endauth
+    <a href="{{ route('images.index') }}">Retour à la liste</a>
+
+
 @endsection
