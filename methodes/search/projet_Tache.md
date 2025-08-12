@@ -5,6 +5,10 @@ on doit tester [mermaid.js](https://mermaid.js.org/), selon les resultats on avi
 - [kanban](https://mermaid.js.org/syntax/kanban.html)
 
 25-08-12 : [essai Mermaid.js](../../srcHtml/mermaid_kanban.html)
+- déployer des graphiques mermaid sous laravel 
+- lecture doc => creation fichier
+- upload vers serveur : /public/mmkb.html
+- url : https://elfennel.fr/public/mmkb.html
 
 
 l'IA prévoit:
