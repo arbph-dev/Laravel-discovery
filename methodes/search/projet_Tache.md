@@ -4,22 +4,27 @@ on doit tester [mermaid.js](https://mermaid.js.org/), selon les resultats on avi
 - [gantt](https://mermaid.js.org/syntax/gantt.html)
 - [kanban](https://mermaid.js.org/syntax/kanban.html)
 
-25-08-12 : [essai Mermaid.js](../../srcHtml/mermaid_kanban.html)
+25-08-12 : Essai Mermaid.js
+- [Mermaid.js - Graphe](../../srcHtml/mermaid_graphe.html) voir [en ligne](https://elfennel.fr/public/mmgraf.html)
+- [Mermaid.js - Kanban](../../srcHtml/mermaid_kanban.html) voir [en ligne](https://elfennel.fr/public/mmkb.html)
+- 
+
+# TODO
 - déployer des graphiques mermaid sous laravel 
 - lecture doc => creation fichier
 - upload vers serveur : /public/mmkb.html
 - url : https://elfennel.fr/public/mmkb.html
 
-
+## proposition IA
 l'IA prévoit:
 - Le modèle Tache et ses relations
 - Les helpers pour formatter les données pour Gantt et Kanban
 - La syntaxe Mermaid à utiliser pour ces deux vues
 - Les 3 vues (showTable, showKanban, showGantt)
 
-# modèle Tache et ses relations
+### modèle Tache et ses relations
 
-## structure des données
+#### structure des données
 
 | Champ         | Type                              | Utilisation                  |
 | ------------- | --------------------------------- | ---------------------------- |
