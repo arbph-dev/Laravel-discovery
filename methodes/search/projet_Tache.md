@@ -49,7 +49,7 @@ Gantt nécessite des choix, d'autres graphiques sont à voir.
 
  
 Une note de synthèse sur 
-- diagramme Mermaid / Kanban est à finaliser (style? interaction?) [doc/tools/Mermaid](../docs/tools/Mermaid.js)
+- diagramme Mermaid / Kanban est à finaliser (style? interaction?) [doc/tools/Mermaid](../docs/tools/Mermaid.md)
 - diagramme Mermaid / Gantt est à créer (syntaxe , style , interaction => fonction assigné à windows )
 
 ---
