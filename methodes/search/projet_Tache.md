@@ -7,7 +7,7 @@ on doit tester [mermaid.js](https://mermaid.js.org/), selon les resultats on avi
 25-08-12 : Essai Mermaid.js
 - [Mermaid.js - Graphe](../../srcHtml/mermaid_graphe.html) voir [en ligne](https://elfennel.fr/public/mmgraf.html)
 - [Mermaid.js - Kanban](../../srcHtml/mermaid_kanban.html) voir [en ligne](https://elfennel.fr/public/mmkb.html)
-- 
+- [Mermaid.js - Gantt](../../srcHtml/mermaid_gantt.html) voir [en ligne](https://elfennel.fr/public/mmgantt.html)
 
 # TODO
 - déployer des graphiques mermaid sous laravel 
@@ -15,7 +15,40 @@ on doit tester [mermaid.js](https://mermaid.js.org/), selon les resultats on avi
 - upload vers serveur : /public/mmkb.html
 - url : https://elfennel.fr/public/mmkb.html
 
-## proposition IA
+
+## Bilan des essais
+### Graphe
+aucun souci => voir + en détail pour usage et style
+### Kanban
+aucun souci => voir + en détail pour usage et style
+### Gantt
+Le code de l'exemple [interaction](https://mermaid.js.org/syntax/gantt.html#interaction) ne fonctionnait pas.
+Il faut assigner les gestionnaires d'evenement à window du fait que le script soit déclaré avec un attribut module.
+
+Le choix de la syntaxe meta est à réaliser,se reporter à [gantt syntax](https://mermaid.js.org/syntax/gantt.html#syntax)
+Celle de l'exemple nécessite un encodages des durées
+Celle proposé par l'IA repose sur date de debut, date de fin
+```
+    gantt
+      dateFormat  YYYY-MM-DD
+
+      section Clickable
+      Visit mermaidjs         :active, cl1, 2014-01-07, 3d
+      Print arguments         :cl2, after cl1, 3d
+      Print task              :cl3, after cl2, 3d
+```
+Celle proposé par l'IA repose sur date de debut, date de fin
+```
+    Tâche 1   :done,    2025-08-01, 2025-08-03
+```
+### Conclusion 
+Gantt nécessite des choix, d'autres graphiques sont à voir.
+Une note de synthèse sur le diagramme Mermaid / Kanban est à prévoir
+
+
+---
+
+# proposition IA
 l'IA prévoit:
 - Le modèle Tache et ses relations
 - Les helpers pour formatter les données pour Gantt et Kanban
