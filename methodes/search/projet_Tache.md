@@ -1,8 +1,10 @@
 On va créer un module gestion des taches
 
 on doit tester [mermaid.js](https://mermaid.js.org/), selon les resultats on avisera
-[gantt](https://mermaid.js.org/syntax/gantt.html)
-[kanban]([https://mermaid.js.org/syntax/gantt.html](https://mermaid.js.org/syntax/kanban.html))
+- [gantt](https://mermaid.js.org/syntax/gantt.html)
+- [kanban](https://mermaid.js.org/syntax/kanban.html)
+
+25-08-12 : [essai Mermaid.js](../../srcHtml/mermaid_kanban.html)
 
 
 l'IA prévoit:
