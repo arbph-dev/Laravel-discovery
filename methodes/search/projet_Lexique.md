@@ -170,4 +170,163 @@ function highlightKnownWords(string $content): string {
 
 - créer le composant Blade pour afficher les mots ou suggestions ?
 
+---
+# Ressources 
+un script php de travaux précédents pourra servir de base de travail et de sources d'inspiration
+```php
+class motcompose {
+	public $uind = -1; // inconu en db
+	public $lbl = null;
+    public $sid = null;
+//-----------------------------------------------------------------------------------------------
+	function getMotComposeById( $uid ) { return QuerySelectWhere('d_motcompose' ,array( 'uind' => $uid)); }
+//-----------------------------------------------------------------------------------------------
+	function getMotComposeBySyntaxe( $stx ) { return QuerySelectWhere('d_motcompose' ,array( 'lbl' => $stx)); }
+//-----------------------------------------------------------------------------------------------    
+    public static function getBySyntaxe( $stx ) { return QuerySelectWhere('d_motcompose' ,array( 'lbl' => $stx)); }
+//-----------------------------------------------------------------------------------------------
+    public static function getLikeSyntaxe($stx) { return QueryLike( 'd_motcompose' ,$stx); }
+//-----------------------------------------------------------------------------------------------
+	public static function setBySyntaxe( $stx , $sid )
+	{
+		$ParamArray = array( 'lbl' => $stx , 'sid' => $sid );
+		$tmp_uind = QueryInsert('d_motcompose',$ParamArray);
+		return $tmp_uind;
+	}
+
+//migration table dic, lbl devient syntaxe
+	//public function getMotLikeSyntaxe($stx) { return QueryLike( 'dmot' ,$stx); }
+//-----------------------------------------------------------------------------------------------
+	public function __construct($stx) { $this->lbl = $stx; }
+//-----------------------------------------------------------------------------------------------
+	public function toString() { return "uind $this->uind : syntaxe $this->lbl"; }
+//-----------------------------------------------------------------------------------------------
+// explose le mot compose, recheche le sid e tfiltre les ' (et autre ??)
+    public static function makeStringSid($mcp)
+    {
+        $arMOTCOMP = explode( ' ' , $mcp ); //on recupere la chaine ex cheval de troie // prévoir mise en minuscule
+        $iNBMO = count($arMOTCOMP);//nombre de mot attention l'hermite reste un seul mot
+        $chaineSID ='';
+        $tmp_uind = -1;
+       
+        for ( $i = 0 ; $i < $iNBMO ; $i++ )//pour chaque mot 
+        {
+            $tmpStr = $arMOTCOMP[$i];
+            $finstr   = "'";//gestion des traits d'unions ??
+            $pos = strpos($tmpStr, $finstr);//un mot inconnu le mot contient ' ??
+            if ( !$pos ) //le mot ne contient pas ' on recherche dansla base si le mot existe
+            { 
+                $RS_MOT = \mot::getBySyntaxe($arMOTCOMP[$i]);//ajout al achaine sid
+                if ( $RS_MOT != null) { $tmp_uind = $RS_MOT[0]['uind']; } 
+                else { 
+ //mot inconnu verifie rles droits et enregistrer
+                    //on ajout ele mot et on recuper id
+                    $tmp_uind = \mot::setBySyntaxe( $arMOTCOMP[$i] ); // retourne -1 ou id
+                 }//return $tmp_uind;   //on ajoute le mot ?
+            }
+            else
+            {
+                if ($pos == 1 )//le mot  contient ' ex l'anthologie
+                {
+                    $tmpStr2 = substr( $tmpStr , 2 , (strlen($tmpStr)-2) );//$tmpStr2 = substr( $tmpStr , 2 , strlen($tmpStr) );
+                    $RS_MOT = \mot::getBySyntaxe($tmpStr2);//on recherche dansla base si le mot existe
+                    if ( $RS_MOT != null) 
+                    { 
+                        $tmp_uind = '0;' . $RS_MOT[0]['uind']; 
+                    } 
+                    else 
+                    {
+//mot inconnu verifie rles droits et enregistrer
+//on ajout ele mot et on recuper id
+                        $tmp_uind = '0;'. \mot::setBySyntaxe( $tmpStr2 ) . ';';
+                        //$tmp_uind = '0;-1';// on a 0 pour l' ou d' et -1 mot inconnu 
+                    }
+                    // on met 0 pour ' le la ?? suivant regle et genre
+                }// $pos == 1 .  2 a faire ex qu'illusion?
+
+
+
+            }
+            if ( $i < ( $iNBMO - 1 ) ) { $chaineSID .= $tmp_uind .';'; } else { $chaineSID .= $tmp_uind; }
+        }
+        //return 'Le mot composé ' . $mcp . ' est décomposée <br/>chaineSID = ' . $chaineSID; 
+        //$tmp_uind = -1;
+         return $chaineSID;   //on ajoute le mot ?   
+    }
+  //============================================================================================================================================
+  //  on ajoute le mot ? 
+  // cette fonction n'eregitre pa sle smots on peut ajouter la fonction en reprenant le code deinsertion makeStringSid 
+  // le service  insertion utilise  makeStringSid qui ne renvoie pas de détail
+  // 0 est ajouté pour les l' d'
+
+      public static function makeStringTableAndSid( $mcp )
+    {
+        $arMOTCOMP = explode( ' ' , $mcp ); //on recupere la chaine ex cheval de troie // prévoir mise en minuscule
+        $iNBMO = count($arMOTCOMP);//nombre de mot attention l'hermite reste un seul mot
+        $chaineSID ='';
+        $tmp_uind = -1;
+        $tblmot = array();//count($this->Sections);
+       
+        for ( $i = 0 ; $i < $iNBMO ; $i++ )//pour chaque mot 
+        {
+            $tmpStr = $arMOTCOMP[$i];
+            $finstr   = "'";//gestion des traits d'unions ??
+            $pos = strpos($tmpStr, $finstr);//un mot inconnu le mot contient ' ??
+            if ( !$pos ) //le mot ne contient pas ' on recherche dansla base si le mot existe
+            { 
+                $RS_MOT = \mot::getBySyntaxe($arMOTCOMP[$i]);//ajout al achaine sid
+                
+                if ( $RS_MOT != null) { $tmp_uind = $RS_MOT[0]['uind']; } 
+                else 
+                { 
+                    $tmp_uind = -1;  
+                }//return $tmp_uind;   //on ajoute le mot ?
+                
+                $tblmot[ count( $tblmot ) ] =array($tmp_uind,$tmpStr );
+            }
+            else
+            {
+                if ($pos == 1 )//le mot  contient ' ex l'anthologie
+                {
+                    $tmpStr2 = substr( $tmpStr , 2 , (strlen($tmpStr)-2) );//$tmpStr2 = substr( $tmpStr , 2 , strlen($tmpStr) );
+                    
+                    $RS_MOT = \mot::getBySyntaxe($tmpStr2);//on recherche dansla base si le mot existe
+                    if ( $RS_MOT != null) 
+                    { 
+                        $tmp_uind = '0;' . $RS_MOT[0]['uind'];
+                        $tblmot[ count( $tblmot ) ] =array($RS_MOT[0]['uind'],$tmpStr2 ); 
+                    }
+                     else 
+                    {   //on n'enregistre pa sl d dans le tableau mais il doit figurer dans la chaien (pour recostruction??)
+                        $tmp_uind = -1; 
+                        $tblmot[ count( $tblmot ) ] =array($tmp_uind,$tmpStr2 ); 
+                        $tmp_uind = '0;-1';
+
+                    }// on met 0 pour ' le la ?? suivant regle et genre
+                }// $pos == 1 .  2 a faire ex qu'illusion?
+                
+                //$tblmot[ count( $tblmot ) ] = $tmpStr2;
+                
+            }
+            if ( $i < ( $iNBMO - 1 ) ) { $chaineSID .= $tmp_uind .';'; } else { $chaineSID .= $tmp_uind; }
+        }
+        //return 'Le mot composé ' . $mcp . ' est décomposée <br/>chaineSID = ' . $chaineSID; 
+        //$tmp_uind = -1;
+        $HtmlOut = $mcp .'<hr/>';
+        $HtmlOut .= '<ul>';
+        for ( $i = 0 ; $i < $iNBMO ; $i++ )//pour chaque mot 
+        {
+            $HtmlOut .='<li>';
+            $HtmlOut .= $tblmot[$i][1];
+            $HtmlOut .= ' [ ' . $tblmot[$i][0] . ' ]';
+            $HtmlOut .='</li>';
+        }
+        $HtmlOut .= '</ul>';
+        $HtmlOut .= '<hr/>' . $chaineSID;
+        // return $chaineSID;   //on ajoute le mot ?   
+        return $HtmlOut;     
+    }
+```
+
+
 
