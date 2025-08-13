@@ -230,21 +230,53 @@ une opération est donc défini par **section** et son IDentifiant : Issue19062 
 Dans les sections, que nous appelons **opérations**; les **tâches** sont par défaut séquentielles.
 **Une date de début de tâche est par défaut à la date de fin de la tâche précédente.**
 
-les **tâches** sont defini par un titre. Les :, sépare le titre de la tâche de ses métadonnées.
+les **tâches** sont defini par
+1. un titre.
+Les :, sépare le titre de la tâche de ses métadonnées.
 
-Les éléments de métadonnées sont séparés par une virgule, Les étiquettes valides sont:
+2. Les éléments de métadonnées
+Les métadonnées sont séparés par une virgule
+
+Les métadonnées valides sont:
 - active
 - done
 - crit
 - [milestone](https://mermaid.js.org/syntax/gantt.html#milestones)
+A définir peuvent servir de point de départ et de fin d'opération  
 Milestones differ from tasks as they represent a single instant in time and are identified by the keyword
 location of the milestone is determined by the initial date for the milestone and the "duration" of the task this way: initial date+duration/2.
+
 - [vert](https://mermaid.js.org/syntax/gantt.html#vertical-markers)
 vertical lines to your Gantt chart, making it easy to highlight important dates like deadlines, events, or checkpoints
 
-**Les étiquettes sont facultatives, mais si elles sont utilisées, elles doivent être spécifiées en premier**
+**Les métadonnées ,ici *"crit, done"*, sont facultatives et peuvent se combiner. Si elles sont utilisées, elles doivent être spécifiées en premier**
+```
+    Completed task in the critical line :crit, done, 2014-01-06,24h
+```
 
 
+3. une tache est IDentifié par un id alpahnumérique
+
+4. les dates, durées ou échéances, on peut mettre :
+  - des dates, début et fin de tâche
+  - une date et une durée
+  - le début de la tache apres une tâche, on utilise **after** suivi de l'id de la tache antérieure
+  - la fin de la tache avant une autre , on utilse **until**
+```
+    Completed task                      :done, des1, 2014-01-06,2014-01-08
+    Completed task in the critical line :crit, done, 2014-01-06,24h
+    Add gantt diagram to demo page      :after a1  , 20h
+```
+sans date le systeme considere que la date de début de la tache, sans date, sera la date de fin de la tâche précedente
+```
+    Create tests for renderer           :2d
+```
+une tache peut ne pas avoir de durée établie, mais devoir etre réalisé avant une autre tache ou une date déterminée
+
+```
+    Add to mermaid                      :until isadded
+    Functionality added                 :milestone, isadded, 2014-01-25, 0d
+```
 
 
 
