@@ -1,9 +1,30 @@
 
 # Gestion Treeview
 
+TODO : changer l'affactetion des clients 
+on emploie _autres , on va passer sur "_internes"
+on modifiera 
 
-## modifer vue vaeexps.index et modiier controller(?)
+## modifer vue vaeexps.index
+
 - [vaeexps.index](../srcLaravel/resources/views/vaeexps/index.blade.php)
+
+La vue des expériences (vaeexps.index) :
+- parcours  les expériences,**exp**, du parcours professionnel , collection **vaeexps**, transmises par le controller
+	- groupe les realisations **r** de l'expérience **exp->realisations** par clients
+ 	Les réalisations qui ne sont affectés a aucune organisation(client de la reailsation) sont attribués à 'autres' 
+ 	- compte, avec **totalCount**,  les  realisations de l'expérience ,**exp**
+  	- créé la structure du treeview
+  		- si l'experience **exp** compte des réalisations (totalCount>0)
+  	 		- parcours les clients
+  	   			- si un client est identifé 	
+  	   				- cree le span pour le client (bouton et nom)
+  	         	- sinon
+  	          		- 	cree le span Autres réalisations
+      			- cree la liste cachée des réalisations avec un lien
+
+RAPPEL les organisations sont les siège des expéreinces. Les réalisations, des expéreinces, sont faites pour l'employeur ou pour un client de l'employeur (services).
+
 
 le code 
 ```blade
