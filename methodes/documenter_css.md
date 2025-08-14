@@ -26,6 +26,14 @@ mis en oeuvre pour le layout[pure2](../srcLaravel/resources/views/layouts/pure2.
 ## W3.css
 consulter [w3.css](https://www.w3schools.com/w3css/w3css_intro.asp)
 mis en oeuvre pour le layout[pure3](../srcLaravel/resources/views/layouts/pure3.blade.php)
+
+```html
+<div class="w3-container w3-teal">
+  <h1>This is a Header</h1>
+</div>
+
+```
+
 ```
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 
@@ -35,6 +43,8 @@ mis en oeuvre pour le layout[pure3](../srcLaravel/resources/views/layouts/pure3.
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-red.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-teal.css">
 ```
+
+
 
 ---
 ## Bootstrap
