@@ -34,7 +34,7 @@ mis en oeuvre pour le layout[pure3](../srcLaravel/resources/views/layouts/pure3.
 
 ```
 
-```
+```html
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
 
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-amber.css">
