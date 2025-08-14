@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Vaeexp;
@@ -131,3 +130,4 @@ class VaeexpController extends Controller
         return redirect()->route('vaeexps.index')->with('success', 'Expérience supprimée.');
     }
 }
+
