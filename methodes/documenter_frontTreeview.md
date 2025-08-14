@@ -1,17 +1,25 @@
 
-Gestion Treeview
+# Gestion Treeview
 
-modifer vue vaeexps.index et modiier controller(?)
+
+## modifer vue vaeexps.index et modiier controller(?)
 - [vaeexps.index](../srcLaravel/resources/views/vaeexps/index.blade.php)
 
-modif style
+## modif style
 - voir ci dessous
 - [pure_style.css](../srcLaravel/public/build/assets/pure_style.css) 
-ajout script
-- la fonction js est associé a window et doit etre anonyme (module)
 
+##ajout script
+- la fonction js est associé a window et doit etre anonyme (module)
+- on inclue le script : **TreeCmp_toggleAll** dans la vue [vaeexps.index](../srcLaravel/resources/views/vaeexps/index.blade.php)
+```
+	<button id="TreeCmp_toggleAll" class="TreeCmp_expandBtn" onclick="TreeCmp_toggleAll()">Tout déplier</button>
+```
 
 ## Style css
+manque ici : 
+- TreeCmp_expandBtn
+
 ```
 .TreeCmp_tree {
     list-style: none;
