@@ -13,8 +13,39 @@ les vues sont réalisés de 3 manière
 blade permet de réaliser l'intégralité de la page en html, en incluant style css et script js
 
 ## utilisation de layout
-on definit la strucutre de la page dans une vue spéciale placé dans le dossier resources/views/layouts
-dans cette strucutre on reserve des sections pour placer les variables et composants
+
+on definit la strucutre de la page dans une vue spéciale placé dans le dossier resources/views/layouts. Dans cette strucutre on reserve des sections pour placer les variables et composants
+
+La vue comporte des variables comme **metaTitle** qui seront employés dans des sections ou des composants
+
+```blade
+@php
+	$metaTitle= "Vue utilisant un layout";
+@endphp
+
+@extends('layouts.pure')
+
+@section('title', $metaTitle )
+
+@section('description', "Module des réalisations,vue détail")
+
+@section('content')
+
+	<p><strong>description :</strong> {{ $realisation->titre }}</p>
+	
+	<p><strong>description :</strong> {!! $realisation->description ?? '—' !!}</p>
+	
+	</ul>
+	@foreach($realisation->competences as $competence)
+		<li>
+			<a href="{{ route('competences.show', $competence) }}">{{ $competence->nom }}</a>
+		</li>
+	@endforeach
+	</ul>
+
+@endsection
+```
+
 
 
 ### Structure du Layout
