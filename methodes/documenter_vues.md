@@ -27,8 +27,6 @@ La vue comporte des variables comme **metaTitle** qui seront employés dans des 
 
 @section('title', $metaTitle )
 
-@section('description', "Module des réalisations,vue détail")
-
 @section('content')
 
 	<p><strong>description :</strong> {{ $realisation->titre }}</p>
