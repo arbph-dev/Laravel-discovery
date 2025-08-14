@@ -16,6 +16,50 @@ blade permet de réaliser l'intégralité de la page en html, en incluant style 
 on definit la strucutre de la page dans une vue spéciale placé dans le dossier resources/views/layouts
 dans cette strucutre on reserve des sections pour placer les variables et composants
 
+
+### Structure du Layout
+
+#### sections 
+
+Le layout comporte des sections qui seront exploitées par les vues.
+
+- title
+On réserve une section title et on lui affecte , 'Site' une valeur par défaut. 
+
+```blade
+<title>@yield('title', 'Site')</title>
+```
+- content
+On réserve une section content et on lui affecte un contenu par défaut. 
+```blade
+@yield('content', '<h2>Content</h2>store html tags')
+```
+
+### Code du Layout
+On retrouve la structure de la page
+- l'entete du document head avec meta et la section title
+- le corps de page et la section content
+
+```blade
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  	<title>@yield('title', 'Site')</title>
+  </head>
+  <body>
+      <div>
+        @yield('content', '<h2>Content</h2>store html tags')
+      </div>
+  </body>
+</html>
+```
+
+
+
+
 ## utilisation de composant
 on definit la strucutre de la page dans un composant, les composants sont placés dans le dossier resources/views/components
 dans cette strucutre on emploie des props et slot pour placer les variables et contenus.
