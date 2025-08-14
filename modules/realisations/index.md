@@ -65,7 +65,7 @@ Les routes sont gérées dans[web.php](../../srcLaravel/routes/web.php)
 
 ### css assoicées
 la mise en forme de la description des realisations est réalisé avec des css
-Un template HTML est employé pour rédiger les réaliations voir [rbase.html](../srcHtml/rbase.html)
+Un template HTML est employé pour rédiger les réaliations voir [rbase.html](../../srcHtml/rbase.html)
 
 ```
 .textimgr
