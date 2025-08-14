@@ -64,7 +64,8 @@ Les routes sont gérées dans[web.php](../../srcLaravel/routes/web.php)
 - [realisations.show](../../srcLaravel/resources/views/realisations/show.blade.php)
 
 ### css assoicées
-la mise en forme de la vue [realisations.show](../../srcLaravel/resources/views/realisations/show.blade.php) utlise des css
+la mise en forme de la description des realisations est réalisé avec des css
+Un template HTML est employé pour rédiger les réaliations voir [rbase.html](../srcHtml/rbase.html)
 
 ```
 .textimgr
