@@ -15,11 +15,14 @@ mis en oeuvre pour le layout[pure](../srcLaravel/resources/views/layouts/pure.bl
 ## Tailwind
 consulter [Tailwind](https://tailwindcss.com/)
 mis en oeuvre pour le layout[pure2](../srcLaravel/resources/views/layouts/pure2.blade.php)
+
+CDN 
 ```html
-  <body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+<script src="https://cdn.tailwindcss.com"></script>
+```
+Syntaxe
+```html
+<h1 class="text-3xl font-bold underline">Info</h1>
 ```
 
 ---
