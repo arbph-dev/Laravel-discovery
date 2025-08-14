@@ -21,25 +21,10 @@
 @endif
 <br>
 
-<label for="w">Largeur (px)</label><br>
-<input type="number" name="w" id="w" value="{{ old('w', $image->w ?? '') }}">
-@if($errors->has('w'))
-    <div style="color:red">{{ $errors->first('w') }}</div>
-@endif
-<br>
+{{-- Champ w supprimé, il sera généré après upload --}}
 
-<label for="h">Hauteur (px)</label><br>
-<input type="number" name="h" id="h" value="{{ old('h', $image->h ?? '') }}">
-@if($errors->has('h'))
-    <div style="color:red">{{ $errors->first('h') }}</div>
-@endif
-<br>
+{{-- Champ h supprimé, il sera généré après upload --}}
 
-<label for="ext">Extension</label><br>
-<input type="text" name="ext" id="ext" value="{{ old('ext', $image->ext ?? '') }}">
-@if($errors->has('ext'))
-    <div style="color:red">{{ $errors->first('ext') }}</div>
-@endif
-<br>
+{{-- Champ ext supprimé, il sera généré après upload --}}
 
 <button type="submit">{{ $image ? 'Mettre à jour' : 'Enregistrer' }}</button>
