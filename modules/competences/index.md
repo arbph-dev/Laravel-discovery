@@ -3,9 +3,18 @@
 ## Migrations
 [Migration 1](../../srcLaravel/database/migrations/2025_07_11_021151_create_competences_table.php)
 
+```
+Schema::create('competence_realisation', function (Blueprint $table) {
+    $table->id();
+    $table->foreignId('competence_id')->constrained()->onDelete('cascade');
+    $table->foreignId('realisation_id')->constrained()->onDelete('cascade');
+    $table->timestamps();
+});
+```
+
 ### tables
 - competences
-
+- competence_realisation
 ## Model Competence
 [Competence](../../srcLaravel/app/Models/Competence.php)
 
