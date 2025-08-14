@@ -62,3 +62,42 @@ Les routes sont gérées dans[web.php](../../srcLaravel/routes/web.php)
 - [realisations.edit](../../srcLaravel/resources/views/realisations/edit.blade.php)
 - [realisations.index](../../srcLaravel/resources/views/realisations/index.blade.php)
 - [realisations.show](../../srcLaravel/resources/views/realisations/show.blade.php)
+
+### css assoicées
+la mise en forme de la vue [realisations.show](../../srcLaravel/resources/views/realisations/show.blade.php) utlise des css
+
+```
+.textimgr
+{
+	display :flex;
+	margin-bottom:20px
+	border : 1px solid #ccc;
+	padding:10px;
+}
+
+
+.textimgr h2
+{
+color : var(--theme-color-4);
+}
+
+.text-content
+{
+flex:1;
+padding-right : 10px;
+}
+.img-content
+{
+width:320px;
+text-align : right;
+}
+
+.img-content img
+{
+max-width:25%;
+max-height:25%;
+}
+```
+
+
+
