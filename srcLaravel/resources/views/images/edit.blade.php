@@ -6,9 +6,10 @@
 @section('content')
     <h1>Modifier l'image</h1>
 
-    <form action="{{ route('images.update', $image) }}" method="POST">
+    <form action="{{ route('images.update', $image) }}" method="POST" enctype="multipart/form-data">
         @include('images._form', ['image' => $image])
     </form>
+
 
     <a href="{{ route('images.show', $image) }}">Retour à l’image</a>
 @endsection

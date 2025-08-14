@@ -1,27 +1,20 @@
-@props([
-    'image' => null, // instance Image ou null
-])
+@props(['image' => null])
 
 @csrf
 @if($image)
     @method('PUT')
 @endif
 
-<label for="filename">Nom du fichier</label><br>
-<input type="text" name="filename" id="filename" value="{{ old('filename', $image->filename ?? '') }}" required>
+<label for="filename">Fichier image</label><br>
+<input type="file" name="filename" id="filename">
 @if($errors->has('filename'))
     <div style="color:red">{{ $errors->first('filename') }}</div>
 @endif
 <br>
 
-<label for="path">Chemin Relatif</label><br>
-<input type="text" name="path" id="path" value="{{ old('path', $image->path ?? '') }}" required>
-@if($errors->has('path'))
-    <div style="color:red">{{ $errors->first('path') }}</div>
-@endif
-<br>
+{{-- Champ path supprimé, il sera généré après upload --}}
 
-<label for="description">Description (pour SEO / alt)</label><br>
+<label for="description">Description (SEO / alt)</label><br>
 <textarea name="description" id="description">{{ old('description', $image->description ?? '') }}</textarea>
 @if($errors->has('description'))
     <div style="color:red">{{ $errors->first('description') }}</div>

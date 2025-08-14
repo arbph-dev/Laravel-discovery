@@ -6,7 +6,7 @@
 @section('content')
     <h1>Ajouter une image</h1>
 
-    <form action="{{ route('images.store') }}" method="POST">
+    <form action="{{ route('images.store') }}" method="POST" enctype="multipart/form-data">
         @include('images._form')
     </form>
 
