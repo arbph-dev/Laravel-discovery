@@ -1,3 +1,27 @@
+# Laravel
+## Gestion d'erreur
+
+💡 Bonne pratique :
+Utiliser sans @ pendant le développement pour voir les erreurs.
+Et si on veut éviter d'afficher les warnings en production, on supprime le @ et on encapsule dans un try...catch ou un test file_exists() avant d’appeler getimagesize() :
+
+```php
+$imageSize = @getimagesize($destinationPath . '/' . $finalName);
+```
+Le @ supprime l’affichage des warnings PHP.
+
+Si le fichier n’est pas une image valide ou introuvable, getimagesize() déclenche normalement un warning (Warning: getimagesize(): ...).
+Avec @, ce warning est silencieusement ignoré. $imageSize sera alors false si ça échoue.
+
+```php
+$imageSize = getimagesize($destinationPath . '/' . $finalName);
+```
+Ici, aucune suppression des warnings : si le fichier n’est pas une image, PHP affiche un warning.
+
+C’est plus sûr en développement car ça t’avertit si quelque chose cloche (fichier corrompu, mauvais chemin, etc.).
+
+---
+
 # BLADE : interaction php -> js
 
 ## Transferer des données au script du navigateur
