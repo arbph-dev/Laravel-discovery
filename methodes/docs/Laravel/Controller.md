@@ -12,9 +12,8 @@ $competences = Competence::all();
 return view('realisations.edit', compact('realisation', 'vaeexps', 'organisations', 'competences'));
 ```
 
-```php
-VaeexpController (avant recherche)
 
+```php
     public function index()
     {
         //$vaeexps = Vaeexp::with('organisation')->orderByDesc('dd')->get();
@@ -22,5 +21,4 @@ VaeexpController (avant recherche)
 		$vaeexps = Vaeexp::with(['organisation', 'realisations.client'])->orderByDesc('dd')->get();
         return view('vaeexps.index', compact('vaeexps'));
     }
-
 ```
