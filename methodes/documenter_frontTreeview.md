@@ -5,6 +5,64 @@
 ## modifer vue vaeexps.index et modiier controller(?)
 - [vaeexps.index](../srcLaravel/resources/views/vaeexps/index.blade.php)
 
+le code 
+```blade
+<ul class="TreeCmp_tree">
+	@foreach($vaeexps as $exp)
+		@php
+			$grouped = $exp->realisations->groupBy(function($r) {
+				return $r->client?->lbl ?? '_autres';
+			});
+			$totalCount = $exp->realisations->count();
+		@endphp
+
+		<li class="TreeCmp_node">
+			<span class="TreeCmp_toggle" onclick="TreeCmp_toggle(this)">▶</span>
+			<strong>{{ $exp->fonction }}</strong>
+			chez 
+			<a href="{{ route('organisations.show', $exp->organisation) }}">{{ $exp->organisation->lbl }}</a>
+			({{ $exp->dd }} → {{ $exp->df }}) <span class="TreeCmp_count">[{{ $totalCount }}]</span>
+
+			@auth
+				@if (Auth::user()->role === 'admin')
+					<a href="{{ route('realisations.create', ['vaeexp_id' => $exp->id]) }}">Ajouter une réalisation</a>
+				@endif
+			@endauth
+
+
+
+
+			@if($totalCount > 0)
+			<ul class="TreeCmp_children TreeCmp_hidden">
+				@foreach($grouped as $client => $realisations)
+					<li class="TreeCmp_node">
+						<span class="TreeCmp_toggle" onclick="TreeCmp_toggle(this)">▶</span>
+						@if($client !== '_autres')
+							Réalisations pour <strong>{{ $client }}</strong>
+						@else
+							<em>Autres réalisations</em>
+						@endif
+						<span class="TreeCmp_count">[{{ $realisations->count() }}]</span>
+						<ul class="TreeCmp_children TreeCmp_hidden">
+							@foreach($realisations->sortBy('titre') as $rexp)
+								<li>
+									<a href="{{ route('realisations.show', $rexp) }}">
+										{{ $rexp->titre }} [{{ $rexp->id }}]
+									</a>
+								</li>
+							@endforeach
+						</ul>
+					</li>
+				@endforeach
+			</ul>
+			@endif
+		</li>
+		<hr/>
+	@endforeach
+	</ul>
+```
+
+
 ## modif style
 - voir ci dessous
 - [pure_style.css](../srcLaravel/public/build/assets/pure_style.css) 
