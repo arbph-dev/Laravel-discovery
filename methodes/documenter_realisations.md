@@ -41,6 +41,7 @@ actuellement
 </div>
 ```
 ----
+
 # Controller et formulaire
 
 ## Combo multi-sélection
@@ -50,6 +51,7 @@ On pourrait remplacer la chaîne d’IDs séparés par ; par un <select multiple
 Plus simple à gérer et plus propre en Laravel. 
 
 => Modifier RealisationController@store et  @update :
+
 ```php
 $realisation->save();
 
@@ -65,7 +67,9 @@ if (!empty($imagesIds)) {
 Dans le formulaire realisation._form :
 
 **$images** est une liste complète d’images passée depuis le contrôleur.
+
 => Modifier RealisationController@create et @edit pour passer la variable **$images**
+
 ```blade
 <div>
     <label for="images_ids">Images associées :</label>
