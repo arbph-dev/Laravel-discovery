@@ -10,6 +10,27 @@ Gère les expériences professionnelles, **vaeexp**, associées à des [organisa
 ## Model Vaeexp
 model : [Vaeexp](../../srcLaravel/app/Models/Vaeexp.php)
 
+```php
+    protected $table = 'vaeexps';
+
+    protected $fillable = [
+        'dd',
+        'df',
+        'fonction',
+        'description',
+        'organisation_id'
+    ];
+
+    public function getDureeAttribute()
+    {
+        if ($this->dd && $this->df) {
+            return Carbon::parse($this->dd)->diff(Carbon::parse($this->df))->format('%y ans, %m mois');
+        }
+        return null;
+    }
+```
+
+
 ### Relations
 - organisation
 une organisation peut contenir plusieurs experiences voir [organisations](../organisations/index.md)
