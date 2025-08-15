@@ -25,10 +25,32 @@ Ici on gere le bouton, uniquement le bouton. Il faudra **ABSOLUMENT** en passer 
 
 Note : Ici le model User propose un méthode isAdmin()
 
+
+## Application - bandeau utilisateur
+
 ```php 
  @auth
 		@if ( Auth::user()->isAdmin() )
 			<a href="{{ route('realisations.edit', $realisation) }}">Modifier</a>
 		@endif   
 	@endauth
+```
+```
+@auth
+  <a href="{{ route('home') }}" class="sys-item">{{ Auth::user()->name}} :: {{ Auth::user()->role }}</a>
+  
+  @if (Route::has('logout'))
+      <a href="javascript:void(0)" class="sys-item" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+          Logout
+      </a>
+
+      <form id="logout-form" action="{{ route('logout') }}" method="POST">@csrf</form>
+
+  @endif 
+@else
+  <a href="{{ route('login') }}" class="sys-item">Log in</a>
+  @if (Route::has('register'))
+    <a href="{{ route('register') }}" class="sys-item">Register</a>
+  @endif
+@endauth
 ```
