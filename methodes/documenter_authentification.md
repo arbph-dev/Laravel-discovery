@@ -26,7 +26,7 @@ Ici on gere le bouton, uniquement le bouton. Il faudra **ABSOLUMENT** en passer 
 Note : Ici le model User propose un méthode isAdmin()
 
 
-## Application - bandeau utilisateur
+
 
 ```php 
  @auth
@@ -35,6 +35,8 @@ Note : Ici le model User propose un méthode isAdmin()
 		@endif   
 	@endauth
 ```
+
+## Application - bandeau utilisateur
 ```
 @auth
   <a href="{{ route('home') }}" class="sys-item">{{ Auth::user()->name}} :: {{ Auth::user()->role }}</a>
