@@ -200,9 +200,66 @@ pour chacun de ces elements d'un composant form on définit de styles
 - .cp_form-label
 - .cp_form-link
 - .cp_form-error
-input.cp_form-field
-input[type=submit].cp_form
-input[type=submit]:hover..cp_form
+- input.cp_form-field
+- input[type=submit].cp_form
+- input[type=submit]:hover.cp_form
 
 
+# Structures 
+La structure du projet évoluera, depusi l'implémentation des formulaire d'autentification j'ai réalisé de nombreux essais.
 
+on décrit la structure de base
+- Navbar
+- Header
+- Content
+- Footer
+
+Cette strucutre doit permettre de délivrer du contenu à des clients grands ecran, pc, tablette et mobileS
+Il faudra donc intéger la notion de Responsive Web Design (a documenter plus en détail...)
+
+## Navbar
+Réalisé en deux parties, avec le framework w3.css. Cette methode bien que redondante est assez facile a gérer
+- pc et mobile : barre en haut, la mahjorité des elements sont masqués sur mobile on laisse le strict minimum du fait d'une larguer réduite
+- mobile : barre de naviagation en haut avec un minimum d'informations et un bouton. Le bouton fait apparaitre la barre de navigation (à gauche ici)   
+
+DOCUMENTER fonction javascript myFunction
+- la navbar mobile a un id : **navDemo**
+- une icone , invisible sur "pc" permet d'afficher la navbar 
+
+
+```html
+    <!-- Navbar -->
+    <div class="w3-top">
+      <!-- Navbar pc  + mobile (reduit + bouton)-->
+
+      <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+        <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 3</a>
+        <a href="#" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Link 4</a>
+      </div>
+      
+      <!-- Navbar on small screens -->
+      <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+        <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+      </div>
+    </div>
+```
+
+##  header
+toujours avec le framework w3.css, l'entete du document contient 
+- titre
+- image
+- description
+```html
+<header class="w3-container w3-red w3-center" style="padding-top:48px">
+  <h1 class="w3-margin w3-animate-opacity">Les Robots pompiers</h1>
+  <img class="w3-image" src="./pompier_robots.jpg" alt="robot pompier" width="600" height="400">
+  <p class="w3-xlarge">description</p>
+</header>
+```
