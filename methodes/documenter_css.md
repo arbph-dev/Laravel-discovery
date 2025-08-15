@@ -42,6 +42,22 @@ Syntaxe
 <h1 class="text-3xl font-bold underline">Info</h1>
 ```
 
+### Compiler Tailwind en cli
+[documentation](https://tailwindcss.com/docs/installation/tailwind-cli)
+
+On doit avoir npm installé, ce qui n'est pas le cas sur Hostinger. j'ai donc comilé les fichiers sur une machine puis télécahrger le fichier
+#### Installer tailwindcss
+```
+npm install tailwindcss @tailwindcss/cli
+```
+un message apparait , exemple : added 12 packages, removed 1 package, and audited 103 packages in 20s....
+
+#### Compiler le style tailwindcss
+```
+npx @tailwindcss/cli -i ./src/input.css -o ./build/output.css --watch
+```
+
+
 ---
 ## W3.css
 consulter [w3.css](https://www.w3schools.com/w3css/w3css_intro.asp)
