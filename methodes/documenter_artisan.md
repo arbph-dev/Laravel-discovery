@@ -12,6 +12,12 @@ pour exploiter artisan il faut déja etre dans le bon repertoire
 php artisan make:model Image -m => model et migration
 php artisan make:model Image -mcr => model migration et controller ressource
 
+
+**php artisan make:model** 
+- saisir le nom de model Vaeexp en respectant les conventions de notation Laravel
+- choisir migration et resource controller
+
+
 php artisan list
 
 php artisan config:clear
