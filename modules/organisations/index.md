@@ -32,8 +32,34 @@ table : organisations
 ## Model
 model : [Organisation](../../srcLaravel/app/Models/Organisation.php)
 
-### Relations
+Déclaration de la table
+```php
+    protected $table = 'organisations';
+```
+Déclaration des fillable
+```php
+    protected $fillable = [
+        'lbl',
+        'adville',
+        'addep',
+        'codeape',
+        'lblape',
+        'urlweb',
+        'urlreg',
+        'pich',
+        'picl',
+    ];
 
+```
+
+### Relations
+Une organisation peut avoir plusieurs experiences
+```php
+    public function vaeexp()
+    {
+        return $this->hasMany(Vaeexp::class);
+    }
+```
 ### Methodes
 
 ## Controller
