@@ -613,7 +613,7 @@ version 2
 
 ## Vue show du module realisation
 realisations/show.blade.php
-```blade
+```
 @php
 $tabs = $realisation->parts;
 @endphp
@@ -657,8 +657,35 @@ $tabs = $realisation->parts;
         });
     });
 </script>
-
 ```
+
+---
+### Version "finale"
+Vue :realisations/show.blade.php
+
+```blade
+@if($realisation->parts->count())
+    <h2>Étapes</h2>
+    @foreach($realisation->parts as $part)
+        <div class="textimgr">
+            <div class="text-content">
+                <h3>{{ $part->titre }}</h3>
+                {!! $part->contenu !!}
+            </div>
+
+            <div class="img-content">
+                @foreach($part->images as $image)
+                    <a href="/public/{{ $image->path }}" target="_blank">
+                        <img src="/public/{{ $image->path }}" alt="{{ $image->filename }}" width="100">
+                    </a>
+                @endforeach
+            </div>
+        </div>
+    @endforeach
+@endif
+```
+
+
 
 ### Ajout de partie a une réalisation
 Dans realisations/show.blade.php, après le contenu principal :
