@@ -21,7 +21,7 @@ On copie le code dans un textaera
 # Migrations
 Fichier : database/migrations/2025_08_XX_create_realisation_parts_table.php
 
-```php
+```
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -51,7 +51,7 @@ class CreateRealisationPartsTable extends Migration
 ```
 
 
-```php
+```
 Schema::create('realisationparts', function (Blueprint $table) {
     $table->id();
     $table->foreignId('realisation_id')->constrained()->onDelete('cascade');
@@ -62,6 +62,53 @@ Schema::create('realisationparts', function (Blueprint $table) {
     $table->timestamps();
 });
 ```
+
+La version finale 
+on gerera meta_description dans realisation plutot que realisationparts
+on ne gere pas type mais l'edition se fera avec un fichier ?? rbase.html en attendant un formulaire plsu avancé
+on ajoute une realtion avec image,plus facile pour gerer les images
+
+
+```php
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateRealisationPartsTable extends Migration
+{
+    public function up()
+    {
+        Schema::create('realisationparts', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('realisation_id')->constrained()->onDelete('cascade');
+            //$table->string('titre')->nullable();      // Titre de la partie
+			//$table->text('contenu')->nullable();      // HTML ou texte enrichi
+    		$table->string('titre');
+    		$table->text('contenu'); // HTML riche
+            $table->integer('ordre')->default(0);     // Pour l'ordre d'affichage
+            $table->timestamps();
+        });
+
+		Schema::create('image_realisation_part', function (Blueprint $table) {
+		    $table->id();
+		    $table->foreignId('image_id')->constrained()->onDelete('cascade');
+		    $table->foreignId('realisation_part_id')->constrained()->onDelete('cascade');
+		    $table->timestamps();
+		});
+    }
+
+    public function down()
+    {
+        Schema::dropIfExists('realisationparts');
+		Schema::dropIfExists('image_realisation_part');
+    }
+}
+```
+
+
+
 
 
 # Models
