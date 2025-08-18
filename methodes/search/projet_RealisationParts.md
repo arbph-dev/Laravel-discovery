@@ -63,10 +63,10 @@ Schema::create('realisationparts', function (Blueprint $table) {
 });
 ```
 
-La version finale 
-on gerera meta_description dans realisation plutot que realisationparts
-on ne gere pas type mais l'edition se fera avec un fichier ?? rbase.html en attendant un formulaire plsu avancé
-on ajoute une realtion avec image,plus facile pour gerer les images
+## version finale 
+- on gerera meta_description dans realisation plutot que realisationparts
+- on ne gere pas type mais l'edition se fera avec un fichier ?? rbase.html en attendant un formulaire plsu avancé
+- on ajoute une realtion avec image,plus facile pour gerer les images
 
 
 ```php
@@ -112,6 +112,7 @@ class CreateRealisationPartsTable extends Migration
 
 
 # Models
+
 ## Realisation
 la relation sera transposé dans le model [Realisation](../../srcLaravel/app/Models/Realisation.php)
 ```php
@@ -120,11 +121,13 @@ public function parts()
     return $this->hasMany(RealisationPart::class)->orderBy('ordre');
 }
 ```
+
+
 ## RealisationPart
 
 php artisan make:model RealisationPart
 
-```php
+```
 // app/Models/RealisationPart.php
 namespace App\Models;
 
@@ -149,7 +152,7 @@ class RealisationPart extends Model
 type est a supprimer on doit gérer les images par la suite 
 mais une RealisationPart => texte + image + lien
 
-```php
+```
 <?php
 namespace App\Models;
 
@@ -164,12 +167,37 @@ class RealisationPart extends Model
         return $this->belongsTo(Realisation::class);
     }
 }
+```
 
+---
 
+### version "finale"
+
+```php
+class RealisationPart extends Model
+{
+    protected $fillable = [
+        'realisation_id',
+        'titre',
+        'contenu',
+        'ordre',
+    ];
+
+    public function realisation()
+    {
+        return $this->belongsTo(Realisation::class);
+    }
+
+    public function images()
+    {
+        return $this->belongsToMany(Image::class, 'image_realisation_part');
+    }
+}
 
 ```
 
-# Helper SEO
+# Helper SEO (standby)
+
 Fichier : app/Helpers/SeoHelper.php
 Résumé SEO : Générer un extrait court et propre depuis le contenu HTML.
 un résumé SEO automatique pour chaque RealisationPart. Cela repose sur :
@@ -276,7 +304,7 @@ class SeoHelper
 
 Dans la methode show de [RealisationController](../../srcLaravel/app/Http/Controllers/RealisationController.php)
 
-```php
+```
 $parts = $realisation->parts;
 
 foreach ($realisation->parts as $part) {
@@ -284,6 +312,10 @@ foreach ($realisation->parts as $part) {
     $part->seo_score = SeoHelper::score($part->contenu);
 }
 ```
+
+---
+
+
 ## RealisationPartController
 fichier : app/Http/Controllers/RealisationPartController.php
 
@@ -294,7 +326,7 @@ Inclut les méthodes CRUD classiques : index, create, store, show, edit, update,
 Optionnellement une méthode sort() ou reorder().
 
 
-```php
+```
 use App\Models\Realisation;
 use App\Models\RealisationPart;
 use Illuminate\Http\Request;
@@ -353,7 +385,7 @@ class RealisationPartController extends Controller
 
 
 evolution doit gerer le seo
-```php
+```
 <?php
 use App\Helpers\SeoHelper;
 
@@ -390,6 +422,47 @@ public function show(Realisation $realisation)
 }
 
 ```
+
+
+
+Un RealisationPartController gère les CRUD des étapes.
+Tu pourras soit :
+
+avoir un CRUD séparé (index, create, edit pour les parts),
+
+soit les gérer directement imbriqués dans la vue edit de Realisation (plus fluide pour toi).
+
+Exemple d’ajout rapide d’un part :
+
+
+```php
+public function store(Request $request, Realisation $realisation)
+{
+    $data = $request->validate([
+        'titre' => 'nullable|string',
+        'contenu' => 'nullable|string',
+        'ordre' => 'nullable|integer',
+        'images_ids' => 'nullable|string'
+    ]);
+
+    $part = $realisation->parts()->create($data);
+
+    $imagesIdsString = $request->input('images_ids', '');
+    if (!empty($imagesIdsString)) {
+        $imagesIds = array_filter(explode(';', $imagesIdsString));
+        $part->images()->sync($imagesIds);
+    }
+
+    return redirect()->route('realisations.show', $realisation);
+}
+```
+
+
+
+
+
+
+
 
 # Views 
 on conserve : Layout pure.blade.php
