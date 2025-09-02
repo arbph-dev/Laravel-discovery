@@ -127,7 +127,7 @@ le style ci dessous peut etre appliqué à un noeud div dans un template ,un com
 .Content { max-width : 1200px;  margin-left : auto; margin-right : auto;}
 ```
 ## 1 - style associé au balise
-avec cete option on écrit
+avec cette option on écrit
 ```html
 <div style="max-width:1200px;margin-left:auto;margin-right:auto;">contenu<div>
 ```
@@ -137,7 +137,7 @@ l'inconvénient évident est le manque de lisibilité, la difficulté de la synt
 Maintenant on spécifie uniquement la classe ou les classes
 
 ```html
-<div classe="Content">contenu<div>
+<div class="Content">contenu<div>
 ```
 Le code est déja plus lisible, on modifiera la classe plutot que tout les styles des balises. mais il faut se repoorter au code ou la documentation pour information
 
