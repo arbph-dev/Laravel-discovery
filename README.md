@@ -24,6 +24,7 @@ Le projet inclut :
 ---
 ## News
 **2025-09-02** : La partie Front est séparée dans un nouveau dépôt
+[Elfennel](https://github.com/arbph-dev/Elfennel.js)
 
 ---
 
