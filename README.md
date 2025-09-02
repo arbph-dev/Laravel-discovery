@@ -22,30 +22,8 @@ Le projet inclut :
 ⚠️ **Tous les fichiers, codes, scripts et ressources présents dans ce dépôt sont protégés par la licence indiquée ci-dessous.**
 
 ---
-## Todo
-**25-08-10_008** voir limite upload hostinger et faire un point hostinger dont npm qui ne fctt pas
-
-**25-08-10_007** compteur js sur imput exemple  image description 255 char max
-
-**25-08-10_006** Artisan / Seeders : [OrganisationSeeder](./srcLaravel/database/seeders/OrganisationSeeder.php)
-
-**25-08-10_005** modules images , Model Image** : méthode url est fonctionnelle : oui , non => sinon
-
-**25-08-10_003** Artisan : expliquer l'utilisation sur Hostinger ( ssh, mdp , creation fichiers appli )
-
-**25-08-10_004**  Artisan: expliquer les scripts et seeders via artisan (création, exploitation)
-- voir images:sync fichier [Syncimages.php](./srcLaravel/app/Console/Commands/SyncImages.php)
-
-**25-08-10_002** routes : Détailler le Route Model Binding.
-- Avec cette technique on passe les objets lors du routage, Laravel gère les paramètres des requetes et fait le lien avec les propriétés des models
-
-**[25-08-10_001](./methodes/todos/25-08-10_001.md)** modules images , vues : ajouter show, edit,create et _form 
-- **RESOLU**
-
-**25-08-10_000** modules images , controller : La pagination requiert une gestion de css à détailler. 
-- **PARTIEL 25-08-10_001** on a retirer la partie génante voir backup local
-
-
+## News
+**2025-09-02** : La partie Front est séparée dans un nouveau dépôt
 
 ---
 
