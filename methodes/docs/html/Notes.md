@@ -1,8 +1,17 @@
 
 # Noeuds Tags
-
+- [article](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#article)
+- [aside](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#aside)
 - [details](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#details) **a tester **
-- [hgroup](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#hgroup)
+- [footer](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#footer)
+- [form](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#form)
+- [header](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#header)
+- [hgroup](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#hgroup) **a tester **
+- [input](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#input) 
+- [kbd](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#kbd)
+- [main](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#main)
+- [mapaera](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#mapaera) **voir area onclick**
+- [menu](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#menu)
 - [meter](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#meter)
 - [nav](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#nav)
 - [ol](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#ol)
@@ -14,12 +23,10 @@
 
 
 
-[
-](
-https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#
-)
+## article
 
-
+## aside
+aside a voir si supprimer par la suite ?? div class aside
 
 
 ## details
@@ -31,8 +38,116 @@ semblable callout ;) => **a tester, img svg**
 </details>
 ```
 
+## footer
+
+
+## form
+```html
+<form action="/action_page.php">
+ <fieldset>
+  <legend>Personalia:</legend>
+  <label for="fname">First name:</label><input type="text" id="fname" name="fname"><br><br>
+  <label for="lname">Last name:</label><input type="text" id="lname" name="lname"><br><br>
+  <label for="email">Email:</label> <input type="email" id="email" name="email"><br><br>
+  <label for="birthday">Birthday:</label><input type="date" id="birthday" name="birthday"><br><br>
+  <input type="submit" value="Submit">
+ </fieldset>
+</form>
+```
+
+
+## header
+
 ## hgroup
 permet de regrouper des delements comme div pour titre et description
+```html
+<hgroup>
+  <h2>Norway</h2>
+  <p>The land with the midnight sun.</p>
+</hgroup>
+```
+## input
+Always use the <label> tag to define labels for 
+```html
+<input type="text">
+<input type="checkbox">
+<input type="radio">
+<input type="file">
+<input type="password">.
+
+<input type="button">
+<input type="checkbox">
+<input type="color">
+
+<input type="date">
+<input type="datetime-local">
+<input type="month">
+<input type="time">
+<input type="week">
+
+<input type="email">
+<input type="tel">
+
+<input type="file">
+<input type="image">
+
+<input type="hidden">
+<input type="password">
+
+<input type="number">
+
+<input type="range">
+
+<input type="search">
+
+<input type="reset">
+<input type="submit">
+
+<input type="text"> (default value)
+
+<input type="url">
+```
+
+
+## kbd
+peu servir pour la synthese vocale ??
+```html
+<p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy text (Windows).</p>
+```
+
+
+## mapaera
+Image + map area ; intéressant si onclick ?? **voir area onclick**
+```html
+<img src="workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+<map name="workmap">
+  <area shape="rect" coords="34,44,270,350" alt="Computer" href="computer.htm">
+  <area shape="rect" coords="290,172,333,250" alt="Phone" href="phone.htm">
+  <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
+</map>
+```
+
+## main
+Specify the main content of the document. There must not be more than one <main> element in a document. 
+
+The <main> element must NOT be a descendant of an :
+- <[article](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#article)>
+- <[aside](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#aside)>
+- <[footer](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#footer)>
+- <[header](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#header)>
+- <[nav](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#nav)>
+
+```html
+<main>
+  <h1>Most Popular Browsers</h1>
+  <p>Chrome, Firefox, and Edge are the most used browsers today.</p>
+
+  <article>
+    <h2>Google Chrome</h2>
+    <p>Google Chrome is a web browser developed by Google, released in 2008. Chrome is the world's most popular web browser today!</p>
+  </article>
+```
+
 
 ## menu
 The <menu> tag defines an unordered list of content.
@@ -58,11 +173,13 @@ apparait en vert mais semble similaire a [progress](https://github.com/arbph-dev
 ## nav
 The <nav> tag defines a set of navigation links.
 The <nav> element is intended only for major blocks of navigation links.
+```html
 <nav>
-  <a href="/html/">HTML</a> |
-  
+  <a href="/html/">HTML</a>
+```  
 ## ol
 **liste**
+```css  
 ol.c {list-style-type: decimal;}
 ol.d {list-style-type: decimal-leading-zero;}
 ol.k {list-style-type: lower-alpha;}
@@ -74,7 +191,7 @@ ol.p {list-style-type: upper-latin;}
 ol.q {list-style-type: upper-roman;}
 ol.r {list-style-type: none;}
 ol.s {list-style-type: inherit;}
-
+```  
 
 ## progress 
 apparait en bleu mais semble similaire a [meter](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#meter)
