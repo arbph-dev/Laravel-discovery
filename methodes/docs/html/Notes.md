@@ -1,15 +1,16 @@
 
 # Noeuds Tags
-[details](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#details) **a tester **
-[hgroup](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#hgroup)
-[meter](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#meter)
-[nav](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#nav)
-[ol](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#ol)
-[progress](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#progress)
-[search](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#search) **utilité??**
-[select](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#select) **optgroup a connaitre**
-[Template](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#Template)**a tester **
-[ul](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#ul)
+
+- [details](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#details) **a tester **
+- [hgroup](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#hgroup)
+- [meter](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#meter)
+- [nav](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#nav)
+- [ol](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#ol)
+- [progress](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#progress)
+- [search](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#search) **utilité??**
+- [select](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#select) **optgroup a connaitre**
+- [Template](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#Template)**a tester **
+- [ul](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#ul)
 
 
 
