@@ -2,6 +2,8 @@
 # Noeuds Tags
 - [article](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#article)
 - [aside](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#aside)
+- [data](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#data)
+- [datalist](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#datalist)
 - [details](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#details) **a tester **
 - [footer](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#footer)
 - [form](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#form)
@@ -9,8 +11,9 @@
 - [hgroup](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#hgroup) **a tester **
 - [input](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#input) 
 - [kbd](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#kbd)
+- [label](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#label)
 - [main](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#main)
-- [mapaera](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#mapaera) **voir area onclick**
+- [mapaera](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#mapaera) **area onclick => oui**
 - [menu](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#menu)
 - [meter](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#meter)
 - [nav](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#nav)
@@ -18,15 +21,44 @@
 - [progress](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#progress)
 - [search](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#search) **utilité??**
 - [select](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#select) **optgroup a connaitre**
-- [Template](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#Template)**a tester **
+- [template](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#template)**a tester **
+- [time](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#time)
 - [ul](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#ul)
 
 
+## aera
+voir [mapaera](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#mapaera) **ci dessous**
+[w3schools / tag area](https://www.w3schools.com/tags/tag_area.asp)
+The <area> tag also supports the Event Attributes in HTML.
 
 ## article
+Voir [w3schools / tag article](https://www.w3schools.com/tags/tag_article.asp)
 
 ## aside
 aside a voir si supprimer par la suite ?? div class aside
+[w3schools / tag aside](https://www.w3schools.com/tags/tag_aside.asp)
+
+## data
+valeur dans la structure mais invisible des users
+```html
+  <li><data value="21053">Cherry Tomato</data></li>
+  <li><data value="21054">Beef Tomato</data></li>
+  <li><data value="21055">Snack Tomato</data></li>
+```
+
+## datalist
+```html
+<label for="browser">Choose your browser from the list:</label>
+<input list="browsers" name="browser" id="browser">
+
+<datalist id="browsers">
+  <option value="Edge">
+  <option value="Firefox">
+  <option value="Chrome">
+  <option value="Opera">
+  <option value="Safari">
+</datalist>
+```
 
 
 ## details
@@ -115,6 +147,7 @@ peu servir pour la synthese vocale ??
 <p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy text (Windows).</p>
 ```
 
+## label
 
 ## mapaera
 Image + map area ; intéressant si onclick ?? **voir area onclick**
@@ -126,6 +159,9 @@ Image + map area ; intéressant si onclick ?? **voir area onclick**
   <area shape="circle" coords="337,300,44" alt="Cup of coffee" href="coffee.htm">
 </map>
 ```
+[w3schools / tag area](https://www.w3schools.com/tags/tag_area.asp)
+The <area> tag also supports the Event Attributes in HTML.
+
 
 ## main
 Specify the main content of the document. There must not be more than one <main> element in a document. 
@@ -208,7 +244,7 @@ apparait en bleu mais semble similaire a [meter](https://github.com/arbph-dev/La
   </form>
 </search>
 ```
-## Select
+## select
 ```html
   <select name="cars" id="cars">
     <optgroup label="Swedish Cars">
@@ -222,7 +258,7 @@ apparait en bleu mais semble similaire a [meter](https://github.com/arbph-dev/La
   </select>
 ```
 
-## Template
+## template
 **a tester **
 comme en svg on définit le "symbole" et on l'ajoute dans la strucuture
 ```html
@@ -242,8 +278,13 @@ comme en svg on définit le "symbole" et on l'ajoute dans la strucuture
   </script>
 ```
 
-
-
+## time
+valeur dans la structure mais invisible des users comme data
+time * selon 
+```html
+<time datetime="2008-02-14 20:00">Valentines day</time> apparait pas
+<time>21:00</time> apparait
+```
 ## ul
 **liste**
 
