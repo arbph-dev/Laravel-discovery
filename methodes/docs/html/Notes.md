@@ -1,3 +1,5 @@
+**le data-* attribute fonctionne avec autre tag?** => oui
+[MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/data-*)
 
 # Noeuds Tags
 - [article](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#article)
@@ -7,6 +9,7 @@
 - [details](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#details) **a tester **
 - [footer](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#footer)
 - [form](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#form)
+    pour le script **"x.value=parseInt(a.value)+parseInt(b.value)"**
 - [header](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#header)
 - [hgroup](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#hgroup) **a tester **
 - [input](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#input) 
@@ -18,6 +21,7 @@
 - [meter](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#meter)
 - [nav](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#nav)
 - [ol](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#ol)
+- [picture](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#picture)**rwd + solution tri image**
 - [progress](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#progress)
 - [search](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#search) **utilité??**
 - [select](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#select) **optgroup a connaitre**
@@ -32,6 +36,9 @@ voir [mapaera](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes
 The <area> tag also supports the Event Attributes in HTML.
 
 ## article
+The <article> tag specifies independent, self-contained content.
+An article should make sense on its own and it should be possible to distribute it independently from the rest of the site.
+
 Voir [w3schools / tag article](https://www.w3schools.com/tags/tag_article.asp)
 
 ## aside
@@ -45,6 +52,41 @@ valeur dans la structure mais invisible des users
   <li><data value="21054">Beef Tomato</data></li>
   <li><data value="21055">Snack Tomato</data></li>
 ```
+
+Use the data-* attribute to embed custom data:
+```html
+<ul>
+  <li data-animal-type="bird">Owl</li>
+  <li data-animal-type="fish">Salmon</li>
+  <li data-animal-type="spider">Tarantula</li>
+</ul>
+```
+
+
+```html
+<script>
+function showDetails(animal) {
+  let animalType = animal.getAttribute("data-animal-type");
+  alert("The " + animal.innerHTML + " is a " + animalType + ".");
+}
+</script>
+</head>
+<body>
+
+<h1>Species</h1>
+<p>Click on a species to see what type it is:</p>
+
+<ul>
+  <li onclick="showDetails(this)" id="owl" data-animal-type="bird">Owl</li>
+  <li onclick="showDetails(this)" id="salmon" data-animal-type="fish">Salmon</li>  
+  <li onclick="showDetails(this)" id="tarantula" data-animal-type="spider">Tarantula</li>  
+</ul>
+```
+
+
+
+
+
 
 ## datalist
 ```html
@@ -70,8 +112,22 @@ semblable callout ;) => **a tester, img svg**
 </details>
 ```
 
+## fieldset
+  peut servir à scinder les formulaires ??
+  
 ## footer
-
+Contact information inside a <footer> element should go inside an <address> tag.
+```html
+<footer>
+  <address>
+    Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br> 
+    Visit us at:<br>
+    Example.com<br>
+    Box 564, Disneyland<br>
+    USA
+  </address>
+</footer>
+```
 
 ## form
 ```html
@@ -86,6 +142,16 @@ semblable callout ;) => **a tester, img svg**
  </fieldset>
 </form>
 ```
+
+
+```html
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+  <input type="range" id="a" value="50">
+  +<input type="number" id="b" value="25">
+  =<output name="x" for="a b"></output>
+</form>
+```
+
 
 
 ## header
@@ -140,6 +206,13 @@ Always use the <label> tag to define labels for
 <input type="url">
 ```
 
+
+**attribut inputmode**
+attribute allows you to change the appearance of the keyboard on a phone or tablet (any device with a virtual keyboard).
+```html
+<input type="text" inputmode="email">
+<input type="text" inputmode="numeric">
+```
 
 ## kbd
 peu servir pour la synthese vocale ??
@@ -228,6 +301,21 @@ ol.q {list-style-type: upper-roman;}
 ol.r {list-style-type: none;}
 ol.s {list-style-type: inherit;}
 ```  
+
+
+
+
+## picture
+
+```html
+<picture>
+  <source media="(min-width:650px)" srcset="img_pink_flowers.jpg">
+  <source media="(min-width:465px)" srcset="img_white_flower.jpg">
+  <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>
+```html
+
+
 
 ## progress 
 apparait en bleu mais semble similaire a [meter](https://github.com/arbph-dev/Laravel-discovery/blob/main/methodes/docs/html/Notes.md#meter)
