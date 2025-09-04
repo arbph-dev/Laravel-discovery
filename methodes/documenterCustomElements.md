@@ -53,22 +53,99 @@ Exemples pratiques → rechercher "Using templates and slots" / "adding flexibil
 
 ### D mise en oeuvre
 Puis je déclarer les composants dans un module  ? que faire du html ?
+
+Déclarer dans un module → ✅ oui
+**my-element.js :**
+```js
+class MyElement extends HTMLElement {
+  constructor() {
+    super();
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.innerHTML = `<p>Hello</p>`;
+  }
+}
+customElements.define("my-element", MyElement);
+```
+est importé
+```html
+<script type="module" src="my-element.js"></script>
+<my-element></my-element>
+```
+#### Template HTML
+Tu peux stocker ton <template> directement dans le module JS, ou dans le DOM principal.
+
+- un template défini en HTML
+```html
+<template id="tpl-hello">
+  <style>p { color: red; }</style>
+  <p>Hello <slot></slot></p>
+</template>
+```
+
+est récupéré en js comme ceci
+```
+const tpl = document.getElementById("tpl-hello");
+this.shadowRoot.appendChild(tpl.content.cloneNode(true));
+```
+
+
+- 
+
+
 - on initialise la page cree les noeuds tempalte dans le dom
 - puis on execute le script customElements.define()
 - enfin on ajoute les noeuds composant dans le dom
 
 Puis je déclarer les composants dans un module et des sous composant dans un autre modules? 
+On peut créer plusieurs fichiers a-component.js, b-component.js, et un main.js qui importe les deux. Chaque module dispose de son customElements.define().
+
 si besoin on emploie un script commun qui importe les deux?
 
 si je place le composant dans un div caché jusqu'a la fin du chargment des scripts customElements.define ça peut passer ?
 
+Placer le composant dans un div hidden avant define() , ça marche, mais mieux vaut charger les scripts avant.
+Si un composant inconnu est présent dans le DOM, il sera "upgrade" automatiquement dès que customElements.define() est exécuté.
+→ Donc pas grave si l’élément est déjà là.
+
+
+- différence entre this.querySelector('todo-input') et this.shadowRoot.querySelector('todo-input') 
+#### this.querySelector('todo-input')
+this.querySelector(...) → cherche dans le contenu fourni par l’utilisateur entre les balises du composant.
+Si tu fais this.querySelector(...), la recherche se fait dans le Light DOM, c’est-à-dire le contenu "normal" inséré par l’utilisateur de ton composant.
+
+Ici this est ton élément custom (par ex. <todo-app>).
+```html
+<todo-app>
+  <todo-input></todo-input> <!-- trouvé par this.querySelector -->
+</todo-app>
+```
+#### this.shadowRoot.querySelector('todo-input')
+this.shadowRoot.querySelector(...) → cherche dans ton template encapsulé (le rendu interne du composant).
+Accede à un composant avec Shadow DOM, tout le contenu est encapsulé dans le Shadow DOM. Le "monde extérieur" (la page) ne peut pas voir directement ce qui est dedans.
+```js
+this.attachShadow({ mode: 'open' });
+this.shadowRoot.innerHTML = `
+  <todo-input></todo-input>
+  <button>Ajouter</button>
+`;
+```
+Donc si tu veux récupérer <todo-input> à l’intérieur de ton Shadow DOM, tu dois cibler :
+```js
+this.shadowRoot.querySelector('todo-input');
+```
+
+
+
+
+
+
+
 ## Méthodes
 
-on crée le template
-on crée le script
+on crée le template (HTML ou JS).
+on crée le script (classe extends HTMLElement.)
+Faire customElements.define().
 on emploie le composant dans html
-
-
 
 ## Templates
 
