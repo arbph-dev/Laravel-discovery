@@ -7,15 +7,15 @@ Quelques questions relatives au composant et customElements
 ### A - Possibilités de la technologie
 
 Depuis le composant Peut on accéder a 
-- window A1 : oui / non
-- les api comme speechsynthesis A2 : oui / non
-- fetch A3 : oui / non
-- declencher des evenemts dans le composant A4 : oui / non
-- declencher des evenemts exploitable dans la page A5 : oui / non
-- utiliser canvas ou svg A6 : oui / non
-- importer des modules A7 : oui / non
-- utiliser des librairie comme threejs A8 : oui / non
-- utiliser element.dataset ( DOMStringMap) A9 : oui / non
+- window A1 : ✅ oui
+- les api comme speechsynthesis A2 : ✅ oui
+- fetch A3 : ✅ oui
+- declencher des evenemts dans le composant A4 : ✅ oui
+- declencher des evenemts exploitable dans la page A5 : ✅ oui
+- utiliser canvas ou svg A6 : ✅ oui
+- importer des modules A7 : ✅ oui
+- utiliser des librairie comme threejs A8 : ✅ oui
+- utiliser element.dataset ( DOMStringMap) A9 : ✅ oui
 
 ### B - limitations de la technologie
 Quelles sont les limitations ?
