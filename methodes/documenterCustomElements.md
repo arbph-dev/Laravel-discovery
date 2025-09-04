@@ -18,7 +18,13 @@ Depuis le composant Peut on accéder a
 - utiliser element.dataset ( DOMStringMap) A9 : ✅ oui
 
 ### B - limitations de la technologie
-Quelles sont les limitations ?
+
+- Isolation : le Shadow DOM isole le style et le DOM → parfois compliqué de faire communiquer le CSS de la page hôte avec l’intérieur du composant.
+  - Styling : le style de la page hôte ne traverse pas le Shadow DOM (sauf avec :host, ::part, ::slotted). 
+- SEO / Accessibilité : certains moteurs de recherche et outils d’accessibilité ont du mal avec des contenus encapsulés dans Shadow DOM.
+- Interop : pas tous les frameworks ne gèrent pas bien les Custom Elements (ex: React a eu longtemps des frictions).
+- Chargement : les composants sont déclarés via customElements.define(). S’ils ne sont pas définis au moment de l’insertion, ils apparaissent comme des "unknown element".
+- Pas de polyfill complet natif : dans les vieux navigateurs (IE…), ça ne marche pas sans polyfills.
 
 ### C - Showcase et projets
 Quels projets consulter pour se former ?
