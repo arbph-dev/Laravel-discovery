@@ -23,14 +23,26 @@ Quelles sont les limitations ?
 ### C - Showcase et projets
 Quels projets consulter pour se former ?
 
-[Using_templates_and_slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)
-[tag template](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template)
-[tag slot](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/slot)
-[using_templates_with_web_components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots#using_templates_with_web_components)
-[adding_flexibility_with_slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots#adding_flexibility_with_slots)
-[events / avoiding_documentfragment_pitfalls ](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template#avoiding_documentfragment_pitfalls)
-[part](https://developer.mozilla.org/en-US/docs/Web/API/Element/part)**script event listener**
-[ShadowRoot](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot)
+- [Using_templates_and_slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)
+- [tag template](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template)
+- [tag slot](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/slot)
+- [using_templates_with_web_components](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots#using_templates_with_web_components)
+- [adding_flexibility_with_slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots#adding_flexibility_with_slots)
+- [events / avoiding_documentfragment_pitfalls ](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/template#avoiding_documentfragment_pitfalls)
+- [part](https://developer.mozilla.org/en-US/docs/Web/API/Element/part)**script event listener**
+- [ShadowRoot](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot)
+
+exemples
+
+- [composants todos](https://github.com/shprink/web-components-todo)
+
+MDN Web Components guide (templates, slots, shadow DOM).
+Lit → framework léger pour simplifier la création de Web Components.
+Shoelace → librairie complète de composants UI en Web Components pur.
+Vaadin Components → gros set de composants Web Components.
+WebComponents.org → annuaire de composants.
+
+Exemples pratiques → rechercher "Using templates and slots" / "adding flexibility with slots" ( tag template, tag slot, part, event listener, etc.).
 
 
 ### D mise en oeuvre
