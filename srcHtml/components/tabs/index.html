@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tabs components demo (autonomous)</title>
+  <style>
+    my-tab[aria-selected="true"] { font-weight: bold; outline: 2px solid #007acc; }
+    .tb-search { margin-bottom: 8px; }
+    .tb-list li { margin: 6px 0; }
+    .tb-list button { margin-left: 6px; }
+    .tb-form { padding: 8px; border: 1px solid #ddd; display:inline-block; }
+  </style>
+</head>
+<body>
+  <h1>Demo: Onglets autonomes (crud minimal)</h1>
+
+  <my-tabs>
+    <my-tab>Liste</my-tab>
+    <my-tab>Formulaire</my-tab>
+
+    <tabpanel-liste></tabpanel-liste>
+    <tabpanel-form></tabpanel-form>
+  </my-tabs>
+
+  <script type="module" src="./tab.js"></script>
+  <script type="module" src="./tabs.js"></script>
+  <script type="module" src="./tab-panel.js"></script>
+  <script type="module" src="./tabpanel-liste.js"></script>
+  <script type="module" src="./tabpanel-form.js"></script>
+
+  <script>
+    // Small glue inside the demo page to let panels communicate without parent handling events:
+    // The list will dispatch 'open-edit' or 'open-create' events (bubbling). We forward them to the form panel.
+    (function(){
+      const tabs = document.querySelector('my-tabs');
+      const list = tabs.querySelector('tabpanel-liste');
+      const form = tabs.querySelector('tabpanel-form');
+      // When list dispatches open-edit or open-create, forward to form panel
+      list.addEventListener('open-edit', (e) => {
+        form.loadData(e.detail.record);
+        // select form tab (second tab)
+        const tabsEls = tabs.querySelectorAll('my-tab');
+        if (tabsEls[1]) tabsEls[1].select();
+      });
+      list.addEventListener('open-create', (e) => {
+        form.loadData({ id: null, label: '' });
+        const tabsEls = tabs.querySelectorAll('my-tab');
+        if (tabsEls[1]) tabsEls[1].select();
+      });
+
+      // When form saves, update list's items locally: listen for 'record-saved'
+      form.addEventListener('record-saved', (e) => {
+        const rec = e.detail.record;
+        // naive behaviour: if id === null push new, else replace by id index
+        if (rec.id === null) {
+          // add locally to list
+          const items = list.items || [];
+          items.push({ id: items.length, label: rec.label });
+          // hack: set internal items
+          list._items = items;
+        } else {
+          const idx = rec.id;
+          if (list._items && list._items[idx]) {
+            list._items[idx].label = rec.label;
+          }
+        }
+        // refresh list render (simple)
+        if (typeof list._renderList === 'function') list._renderList();
+        // go back to list tab
+        const tabsEls = tabs.querySelectorAll('my-tab');
+        if (tabsEls[0]) tabsEls[0].select();
+      });
+    })();
+
+  </script>
+</body>
+</html>
