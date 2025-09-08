@@ -1,10 +1,26 @@
-le code est tirée de cette page
-[MDN / exportparts](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/exportparts)
+# 2025-09-08
+## Essai
+2 composants sont réalisés , le troisième doit être validé
+
+[InforBar](../scrhtml/Infobar.js)
 
 
+
+
+
+
+
+
+
+
+
+
+
+# Documentations
+le code est tirée de cette page : [MDN / exportparts](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/exportparts)
 Quelques questions relatives au composant et customElements
 
-### A - Possibilités de la technologie
+## A - Possibilités de la technologie
 
 Depuis le composant Peut on accéder a 
 - window A1 : ✅ oui
@@ -17,7 +33,7 @@ Depuis le composant Peut on accéder a
 - utiliser des librairie comme threejs A8 : ✅ oui
 - utiliser element.dataset ( DOMStringMap) A9 : ✅ oui
 
-### B - limitations de la technologie
+## B - limitations de la technologie
 
 - Isolation : le Shadow DOM isole le style et le DOM → parfois compliqué de faire communiquer le CSS de la page hôte avec l’intérieur du composant.
   - Styling : le style de la page hôte ne traverse pas le Shadow DOM (sauf avec :host, ::part, ::slotted). 
@@ -26,7 +42,7 @@ Depuis le composant Peut on accéder a
 - Chargement : les composants sont déclarés via customElements.define(). S’ils ne sont pas définis au moment de l’insertion, ils apparaissent comme des "unknown element".
 - Pas de polyfill complet natif : dans les vieux navigateurs (IE…), ça ne marche pas sans polyfills.
 
-### C - Showcase et projets
+## C - Showcase et projets
 Quels projets consulter pour se former ?
 
 - [Using_templates_and_slots](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_templates_and_slots)
@@ -51,7 +67,7 @@ WebComponents.org → annuaire de composants.
 Exemples pratiques → rechercher "Using templates and slots" / "adding flexibility with slots" ( tag template, tag slot, part, event listener, etc.).
 
 
-### D mise en oeuvre
+## D mise en oeuvre
 Puis je déclarer les composants dans un module  ? que faire du html ?
 
 Déclarer dans un module → ✅ oui
