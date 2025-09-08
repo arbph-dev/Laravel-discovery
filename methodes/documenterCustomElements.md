@@ -1,11 +1,11 @@
 # 2025-09-08
 ## Essai
 2 composants sont réalisés , le troisième doit être validé
-- [InforBar](../scrHtml/InfoBar.js)
-- [InforBar2](../scrHtml/InfoBar.js)
+- [InforBar](https://github.com/arbph-dev/Laravel-discovery/scrHtml/InfoBar.js)
+- [InforBar2](https://github.com/arbph-dev/Laravel-discovery/scrHtml/InfoBar2.js)
 
 
-
+srcHtml/InfoBar.js
 
 
 
