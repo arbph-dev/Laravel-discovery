@@ -2,33 +2,35 @@
 Récupérer le JSON des parrainages 2022 depuis data.gouv.fr et l’injecter dans un base via Laravel
 
 # Étapes pour créer une API dans Laravel
-1. Définir modèle et contrôleur API
+## Définir modèle et contrôleur API
 - un modèle Parrainage
 - une migration (avec seeder ou command pour import) 
 - un contrôleur ParrainageController
 
-Si on part sur l’exemple des parrainages :
+on part sur l’exemple des parrainages :
 ```
 php artisan make:model Parrainage -mcr
 ```
 
 
-2. Configurer les routes API
+## Configurer les routes API
 
 Dans routes/api.php :
+```php
 use App\Http\Controllers\ParrainageController;
 
 Route::get('/parrainages', [ParrainageController::class, 'index']);
 Route::get('/parrainages/{id}', [ParrainageController::class, 'show']);
 Route::get('/parrainages/departement/{dep}', [ParrainageController::class, 'byDepartement']);
+```
+
+Url :
+- https://ton-domaine/api/parrainages
+- https://ton-domaine/api/parrainages/123
 
 
-https://ton-domaine/api/parrainages
-https://ton-domaine/api/parrainages/123
 
-
-
-3- Contrôleur
+## Contrôleur
 
 Dans app/Http/Controllers/ParrainageController.php
 
@@ -44,12 +46,33 @@ class ParrainageController extends Controller
     {
         return response()->json(Parrainage::paginate(50));
     }
+// ou mieux
+/*
+    public function index(Request $request)
+    {
+        $query = Parrainage::query();
+
+        // Filtres dynamiques
+        if ($request->has('candidat')) {
+            $query->where('candidat', $request->candidat);
+        }
+        if ($request->has('departement')) {
+            $query->where('departement', $request->departement);
+        }
+        if ($request->has('region')) {
+            $query->where('region', $request->region);
+        }
+
+        return response()->json($query->paginate(50));
+    }
+*/
+
 
     public function show($id)
     {
         return response()->json(Parrainage::findOrFail($id));
     }
-
+    /* devient obsolete voir ci dessus */
     public function byDepartement($departement)
     {
         return response()->json(
@@ -61,6 +84,27 @@ class ParrainageController extends Controller
 
 
 
+
+
+## Model
+Fichier app/Models/Parrainage.php
+```php
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Parrainage extends Model
+{
+    protected $fillable = [
+        'nom',
+        'prenom',
+        'candidat',
+        'departement',
+        'region',
+        'fonction',
+    ];
+}
+```
 
 
 
@@ -106,7 +150,7 @@ Schema::create('parrainages', function (Blueprint $table) {
 php artisan migrate
 ```
 
-3. Créer un seeder
+### Créer un seeder
 ```
 php artisan make:seeder ParrainagesSeeder
 ```
@@ -148,10 +192,88 @@ class ParrainagesSeeder extends Seeder
     }
 }
 ```
-3-2. executer
+#### 3-2. executer
 ```
 php artisan db:seed --class=ParrainagesSeeder
 ```
+
+
+### commande artisan
+
+#### commandes
+```
+php artisan make:command ImportParrainages => import:parrainages ??
+curl -o storage/app/parrainages.json https://static.data.gouv.fr/resources/parrainages-des-candidats-a-lelection-presidentielle-francaise-de-2022/20220307-183354/parrainagestotal.json
+php artisan import:parrainages storage/app/parrainages.json
+```
+
+#### fichier
+app/Console/Commands/ImportParrainages.php
+```php
+
+namespace App\Console\Commands;
+
+use Illuminate\Console\Command;
+use App\Models\Parrainage;
+
+class ImportParrainages extends Command
+{
+    protected $signature = 'import:parrainages {file}';
+    protected $description = 'Importer les parrainages depuis un fichier JSON';
+
+    public function handle()
+    {
+        $file = $this->argument('file');
+
+        if (!file_exists($file)) {
+            $this->error("Fichier introuvable : $file");
+            return 1;
+        }
+
+        $this->info("Importation depuis $file ...");
+
+        // Lecture du fichier ligne par ligne
+        $handle = fopen($file, 'r');
+        $buffer = '';
+        $batch = [];
+
+        while (($line = fgets($handle)) !== false) {
+            $buffer .= $line;
+
+            // Détection fin du JSON complet (si ton fichier est un tableau unique)
+            if (str_ends_with(trim($line), ']')) {
+                $json = json_decode($buffer, true);
+                foreach ($json as $entry) {
+                    $batch[] = [
+                        'nom'        => $entry['nom'] ?? '',
+                        'prenom'     => $entry['prenom'] ?? null,
+                        'candidat'   => $entry['candidat'] ?? '',
+                        'departement'=> $entry['departement'] ?? null,
+                        'region'     => $entry['region'] ?? null,
+                        'fonction'   => $entry['fonction'] ?? null,
+                    ];
+
+                    if (count($batch) >= 500) {
+                        Parrainage::insert($batch);
+                        $batch = [];
+                        $this->info("500 entrées importées...");
+                    }
+                }
+            }
+        }
+
+        if (!empty($batch)) {
+            Parrainage::insert($batch);
+        }
+
+        fclose($handle);
+
+        $this->info("✅ Import terminé !");
+        return 0;
+    }
+}
+```
+
 
 ## exploitation
 Côté JavaScript (WebComponents, fetch)
