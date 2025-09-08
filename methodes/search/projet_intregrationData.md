@@ -291,6 +291,40 @@ getParrainages();
 
 ```
 
+
+
+
+```js
+fetch('/api/parrainages')
+  .then(r => r.json())
+  .then(console.log)
+
+```
+
+
+```js
+fetch('/api/parrainages?candidat=Macron')
+  .then(r => r.json())
+  .then(console.log)
+
+```
+
+
+```js
+fetch('/api/parrainages?departement=29')
+  .then(r => r.json())
+  .then(console.log)
+
+```
+
+
+```js
+fetch('/api/parrainages?region=Bretagne')
+  .then(r => r.json())
+  .then(console.log)
+
+```
+
 ### WebComponents
 
 ```js
@@ -307,4 +341,26 @@ class ParrainageList extends HTMLElement {
 }
 
 customElements.define('parrainage-list', ParrainageList);
+```
+
+
+
+```js
+class ParrainageList extends HTMLElement {
+  async connectedCallback() {
+    const res = await fetch('/api/parrainages?region=Bretagne');
+    const data = await res.json();
+
+    this.innerHTML = `
+      <h3>Parrainages en Bretagne</h3>
+      <ul>
+        ${data.data.map(p => `
+          <li>${p.prenom ?? ''} ${p.nom} — ${p.candidat}</li>
+        `).join('')}
+      </ul>
+    `;
+  }
+}
+customElements.define('parrainage-list', ParrainageList);
+
 ```
