@@ -153,3 +153,36 @@ class ParrainagesSeeder extends Seeder
 php artisan db:seed --class=ParrainagesSeeder
 ```
 
+## exploitation
+Côté JavaScript (WebComponents, fetch)
+
+### fetch
+
+```js
+async function getParrainages() {
+  const response = await fetch('https://ton-domaine/api/parrainages');
+  const data = await response.json();
+  console.log(data);
+}
+
+getParrainages();
+
+```
+
+### WebComponents
+
+```js
+class ParrainageList extends HTMLElement {
+  async connectedCallback() {
+    const res = await fetch('/api/parrainages');
+    const data = await res.json();
+    this.innerHTML = `
+      <ul>
+        ${data.data.map(p => `<li>${p.nom} ${p.prenom} (${p.candidat})</li>`).join('')}
+      </ul>
+    `;
+  }
+}
+
+customElements.define('parrainage-list', ParrainageList);
+```
