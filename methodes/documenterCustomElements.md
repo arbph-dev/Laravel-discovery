@@ -4,11 +4,25 @@
 - [InforBar](https://github.com/arbph-dev/Laravel-discovery/blob/main/srcHtml/InfoBar.js)
 - [InforBar2](https://github.com/arbph-dev/Laravel-discovery/blob/main/srcHtml/InfoBar2.js)
 
+### Mise en oeuvre
+- on délare le script, ici dans le template 
+```html
+<script type="module" src="InfoBar.js"></script>
+```
+
+on instancie dan la vue ou le template (template)
+```html
+<info-bar></info-bar>
+```
+
 ### InforBar
-a supprimé
+a supprimer 
 
 ### InforBar2
+Pour homogéniser les style le css du document est aussi lié au composant dans une balise style
+
 un blink a été perçu sur le chargment
+
 - voir ligne 32 supprimer
 ```js
 setTimeout(() => this._reDraw(), 0); // attend que le DOM soit prêt
@@ -26,7 +40,38 @@ ajouter les slots
 </info-bar2>
 ```
 
-## essaiyer et documenter  
+### Note : 
+
+
+Utilise uniquement les styles de l'arborescence fantôme, et non du document principal.
+voir part:: et :host on pourrait appliquer le style depuis le document principal
+attention les slots ont le style du document principal (?)
+
+Approfondir : **formAssociated** , **ElementInternals**
+
+**formAssociated** Adding a static formAssociated property, with a true value, makes an autonomous custom element a form-associated custom element.
+The **ElementInternals** interface helps you to implement functions and properties common to form control elements.
+[voir](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements)
+
+
+Custom elements can be of two types: https://javascript.info/custom-elements
+- “Autonomous” – new tags, extending HTMLElement
+- “Customized built-in elements” – extensions of existing elements.
+
+Shadow DOM est un moyen de créer un DOM local aux composants.
+
+shadowRoot = elem.attachShadow({mode: open|closed})
+– crée un DOM fantôme pour elem. Si mode="open", alors il est accessible en tant que elem.shadowRoot.propriété.
+Nous pouvons remplir shadowRoot en utilisant innerHTML ou d'autres méthodes DOM.
+
+Éléments DOM fantômes :
+Possèdent leur propres espaces d'identifications invisibles pour les sélecteurs JavaScript du document principal, tels que querySelector,
+
+
+
+
+
+## essayer et documenter  
 manipulation InforBar2 , atribut et slot via dom
 
 
