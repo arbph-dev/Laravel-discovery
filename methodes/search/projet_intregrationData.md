@@ -1,5 +1,71 @@
 "Objectif"
 Récupérer le JSON des parrainages 2022 depuis data.gouv.fr et l’injecter dans un base via Laravel
+
+# Étapes pour créer une API dans Laravel
+1. Définir modèle et contrôleur API
+- un modèle Parrainage
+- une migration (avec seeder ou command pour import) 
+- un contrôleur ParrainageController
+
+Si on part sur l’exemple des parrainages :
+```
+php artisan make:model Parrainage -mcr
+```
+
+
+2. Configurer les routes API
+
+Dans routes/api.php :
+use App\Http\Controllers\ParrainageController;
+
+Route::get('/parrainages', [ParrainageController::class, 'index']);
+Route::get('/parrainages/{id}', [ParrainageController::class, 'show']);
+Route::get('/parrainages/departement/{dep}', [ParrainageController::class, 'byDepartement']);
+
+
+https://ton-domaine/api/parrainages
+https://ton-domaine/api/parrainages/123
+
+
+
+3- Contrôleur
+
+Dans app/Http/Controllers/ParrainageController.php
+
+```php
+namespace App\Http\Controllers;
+
+use App\Models\Parrainage;
+use Illuminate\Http\Request;
+
+class ParrainageController extends Controller
+{
+    public function index()
+    {
+        return response()->json(Parrainage::paginate(50));
+    }
+
+    public function show($id)
+    {
+        return response()->json(Parrainage::findOrFail($id));
+    }
+
+    public function byDepartement($departement)
+    {
+        return response()->json(
+            Parrainage::where('departement', $departement)->get()
+        );
+    }
+}
+```
+
+
+
+
+
+
+
+## import
 2 possibilitées 
 - Seeder (petits fichiers) 
 - Artisan command (gros volumes)
@@ -82,6 +148,8 @@ class ParrainagesSeeder extends Seeder
     }
 }
 ```
-
-
+3-2. executer
+```
+php artisan db:seed --class=ParrainagesSeeder
+```
 
