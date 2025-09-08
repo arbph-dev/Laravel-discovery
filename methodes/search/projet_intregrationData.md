@@ -450,6 +450,10 @@ SITE CATALOGUE :
 https://www.allthingsdev.co/apimarketplace/endpoints/jsearch/666bdc4af86d656f834184ad
 rapidapi
 
+A voir
+https://data.culture.gouv.fr/explore/dataset/individus_presumes_emigres_revolution_francaise/api/?disjunctive.sexe&disjunctive.departement
+
+
 
 ## https://hubeau.eaufrance.fr/page/api-surveillance-littoral
 
