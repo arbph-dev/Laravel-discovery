@@ -1,9 +1,8 @@
 # 2025-09-08
 ## Essai
 2 composants sont réalisés , le troisième doit être validé
-
-[InforBar](../scrhtml/Infobar.js)
-
+- [InforBar](../scrHtml/InfoBar.js)
+- [InforBar2](../scrHtml/InfoBar.js)
 
 
 
