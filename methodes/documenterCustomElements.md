@@ -4,10 +4,32 @@
 - [InforBar](https://github.com/arbph-dev/Laravel-discovery/blob/main/srcHtml/InfoBar.js)
 - [InforBar2](https://github.com/arbph-dev/Laravel-discovery/blob/main/srcHtml/InfoBar2.js)
 
+### InforBar
+a supprimé
 
-srcHtml/InfoBar.js
+### InforBar2
+un blink a été perçu sur le chargment
+- voir ligne 32 supprimer
+```js
+setTimeout(() => this._reDraw(), 0); // attend que le DOM soit prêt
+```
+- ligne 55 => this.shadowRoot.querySelector("aside") augmener selectivité aside.w3-panel
+```js
+  this._nodAside = this.shadowRoot.querySelector("aside")
+```
+
+ajouter les slots
+```html
+<info-bar2 type="information">
+  <span slot="title">Information Importante</span>
+  <span slot="text">Ce message explique comment utiliser les slots.</span>
+</info-bar2>
+```
 
 ## essaiyer et documenter  
+manipulation InforBar2 , atribut et slot via dom
+
+
 gestion onglet
 
 
